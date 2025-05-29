@@ -1,0 +1,8 @@
+<svg preserveAspectRatio="none" data-bbox="20 20 160 160" viewBox="20 20 160 160" height="200" width="200" xmlns="http://www.w3.org/2000/svg" data-type="shape" role="presentation" aria-hidden="true" aria-label="">
+    <g>
+        <path d="M172 28.2h-40v39.9h40V28.2zm8-8v55.9h-56V20.2h56z" fill-rule="evenodd" clip-rule="evenodd"/>
+        <path d="M68 28H28v39.9h40V28zm8-8v55.9H20V20h56z" fill-rule="evenodd" clip-rule="evenodd"/>
+        <path d="M172 132.1h-40V172h40v-39.9zm8-8V180h-56v-55.9h56z" fill-rule="evenodd" clip-rule="evenodd"/>
+        <path d="M68 132.1H28V172h40v-39.9zm8-8V180H20v-55.9h56z" fill-rule="evenodd" clip-rule="evenodd"/>
+    </g>
+</svg>
