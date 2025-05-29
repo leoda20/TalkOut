@@ -191,7 +191,7 @@ h6 br,
 
 h1,
 .mil-h1 {
-  font-size: 64px;
+  font-size: 116px;
 }
 @media screen and (max-width: 1400px) {
   h1,
@@ -3076,7 +3076,7 @@ blog
 .mil-blog-card .mil-cover-frame {
   position: relative;
   overflow: hidden;
-  padding-bottom: 420px;
+  padding-bottom: 240px;
   margin-bottom: 24px;
   border-radius: 8px;
   
@@ -3086,10 +3086,10 @@ blog
   position: absolute;
   top: 16px;
   left: 16px;
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-top: 0px;
+  padding-bottom: 0px;
   border-radius: 4px;
   background-color: #ffffff;
 }
