@@ -178,7 +178,14 @@
                 <!-- project -->
                 <section class="container mil-up" style="gap: 8px;" id="hero">
 
-                    <h2 class="mil-mb-16 col-lg-12">Brunch e TalkOut</h2>
+                    <h2 class="col-lg-12">Brunch e TalkOut</h2>
+
+                    <div class="align-items-center mil-mb-16 " style="gap: 8px; display: inline-flex;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.364 17.364L12 23.7279L5.63604 17.364C2.12132 13.8492 2.12132 8.15076 5.63604 4.63604C9.15076 1.12132 14.8492 1.12132 18.364 4.63604C21.8787 8.15076 21.8787 13.8492 18.364 17.364ZM12 13C13.1046 13 14 12.1046 14 11C14 9.89543 13.1046 9 12 9C10.8954 9 10 9.89543 10 11C10 12.1046 10.8954 13 12 13Z"></path></svg>
+
+                                    <p>Lisbon - 28/05 - 9:00</p>
+
+                                </div>
 
                     <div class="flex-div mil-gap-16" >
 
@@ -199,12 +206,7 @@
                                     
                             <div class="card-themes">
 
-                                <div class="align-items-center" style="gap: 8px; display: inline-flex;">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.364 17.364L12 23.7279L5.63604 17.364C2.12132 13.8492 2.12132 8.15076 5.63604 4.63604C9.15076 1.12132 14.8492 1.12132 18.364 4.63604C21.8787 8.15076 21.8787 13.8492 18.364 17.364ZM12 13C13.1046 13 14 12.1046 14 11C14 9.89543 13.1046 9 12 9C10.8954 9 10 9.89543 10 11C10 12.1046 10.8954 13 12 13Z"></path></svg>
-
-                                    <p>Lisbon - 28/05 - 9:00</p>
-
-                                </div>
+                               
 
                             
 
@@ -552,10 +554,10 @@
 
                     <div class="col-lg-3 mil-mb-20">
 
-                            <h2 class="mil-mb-16 text-light" >Não deixe para <span class="text-purple curved-text-md ">depois</span></h2>
+                            <h2 class="mil-mb-16 title-light" >Não deixe para depois</h2>
 
 
-                            <p class="mil-mb-20 text-light">Chega de chamadas de grupo com pouca participação.</p>
+                            <p class="mil-mb-20 title-light">Chega de chamadas de grupo com pouca participação.</p>
 
                     </div> 
 
@@ -569,10 +571,12 @@
                             <h4>Garante teu lugar</h4>
                             <p class="mil-mb-16" >As vagas são limitadas e gostamos de saber com quem contar.</p>
 
-                            <button class="hero-card-btn " id="openModalBtn">
+                            <a class="hero-card-btn " href="#hero">
 
                                 <h5 class="">Quero Participar</h5>
-                            </button>
+                            </a>
+
+                            
 
                         </div>
 
@@ -779,7 +783,7 @@
     <!-- ashley js -->
     <script src="js/main.js"></script>
     <script>
-            const modal = document.getElementById("myModal");
+    const modal = document.getElementById("myModal");
     const btn = document.getElementById("openModalBtn");
     const closeBtn = document.querySelector("#myModal .close");
     const sendBtn = document.getElementById("sendBtn");
