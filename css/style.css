@@ -5463,7 +5463,7 @@ modal
 /* Modal content box */
 .modal-content {
    background: white;
-  padding: 20px;
+  padding: 32px;
   margin: 15% auto;
   width: 80%;
   max-width: 500px;
