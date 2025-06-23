@@ -194,6 +194,7 @@ h6 br,
 h1,
 .mil-h1 {
   font-size: 80px;
+  line-height: 56px;
 }
 @media screen and (max-width: 1400px) {
   h1,
@@ -816,9 +817,9 @@ textarea {
 }
 
 .curved-text-lg {
-  line-height: 120px;
+  line-height: 80px;
   font-size: 80px;
- 
+  text-justify: center;
   font-weight: 500;
   font-family: "Borel", serif;
 
@@ -831,14 +832,14 @@ textarea {
 @media screen and (max-width: 1400px) {
 .curved-text-lg {
     font-size: 64px;
-    line-height: 80px;
+    line-height: 120px;
   }
 }
 @media screen and (max-width: 1200px) {
   .curved-text-lg {
     font-size: 64px;
     
-    line-height: 80px;
+    line-height: 120px;
   }
 }
 @media screen and (max-width: 992px) {
@@ -1053,14 +1054,35 @@ Icons
   fill: currentColor;
 }
 
+.icon-80 {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-80 path {
+  fill: currentColor;
+}
+
 /* -------------------------------------------
 
 Logos
 
 ------------------------------------------- */
 
+.logo-24 {
+  width: 100%px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 .logo-40 {
-  width: 40px;
+  width: 100%px;
   height: 40px;
   display: flex;
   align-items: center;
@@ -1068,7 +1090,7 @@ Logos
 }
 
 .logo-64 {
-  width: 64px;
+  width: 100%px;
   height: 64px;
   display: flex;
   align-items: center;
@@ -3018,7 +3040,7 @@ social icons
   height: 40px;
   width: 40px;
   padding: 4px;
-  background-color: transparent;
+  background-color: #475569;
   
   border-radius: 8px;
 
@@ -3035,7 +3057,7 @@ social icons
   padding: 4px;
   border: none;
   border-radius: 8px;
-  background-color: #D946EF;
+  background-color: #A21CAF;
 
   display: flex;
     align-items: center;
@@ -3505,7 +3527,7 @@ footer
 .footer-content{
   border-radius:  24px 24px 0 0;
   display: flex;
-  background-color: #4A044E;
+  background-color: #020617;
   align-items: center;
   justify-items: center;
   padding-top: 48px;
@@ -3518,14 +3540,14 @@ footer
 
 .footer-content .newsletter {
   padding: 24px;
-  background-color: #C026D3;
+  background-color: #0F172A;
   border-radius: 16px;
   -webkit-transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
   transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
 }
 
 .footer-content .newsletter h3{
-  color: #4A044E;
+  color: #ffffff;
 }
 
 .footer-content .newsletter p{
@@ -3698,25 +3720,26 @@ portfolio
 
 .contact-card{
   padding: 24px;
-  background-color: #FDF4FF;
+  background-color: #F8FAFC;
   border-radius: 16px;
   -webkit-transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
   transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
+  gap: 24px;
 }
 
 .contact-card h4{
-  color: #701A75;
+  color: #020617;
 }
 
 
 
 .contact-card:hover{
-  background-color: #D946EF;
+  background-color: #FEF3C7;
   
 }
 
 .contact-card:hover h4{
-  color: #ffffff;
+  color: #020617;
 }
 
 @media screen and (max-width: 768px) {
@@ -3756,8 +3779,10 @@ portfolio
 }
 
 .contact-card path{
-  fill: #D946EF;
+  fill: #F59E0B;
   -webkit-transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
+  margin-left: 16px;
+  margin-right: 16px;
 }
 
 .contact-card:hover svg{
@@ -3767,7 +3792,7 @@ portfolio
 }
 
 .contact-card:hover path{
-  fill: #ffffff;
+  fill: #F59E0B;
 }
 
 .contact-card p{
@@ -3856,7 +3881,7 @@ portfolio
   padding-left: 16px;
   padding-right: 16px;
   height: fit-content;
-  background: #C026D3;
+  background: #020617;
   border-radius: 8px;
   width: fit-content;
 }
@@ -3868,8 +3893,8 @@ portfolio
   text-align: center;
   height: auto;
   text-decoration: none;
-  background-color: #4A044E;
-
+  background-color: #A21CAF;
+  cursor: pointer;
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 16px;
@@ -3938,9 +3963,9 @@ portfolio
   padding-left: 16px;
   padding-right: 16px;
   height: fit-content;
-  background: #F5D0FE;
+  border: solid 1px #CBD5E1 ;
   border-radius: 8px;
-  width: fit-content;
+  width: max-content;
 }
 
 .btn-secondary:hover{
@@ -3950,14 +3975,15 @@ portfolio
   text-align: center;
   height: auto;
   text-decoration: none;
-  background-color: #E879F9;
-
+  background-color: #A21CAF;
+  border: solid 1px #A21CAF;
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 16px;
   padding-right: 16px;
   height: fit-content;
   border-radius: 8px;
+  cursor: pointer;
   
 }
 
@@ -3970,7 +3996,7 @@ portfolio
 }
 
 .btn-secondary:hover h5{
-  color: #000000;
+  color: #ffffff;
   font-size: 18px;
   -webkit-transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
   
@@ -5068,10 +5094,10 @@ images
   overflow: hidden;
     flex-wrap: wrap;
     border-radius: 16px;
-    min-height: 48vh;
+    min-height: 40vh;
     height: 100%;
     align-items: center;
-    min-width: 48vh;
+    min-width: 32vh;
     width: 100%;
     
     justify-content: center;
@@ -5243,48 +5269,17 @@ images
 
 
 .mil-image-frame-hero {
-  display: flex;
-    flex-wrap: wrap;
     border-radius: 16px;
-    overflow:hidden;
-    
-    justify-content: center;
-
-   min-height: 48vh;
-    height: 100%;
-    min-width: 48vh;
-    width: 100%;
-}
-.mil-image-frame-hero > img {
-  position: relative;
-  max-height: 100%;
+    max-height: 32vh;
+    display: flex;
+    max-width: 100%;
     
     object-fit: cover; /* Change to 'cover' if you prefer images to fill the container */
     object-position: center;
-
 }
 
-@media screen and (max-width: 992px) {
-.mil-image-frame-hero {
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-wrap: wrap;
-  border-radius: 16px;
-  justify-content: center;
-  min-height: 16vh;
-  max-height: 32vh;
-}
 
-  .mil-image-frame-hero > img {
-  position: fixed;
-  height: 100%;
-  max-width: 100%;
-  object-fit: contain;
-  object-position: center;
 
-}
-}
 
 .mil-image-frame-hero.mil-horizontal {
   padding-bottom: 30%;
