@@ -129,21 +129,24 @@
                 <span class="close">&times;</span>
                 <h3 class="mil-mb-16">Guardar meu lugar</h3>
 
-                <form  class="form-group" action="https://formsubmit.co/leonardo.denega@hotmail.com" method="POST">
+                <form class="form-group" action="https://formsubmit.co/leonardo.denega@hotmail.com" method="POST">
+  
+                    <!-- Evita spam sem precisar de backend -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <!-- Redireciona para uma página de sucesso (opcional) -->
+                    <input type="hidden" name="_next" value="https://seusite.com/obrigado.html">
+
                     <label class="d-block mil-mb-8">
                         Digite seu Nome
                         <span class="text-danger">*</span>
                     </label>
-
-                    <input class="form-control mil-mb-16" name="nome" id="nome" required="" placeholder="email@email.com" type="text">
+                    <input class="form-control mil-mb-16" name="nome" id="nome" required placeholder="Seu nome" type="text">
 
                     <label class="d-block mil-mb-8">
                         Digite seu Email
                         <span class="text-danger">*</span>
                     </label>
-
-                    
-                    <input class="form-control mil-mb-16 " name="email" id="email" required="" placeholder="email@email.com" type="email">
+                    <input class="form-control mil-mb-16" name="email" id="email" required placeholder="email@email.com" type="email">
 
                     <button class="hero-card-btn mil-mb-8" type="submit" id="sendBtn">
                         <h5 class="">Confirmar</h5>
