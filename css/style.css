@@ -369,6 +369,25 @@ blockquote {
   width: fit-content;
 }
 
+.mil-badge-disabled{
+  
+   padding-left: 6px;
+  padding-right: 6px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  border-radius: 4px;
+  background-color: #F1F5F9;
+}
+
+.mil-badge-disabled p{
+  color: #475569;
+  letter-spacing: 2px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+
 .icon-circle-yellow{
   padding: 12px;
   border-radius: 100%;
@@ -839,7 +858,7 @@ textarea {
   .curved-text-lg {
     font-size: 64px;
     
-    line-height: 120px;
+    line-height: 64px;
   }
 }
 @media screen and (max-width: 992px) {
