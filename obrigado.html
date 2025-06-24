@@ -642,23 +642,26 @@
                                 <h3 class="mil-mb-8">Inscreva-se na Newsletter</h3>
                                 <p class="mil-mb-16 mil-text-lg">Não fique por fora das novidades em próximos eventos.</p>
 
-                                    <div class="form-group">
-                                    <label class="d-block mil-mb-8">
-                                        Digite seu email
-                                        <span class="text-danger">*</span>
-                                    </label>
+                                    <form action="https://formsubmit.co/leonardo.denega@hotmail.com" method="POST">
 
-                                    <div class="mil-mb-16">
-                                        <input class="form-control" name="name" id="name" required="" placeholder="email@email.com" type="text">
-                                    </div>
+                                        <title>Newsletter</title>
 
-                                    <a class="hero-card-btn">
+                                        <input type="hidden" name="_subject" value="Newsletter">
+  
+                                        <!-- Optional hidden fields -->
+                                        <input type="hidden" name="_subject" value="Nova resposta do formulário">
+                                        <input type="hidden" name="_captcha" value="false">
+                                        <input type="hidden" name="_next" value="https://seusite.com/obrigado.html"> <!-- personalize se quiser -->
 
-                                        <h5 class="">Enviar</h5>
-                            
-                    
-                                    </a>
-                                </div>
+                                        
+                                        <!-- Email -->
+                                        <label for="email" class="mil-mb-8">Digite seu Email <span style="color:red">*</span></label><br>
+                                        <input type="email" id="email" name="email" placeholder="email@exemplo.com" required><br><br>
+
+                                        <!-- Botão -->
+                                        <button class="hero-card-btn" type="submit"><h5>Enviar</h5></button>
+
+                                    </form>
                             </div>
 
                         </div>
