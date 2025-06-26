@@ -836,12 +836,11 @@ textarea {
 }
 
 .curved-text-lg {
-  line-height: 80px;
+  line-height: 120px;
   font-size: 80px;
   text-justify: center;
   font-weight: 500;
   font-family: "Borel", serif;
-
   text-align: center;
   
   /*border-bottom: solid 1px rgba(0, 0, 0, 0.2);
@@ -850,17 +849,11 @@ textarea {
 
 @media screen and (max-width: 1400px) {
 .curved-text-lg {
-    font-size: 64px;
+    font-size: 80px;
     line-height: 120px;
   }
 }
-@media screen and (max-width: 1200px) {
-  .curved-text-lg {
-    font-size: 64px;
-    
-    line-height: 64px;
-  }
-}
+
 @media screen and (max-width: 992px) {
   .curved-text-lg {
     font-size: 58px;
@@ -870,14 +863,13 @@ textarea {
 }
 @media screen and (max-width: 768px) {
   .curved-text-lg {
-    font-size: 48px;
+    font-size: 52px;
     line-height: 48px;
   }
 }
 
 
 .curved-text-md {
-  position: relative;
   height: 70px;
   
   width: 100%;
@@ -893,11 +885,7 @@ textarea {
     font-size: 40px;
   }
 }
-@media screen and (max-width: 1200px) {
-  .curved-text-md {
-    font-size: 40px;
-  }
-}
+
 @media screen and (max-width: 992px) {
   .curved-text-md {
     font-size: 40px;
@@ -905,7 +893,7 @@ textarea {
 }
 @media screen and (max-width: 768px) {
   .curved-text-md {
-    font-size: 40px;
+    font-size: 34px;
     line-height: 16px;
   }
 }
