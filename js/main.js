@@ -850,9 +850,7 @@ $(function () {
 
         ***************************/
 
-        const swup = new Swup({
-  forms: false
-});
+       
 
         const appearance = document.querySelectorAll(".mil-up");
 
