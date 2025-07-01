@@ -716,41 +716,43 @@
     <!-- ashley js -->
     <script src="js/main.js"></script>
     <script>
+  function initModal() {
     const modal = document.getElementById("myModal");
     const btn = document.getElementById("openModalBtn");
     const closeBtn = document.querySelector("#myModal .close");
     const sendBtn = document.getElementById("sendBtn");
 
+    if (!modal || !btn || !closeBtn || !sendBtn) return; // evita erro se algum elemento não existir
+
     btn.onclick = (e) => {
-    e.preventDefault();
-    modal.style.display = "block";
-    document.body.classList.add("modal-open");
+      e.preventDefault();
+      modal.style.display = "block";
+      document.body.classList.add("modal-open");
     };
 
     closeBtn.onclick = () => {
-    modal.style.display = "none";
-    document.body.classList.remove("modal-open");
+      modal.style.display = "none";
+      document.body.classList.remove("modal-open");
     };
 
     window.onclick = (event) => {
-    if (event.target === modal) {
+      if (event.target === modal) {
         modal.style.display = "none";
         document.body.classList.remove("modal-open");
-    }
+      }
     };
 
     sendBtn.onclick = () => {
-    alert("Message sent!");
-    modal.style.display = "none";
-    document.body.classList.remove("modal-open");
+      alert("Message sent!");
+      modal.style.display = "none";
+      document.body.classList.remove("modal-open");
     };
+  }
 
-    document.addEventListener("DOMContentLoaded", initModal);
-    document.addEventListener("swup:contentReplaced", initModal);
-
-
-    
-    </script>
+  // Inicializa a modal na primeira carga e após trocas de conteúdo com Swup
+  document.addEventListener("DOMContentLoaded", initModal);
+  document.addEventListener("swup:contentReplaced", initModal);
+</script>
 
 </body>
 
