@@ -400,6 +400,9 @@ $(function () {
             scrub: 0.3
         }
     });
+
+
+    
     /***************************
 
     scroll animations

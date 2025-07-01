@@ -28,6 +28,34 @@
 
 <body>
 
+    <div id="myModal" class="modal" data-swup-form="true">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3 class="mil-mb-16">Guardar meu lugar</h3>
+
+                <form action="https://formsubmit.co/info@talkout.today" method="POST" >
+  
+                    <!-- Optional hidden fields -->
+                    <input type="hidden" name="_subject" value="Nova inscrição Brunch e TalkOut">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="obrigado.html"> <!-- personalize se quiser -->
+
+                    <!-- Nome -->
+                    <label for="nome">Digite seu Nome <span style="color:red">*</span></label><br>
+                    <input type="text" id="nome" name="nome" placeholder="Seu nome" required><br><br>
+
+                    <!-- Email -->
+                    <label for="email">Digite seu Email <span style="color:red">*</span></label><br>
+                    <input type="email" id="email" name="email" placeholder="email@exemplo.com" required><br><br>
+
+                    <!-- Botão -->
+                    <button class="hero-card-btn" type="submit"> <h5> Confirmar</h5></button>
+
+                </form>
+
+            </div>
+        </div>
+
     <!-- wrapper -->
     <div class="mil-wrapper" id="top">
 
@@ -126,33 +154,7 @@
         <div class="mil-curtain"></div>
         <!-- curtain end -->
 
-        <div id="myModal" class="modal" data-swup-form="true">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h3 class="mil-mb-16">Guardar meu lugar</h3>
-
-                <form action="https://formsubmit.co/info@talkout.today" method="POST" >
-  
-                    <!-- Optional hidden fields -->
-                    <input type="hidden" name="_subject" value="Nova inscrição Brunch e TalkOut">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="obrigado.html"> <!-- personalize se quiser -->
-
-                    <!-- Nome -->
-                    <label for="nome">Digite seu Nome <span style="color:red">*</span></label><br>
-                    <input type="text" id="nome" name="nome" placeholder="Seu nome" required><br><br>
-
-                    <!-- Email -->
-                    <label for="email">Digite seu Email <span style="color:red">*</span></label><br>
-                    <input type="email" id="email" name="email" placeholder="email@exemplo.com" required><br><br>
-
-                    <!-- Botão -->
-                    <button class="hero-card-btn" type="submit"> <h5> Confirmar</h5></button>
-
-                </form>
-
-            </div>
-        </div>
+        
 
         
 
@@ -716,43 +718,41 @@
     <!-- ashley js -->
     <script src="js/main.js"></script>
     <script>
-  function initModal() {
     const modal = document.getElementById("myModal");
     const btn = document.getElementById("openModalBtn");
     const closeBtn = document.querySelector("#myModal .close");
     const sendBtn = document.getElementById("sendBtn");
 
-    if (!modal || !btn || !closeBtn || !sendBtn) return; // evita erro se algum elemento não existir
-
     btn.onclick = (e) => {
-      e.preventDefault();
-      modal.style.display = "block";
-      document.body.classList.add("modal-open");
+    e.preventDefault();
+    modal.style.display = "block";
+    document.body.classList.add("modal-open");
     };
 
     closeBtn.onclick = () => {
-      modal.style.display = "none";
-      document.body.classList.remove("modal-open");
+    modal.style.display = "none";
+    document.body.classList.remove("modal-open");
     };
 
     window.onclick = (event) => {
-      if (event.target === modal) {
+    if (event.target === modal) {
         modal.style.display = "none";
         document.body.classList.remove("modal-open");
-      }
+    }
     };
 
     sendBtn.onclick = () => {
-      alert("Message sent!");
-      modal.style.display = "none";
-      document.body.classList.remove("modal-open");
+    alert("Message sent!");
+    modal.style.display = "none";
+    document.body.classList.remove("modal-open");
     };
-  }
 
-  // Inicializa a modal na primeira carga e após trocas de conteúdo com Swup
-  document.addEventListener("DOMContentLoaded", initModal);
-  document.addEventListener("swup:contentReplaced", initModal);
-</script>
+    document.addEventListener("DOMContentLoaded", initModal);
+    document.addEventListener("swup:contentReplaced", initModal);
+
+
+    
+    </script>
 
 </body>
 
