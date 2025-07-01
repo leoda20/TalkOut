@@ -25,7 +25,7 @@ $(function () {
 
     swup
 
-    ***************************/
+    *************************
     const options = {
         containers: ['#swupMain', '#swupMenu'],
         animateHistoryBrowsing: true,
@@ -33,6 +33,8 @@ $(function () {
         animationSelector: '[class="mil-main-transition"]'
     };
     const swup = new Swup(options);
+
+    **/
 
     /***************************
 
