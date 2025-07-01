@@ -626,9 +626,9 @@ $(function () {
 
     ------------------------------------------------------------
     ----------------------------------------------------------*/
-    /*document.addEventListener("swup:contentReplaced", function () {
+    document.addEventListener("swup:contentReplaced", function () {
 
-        $('html, body').animate({
+        $('').animate({
             scrollTop: 0,
         }, 0);
 
@@ -638,7 +638,7 @@ $(function () {
             onComplete: () => {
                 ScrollTrigger.refresh()
             },
-        });*/
+        });
         /***************************
 
          menu
