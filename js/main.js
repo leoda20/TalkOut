@@ -25,16 +25,17 @@ $(function () {
 
     swup
 
-    *************************
+    *************************/
     const options = {
         containers: ['#swupMain', '#swupMenu'],
         animateHistoryBrowsing: true,
         linkSelector: 'a:not([data-no-swup])',
         animationSelector: '[class="mil-main-transition"]'
+        
     };
     const swup = new Swup(options);
 
-    **/
+    
 
     /***************************
 
@@ -628,7 +629,7 @@ $(function () {
     ----------------------------------------------------------*/
     document.addEventListener("swup:contentReplaced", function () {
 
-        $('').animate({
+        $('html, body').animate({
             scrollTop: 0,
         }, 0);
 
