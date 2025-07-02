@@ -129,7 +129,7 @@ $(function () {
 
     anchor scroll
 
-    ***************************/
+    **************************
     $(document).on('click', 'a[href^="#"]', function (event) {
         event.preventDefault();
 
@@ -144,7 +144,7 @@ $(function () {
             scrollTop: target.offset().top - offset
         }, 400);
     });
-    /***************************
+    **************************
 
     append
 
