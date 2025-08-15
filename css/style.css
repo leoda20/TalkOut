@@ -1029,7 +1029,7 @@ backgrounds
 }
 
 .mil-soft-bg {
-  background-image: url('/img/photo/bg-gradient.png');
+  background-image: url('/img/photo/new-bg-gradient.png');
   background-size: cover;        /* cover entire area */
   background-position: center;   /* center the image */
   background-repeat: no-repeat;  /* prevent repeating */
