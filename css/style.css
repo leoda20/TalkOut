@@ -360,9 +360,9 @@ blockquote {
   padding-right: 6px;
   padding-bottom: 2px;
   padding-top: 2px;
-  background-color: #FDF4FF;
+  background-color: #DEE1FA;
   border-radius: 4px;
-  color: #C026D3;
+  color: #3C4585;
   font-weight: 600;
   font-size: 14px;
   text-transform: uppercase;
@@ -776,7 +776,6 @@ textarea {
   padding: 0 16px;
   width: 100%;
   font-size: 14px;
-  letter-spacing: 2px;
   font-weight: 500;
   font-family: "Outfit", sans-serif;
   color: rgb(0, 0, 0);
@@ -795,7 +794,7 @@ input:hover,
 textarea:hover {
   outline: inherit;
   
-  border: solid 1px #9C1FAB;
+  border: solid 1px #FE6B42;
 
 }
 
@@ -803,38 +802,33 @@ input:focus,
 textarea:focus {
   outline: inherit;
   
-  border: solid 1px #9C1FAB;
+  border: solid 1px #FE6B42;
 
 
 }
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   font-size: 14px;
-  letter-spacing: 2px;
   font-weight: 500;
   color: rgba(0, 0, 0, 0.5);
 }
 input::-moz-placeholder, textarea::-moz-placeholder {
   font-size: 14px;
-  letter-spacing: 2px;
   font-weight: 500;
   color: rgba(0, 0, 0, 0.5);
 }
 input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   font-size: 14px;
-  letter-spacing: 2px;
   font-weight: 500;
   color: rgba(0, 0, 0, 0.5);
 }
 input::-ms-input-placeholder, textarea::-ms-input-placeholder {
   font-size: 14px;
-  letter-spacing: 2px;
   font-weight: 500;
   color: rgba(0, 0, 0, 0.5);
 }
 input::placeholder,
 textarea::placeholder {
   font-size: 14px;
-  letter-spacing: 2px;
   font-weight: 400;
   color: rgba(0, 0, 0, 0.5);
 }
@@ -3330,7 +3324,7 @@ blog
   padding-top: 0px;
   padding-bottom: 0px;
   border-radius: 4px;
-  background-color: #FDF4FF;
+  background-color: #FFDED5;
 }
 
 
@@ -3338,7 +3332,7 @@ blog
 
 
 .blog-card-title p{
-  color: #C026D3;
+  color: #FE6A42;
   letter-spacing: 2px;
   font-weight: 600;
   text-transform: uppercase;
@@ -4368,10 +4362,9 @@ portfolio
 
 .card-highlight {
   padding: 24px;
-  border: solid 2px #FEF3C7;
-  border-color: #FEF3C7;
+  
   border-radius: 16px;
-  background-color: #FFFBEB;
+  background-color: #FFF4DC;
   height: max-content;
   
   
@@ -4382,12 +4375,12 @@ portfolio
   width: fit-content;
   display: flex;
     align-items: flex-end;
-  color: #A21CAF;
+  color: #FE6B42;
   font-weight: 400;
 } 
 
 .card-highlight svg {
-  fill: #A21CAF;
+  fill: #FE6B42;
 } 
 
 .text-box-end{
@@ -4426,11 +4419,23 @@ portfolio
 .hero-container {
   height: fit-content; 
   align-content: center; 
+  padding-top: 40px;
 }
 
 .hero-container .curved-hero{
-  height: 120px;
-  margin-bottom: 16px;
+  height: 110px;
+  align-content: end;
+  display: flex;
+  justify-content: center;
+  padding-top: 32px;
+}
+
+.hero-container .hero-image-container{
+  margin-bottom: 40px;
+
+  display: flex;  
+  border-bottom: solid #E2E8F0 1px;
+
 }
 
 .hero-people {
@@ -4445,15 +4450,23 @@ portfolio
  .hero-container {
   height: fit-content; 
   align-content: center; 
+  padding-top: 0px;
 }
 
 .hero-container .curved-hero{
   height: 80px;
-  margin-bottom: 24px;
+  padding-top: 0px;
+  margin-bottom: 32px;
 }
 
 .hero-people p{
   text-align: center;
+}
+
+.hero-container .hero-image-container{
+  margin-bottom: 32px;
+
+
 }
 }
 
