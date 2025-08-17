@@ -1029,7 +1029,7 @@ backgrounds
   background-repeat: no-repeat;  /* prevent repeating */
   background-attachment: fixed;
                /* full viewport height */
-  border-radius: 16px;
+  border-radius: 32px;
   padding: 80px;
   
 }
@@ -1045,7 +1045,7 @@ backgrounds
 
 @media screen and (max-width: 992px) {
   .mil-soft-bg {
-    padding: 24px;
+    padding: 32px;
     align-items: center;
     
   }
@@ -1524,12 +1524,12 @@ scrollbar
   right: 0;
   width: 4px;
   height: 100%;
-  background-color: rgb(0, 0, 0);
+  background-color: #ffffff;
 }
 .mil-progress-track .mil-progress {
   width: 4px;
   height: 0;
-  background-color: #D946EF;
+  background-color: #1c1c1c;
 }
 @media screen and (max-width: 992px) {
   .mil-progress-track {
@@ -3543,7 +3543,7 @@ footer
 ------------------------------------------- */
 
 .footer-content{
-  border-radius:  24px 24px 0 0;
+  border-radius:  32px 32px 0 0;
   display: flex;
   background-color: #1C1917;
   align-items: center;
@@ -3735,6 +3735,7 @@ portfolio
 
 .title-light{
   color: #fff;
+  font-weight: 500;
 }
 
 
@@ -4338,6 +4339,43 @@ portfolio
 }
 
 
+.card-blur {
+
+  padding: 40px;
+  border: solid 0px 0px 2px 0px #E2E8F0;
+  border-color: #E2E8F0;
+  border-radius: 16px;
+  background-color: #ffffff;
+  background: rgba(255, 255, 255, 0.2); /* translucent */
+      backdrop-filter: blur(4px); /* blurs background behind */
+      -webkit-backdrop-filter: blur(10px); /* Safari support */
+      
+  
+
+}
+
+.card-blur h3{
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+
+.card-blur p {
+  bottom: 0;
+  width: fit-content;
+  display: flex;
+  color: #ffffff;
+    align-items: flex-end;
+}  
+
+.card-blur svg {
+  fill: #ffffff;
+  margin-bottom: 8px;
+} 
+
+
 
 .card-themes {
   padding: 24px;
@@ -4439,7 +4477,7 @@ portfolio
 }
 
 .hero-people {
-  display: flex;
+  display:flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
@@ -4541,6 +4579,23 @@ map
   width: 100%;
   height: 100%;
 }
+
+
+    .blur-box {
+      width: 300px;
+      height: 200px;
+      background: rgba(255, 255, 255, 0.2); /* translucent */
+      backdrop-filter: blur(10px); /* blurs background behind */
+      -webkit-backdrop-filter: blur(10px); /* Safari support */
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 1.2rem;
+      padding: 24px;
+    }
 /* -------------------------------------------
 
 accordion
