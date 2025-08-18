@@ -351,7 +351,7 @@ blockquote {
 }
 
 .mil-text-lg {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 170%;
 }
 
@@ -3741,6 +3741,7 @@ portfolio
 
 
 
+
 .contact-card{
   padding: 24px;
   background-color: #F8FAFC;
@@ -4306,49 +4307,65 @@ portfolio
 }
 
 
-.card-yellow {
-  padding: 32px;
-  
+
+.card-comment {
+  margin: 88px;
+  margin-right: 160px;
   border-radius: 32px;
-  background-color: #F1F5F9;
   height: max-content;
   justify-content: center;
-  overflow: hidden;
-
+  padding: 40px;
+  border-top: solid 2px rgba(226, 232, 240, 0.5); /* 50% transparent border */
+  border-color: rgba(226, 232, 240, 0.5);
+  background-color: #ffffff;
+  background: rgba(255, 255, 255, 0.2); /* translucent */
+  backdrop-filter: blur(4px); /* blurs background behind */
+  -webkit-backdrop-filter: blur(4px); /* Safari support */
+  box-shadow: 0 8px 32px 0 rgba(60, 60, 60, 0.15); /* subtle shadow */
   
-  
+  max-width: 90%;
 }
 
-.card-yellow h3{
+.card-comment h3{
   color: #1c1c1c;
   font-weight: 500;
   font-size: 24px;
   margin-bottom: 8px;
 }
 
-.card-yellow p{
+.card-comment p{
   font-weight: 400;
   font-size: 16px;
   margin-bottom: 16px;
+
 }
 
-.card-yellow svg{
-  fill: #6EE7B7 ;
+.card-comment svg{
+  height: 80px;
+  width: 80px;
+  fill: #1A7C53 ;
   margin-bottom: 8px;
- 
+  position:fixed;
+  top: -40px;
+  left: 16px;
 }
 
 
 .card-blur {
 
   padding: 40px;
-  border: solid 0px 0px 2px 0px #E2E8F0;
-  border-color: #E2E8F0;
-  border-radius: 16px;
+ 
+  border-radius: 32px;
   background-color: #ffffff;
   background: rgba(255, 255, 255, 0.2); /* translucent */
       backdrop-filter: blur(4px); /* blurs background behind */
-      -webkit-backdrop-filter: blur(10px); /* Safari support */
+      -webkit-backdrop-filter: blur(4px); /* Safari support */
+
+
+      border-top: solid 2px rgba(226, 232, 240, 0.5); /* 50% transparent border */
+  border-color: rgba(226, 232, 240, 0.5);
+ 
+  box-shadow: 0 16px 32px 0 rgba(60, 60, 60, 0.50); /* subtle shadow */
       
   
 
