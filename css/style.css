@@ -3117,7 +3117,7 @@ social icons
   margin-right: 0;
 }
 .mil-social-icons li a {
-  color: rgb(255, 255, 255);
+  color: #ffffff;
   font-size: 18px;
   -webkit-transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
   transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
@@ -3738,7 +3738,9 @@ portfolio
   font-weight: 500;
 }
 
-
+html {
+  scroll-behavior: smooth;
+}
 
 
 
