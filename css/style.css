@@ -4006,8 +4006,8 @@ html {
   text-align: center;
   height: auto;
   text-decoration: none;
-  background-color: #0C0A09;
-  border: solid 1px #0C0A09;
+  background-color: #1c1c1c;
+  border: solid 1px #1c1c1c;
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 16px;
@@ -4021,7 +4021,7 @@ html {
 
 .btn-secondary h5{
   font-size: 18px;
-  color: #000000;
+  color: #1c1c1c;
   -webkit-transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
   
 }
