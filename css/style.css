@@ -356,13 +356,12 @@ blockquote {
 }
 
 .mil-badge {
-  padding-left: 6px;
-  padding-right: 6px;
-  padding-bottom: 2px;
-  padding-top: 2px;
-  background-color: #DEE1FA;
+  padding-left: 8px;
+  padding-right: 8px;
+  background-color: #fff;
   border-radius: 4px;
-  color: #3C4585;
+  color: #1c1c1c;
+  border: solid 1px oklch(92.9% 0.013 255.508);
   font-weight: 600;
   font-size: 14px;
   text-transform: uppercase;
