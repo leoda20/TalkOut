@@ -363,7 +363,7 @@ blockquote {
   color: #1c1c1c;
   border: solid 1px oklch(92.9% 0.013 255.508);
   font-weight: 600;
-  font-size: 14px;
+  font-size: 12px;
   text-transform: uppercase;
   width: fit-content;
 }
@@ -3446,12 +3446,12 @@ blog
   padding-bottom: 0px;
   border-radius: 4px;
   background-color: #F1F5F9;
+  gap: 4px;
 }
 
 
 .blog-card-disabled p{
   color: #475569;
-  letter-spacing: 2px;
   font-weight: 600;
   text-transform: uppercase;
   font-size: 12px;
@@ -4090,7 +4090,6 @@ html {
 }
 
 .btn-secondary:hover{
-  border-radius: 8px;
   display: flex;
   align-items: center;
   text-align: center;
@@ -4119,6 +4118,57 @@ html {
 }
 
 .btn-secondary:hover h5{
+  color: #ffffff;
+  font-size: 18px;
+  -webkit-transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
+  
+}
+
+
+.btn-ghost{
+  display: flex;
+  
+  align-items: center;
+  text-align: center;
+  -webkit-transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
+  
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: fit-content;
+  border-radius: 99px;
+  width: max-content;
+}
+
+.btn-ghost:hover{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  height: auto;
+  text-decoration: none;
+  background-color: #1c1c1c;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: fit-content;
+  border-radius: 16px;
+  cursor: pointer;
+    -webkit-transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
+  transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
+
+}
+
+
+.btn-ghost h5{
+  font-size: 18px;
+  color: #1c1c1c;
+  -webkit-transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
+  
+}
+
+.btn-ghost:hover h5{
   color: #ffffff;
   font-size: 18px;
   -webkit-transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
