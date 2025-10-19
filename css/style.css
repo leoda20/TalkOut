@@ -347,7 +347,7 @@ blockquote {
 }
 
 .mil-text-sm {
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .mil-text-lg {
@@ -366,7 +366,33 @@ blockquote {
   font-size: 12px;
   text-transform: uppercase;
   width: fit-content;
+  gap: 4px;
 }
+
+.mil-badge-sm {
+  padding-left: 4px;
+  padding-right: 4px;
+  height: 20px;
+  background-color: #ffffff;
+  background: rgba(255, 255, 255, 0.2); /* translucent */
+      backdrop-filter: blur(4px); /* blurs background behind */
+      -webkit-backdrop-filter: blur(4px); /* Safari support */
+
+
+      border-top: solid 1px rgba(226, 232, 240, 0.5); /* 50% transparent border */
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 10px;
+  text-transform: uppercase;
+  width: fit-content;
+  gap: 4px;
+  position: relative;
+  top:-30px;
+  left: 8px;
+  box-shadow: 0 16px 32px 0 rgba(60, 60, 60, 0.50); /* subtle shadow */
+}
+
 
 .mil-badge-disabled{
 
@@ -2782,6 +2808,25 @@ services
 
 ------------------------------------------- */
 
+
+.event-card {
+  background: #fff;
+  background-size: cover;
+  border-style:2px #6d6d6d;
+  height: 100%;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.event-card:hover {
+  background: #f1f1f1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-style:2px #6d6d6d;
+  height: 100%;
+  padding: 8px;
+}
+
 .mil-services{
   display: flex;
 }
@@ -3406,9 +3451,8 @@ blog
 .mil-blog-card .mil-cover-frame {
   position: relative;
   overflow: hidden;
-  padding-bottom: 240px;
-  margin-bottom: 24px;
-  border-radius: 16px;
+  padding-bottom: 180px;
+  border-radius: 4px;
   
 }
 
