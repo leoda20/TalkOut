@@ -3897,6 +3897,7 @@ html {
   -webkit-transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
   transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
   gap: 24px;
+  height: max-content;
 }
 
 .contact-card h4{
@@ -4892,7 +4893,7 @@ html {
 .hero-container {
   height: fit-content; 
   align-content: center; 
-  padding-top: 40px;
+  margin-top: 120px;
 }
 
 .hero-container .curved-hero{
@@ -4923,7 +4924,8 @@ html {
  .hero-container {
   height: fit-content; 
   align-content: center; 
-  padding-top: 0px;
+  
+  margin-top: 80px;
 }
 
 .hero-container .curved-hero{
@@ -4951,6 +4953,48 @@ html {
   Gap: 32px;
   
 }  
+
+
+.hero-people{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+}
+
+/* floating animations */
+@keyframes float-rotate {
+    0%   { transform: translateY(0) rotate(-1deg); }
+    50%  { transform: translateY(-14px) rotate(2deg); }
+    100% { transform: translateY(0) rotate(-1deg); }
+}
+
+.floating-left,
+.floating-right{
+    position: relative;
+    width: 180px;
+    max-width: 22%;
+    object-fit: contain;
+    will-change: transform;
+    pointer-events: none;
+    z-index: 1;
+    filter: drop-shadow(0 6px 18px rgba(0,0,0,0.08));
+}
+
+/* slight overlap / tuck to make them sit beside the paragraph */
+.floating-left{ margin-right: -6px; animation: float-rotate 4.6s ease-in-out infinite; }
+.floating-right{ margin-left: -6px; animation: float-rotate 5.2s ease-in-out infinite; }
+
+/* keep the text above images and remove extra spacing */
+.hero-people p{ z-index: 2; position: relative; margin: 0; padding: 0 12px; text-align: center; }
+
+/* mobile: hide floated images */
+@media (max-width: 768px){
+    .hide-mobile{ display: none !important; }
+    .floating-left, .floating-right{ display: none !important; }
+    .hero-people p{ padding: 0 12px; text-align: center; }
+}
 
 
 
