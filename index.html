@@ -31,143 +31,64 @@
     <!-- wrapper -->
     <div class="mil-wrapper" id="top">
 
-        <!-- cursor -->
-        <div class="mil-ball">
-            <span class="mil-icon-1">
-                <svg viewBox="0 0 128 128">
-                    <path d="M106.1,41.9c-1.2-1.2-3.1-1.2-4.2,0c-1.2,1.2-1.2,3.1,0,4.2L116.8,61H11.2l14.9-14.9c1.2-1.2,1.2-3.1,0-4.2	c-1.2-1.2-3.1-1.2-4.2,0l-20,20c-1.2,1.2-1.2,3.1,0,4.2l20,20c0.6,0.6,1.4,0.9,2.1,0.9s1.5-0.3,2.1-0.9c1.2-1.2,1.2-3.1,0-4.2	L11.2,67h105.5l-14.9,14.9c-1.2,1.2-1.2,3.1,0,4.2c0.6,0.6,1.4,0.9,2.1,0.9s1.5-0.3,2.1-0.9l20-20c1.2-1.2,1.2-3.1,0-4.2L106.1,41.9	z" />
-                </svg>
-            </span>
-            <div class="mil-more-text">Ver</div>
-            <div class="mil-choose-text">Сhoose</div>
-        </div>
-        <!-- cursor end -->
+        <div class="top-header" style="border-bottom: 1px solid #E2E8F0; position: fixed; width: 100%; top: 0; left: 0; z-index: 9999; background: #fff;">
+            <div class="justify-content-between container" style="height: 80px; align-items: center; display: flex;">
+                <a href="index.html" style="cursor: pointer;">
+                    <img class="logo-24" src="img/photo/in-line-logo.svg" alt="image">
+                </a>
 
-    
+                <!-- Desktop nav -->
+                <div class="desktop-nav inline-flex justify-content-center align-items-center " style="gap:4px;">
+                    <!--<a class="btn-ghost" aria-label="Português">
+                        <img src="https://flagcdn.com/w40/pt.png" alt="Português" style="width: 20px; margin-right: 8px;">
+                        <h5 class="">PT</h5>
+                    </a>
 
-        <!-- scrollbar progress -->
-        <div class="mil-progress-track">
-            <div class="mil-progress"></div>
-        </div>
-        <!-- scrollbar progress end -->
+                    <hr style="height: 24px; border: 1px solid #E2E8F0; margin: 0 8px;" id="anchor1">-->
 
-        <!-- menu -->
-        <div class="mil-menu-frame">
-            <!-- frame clone -->
-            <div class="mil-frame-top">
-               
-                <div>
+                    <a href="eventos.html" class="btn-ghost">
+                        <h5 class="">Eventos</h5>
+                    </a>
+
+                    <a href="registro.html" class="btn-primary">
+                        <h5 class="">Criar Evento</h5>
+                    </a>
                 </div>
+
+                <!-- Hamburger for mobile -->
+                <button id="navToggle" aria-label="Abrir menu" aria-expanded="false" style="display:none; background:transparent; border:0; padding:8px; cursor:pointer;">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z"/></svg>
+                </button>
             </div>
-            <!-- frame clone end -->
-            <div class="container">
-                <div class="mil-menu-content">
-                    <div class="row">
-                        <div class="col-xl-5">
 
-                            <nav class="mil-main-menu" id="swupMenu">
-                                <ul>
-                                    <li class="mil-has-children mil-active">
-                                        <a href="#.">Homepage</a>
-                                        <ul>
-                                            <li><a href="home-1.html">Landing page</a></li>
-                                            <li><a href="home-2.html">Personal</a></li>
-                                            <li><a href="portfolio-3.html">Portfolio slider</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="mil-has-children">
-                                        <a href="#.">Portfolio</a>
-                                        <ul>
-                                            <li><a href="portfolio-1.html">Grid type 1</a></li>
-                                            <li><a href="portfolio-2.html">Grid type 2</a></li>
-                                            <li><a href="portfolio-3.html">Slider</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="mil-has-children">
-                                        <a href="#.">Services</a>
-                                        <ul>
-                                            <li><a href="services.html">Services List</a></li>
-                                            <li><a href="service.html">Single service</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="mil-has-children">
-                                        <a href="#.">Newsletter</a>
-                                        <ul>
-                                            <li><a href="blog.html">Blog List</a></li>
-                                            <li><a href="publication.html">Publication</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="mil-has-children">
-                                        <a href="#.">Other pages</a>
-                                        <ul>
-                                            <li><a href="team.html">Team</a></li>
-                                            <li><a href="contact.html">Contact</a></li>
-                                            <li><a href="404.html">404</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </nav>
-
-                        </div>
-
-                        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.17/build/spline-viewer.js"></script>
-                        <spline-viewer url="https://prod.spline.design/oC4nK7d40Wk7fchD/scene.splinecode"></spline-viewer>
-                        <div class="col-xl-7">
-
-                            <div class="mil-menu-right-frame">
-                                <div class="mil-animation-in">
-                                    <div class="mil-animation-frame">
-                                        <div class="mil-animation mil-position-1 mil-scale" data-value-1="2" data-value-2="2"></div>
-                                    </div>
-                                </div>
-                                <div class="mil-menu-right">
-                                    <div class="row">
-                                        <div class="col-lg-8 mil-mb-60">
-
-                                            <h6 class="mil-muted mil-mb-30">Projects</h6>
-
-                                            <ul class="mil-menu-list">
-                                                <li><a href="project-finbooks.html" class="mil-light-soft">Finbooks AI</a></li>
-                                                <li><a href="project-TR-messages.html" class="mil-light-soft">Messages and Notifications TR</a></li>
-                                                <li><a href="project-TR-blueprint.html" class="mil-light-soft">Blueprint TR</a></li>
-                                                <li><a href="project-email-onboarding.html" class="mil-light-soft">Email App Onboarding</a></li>
-                                                <li><a href="project-email-marketing.html" class="mil-light-soft">Email Marketing</a></li>
-                                                <li><a href="project-medtime.html" class="mil-light-soft">Medtime</a></li>
-                                                <li><a href="project-dronelivery.html" class="mil-light-soft">Dronelivery</a></li>
-                                                <li><a href="project-cluber.html" class="mil-light-soft">Cluber</a></li>
-                                                <li><a href="project-cadastrapet.html" class="mil-light-soft">Cadastrapet</a></li>
-                                            </ul>
-
-                                        </div>
-                                        <div class="col-lg-4 mil-mb-60">
-
-                                            <h6 class="mil-muted mil-mb-30">Useful links</h6>
-
-                                            <ul class="mil-menu-list">
-                                                <li><a href="#." class="mil-light-soft">Privacy Policy</a></li>
-                                                <li><a href="#." class="mil-light-soft">Terms and conditions</a></li>
-                                                <li><a href="#." class="mil-light-soft">Cookie Policy</a></li>
-                                                <li><a href="#." class="mil-light-soft">Careers</a></li>
-                                            </ul>
-
-                                        </div>
-                                    </div>
-                                    <div class="mil-divider mil-mb-60"></div>
-                                    
-                                </div>
-                            </div>
-
-                        </div>
+            <!-- Mobile menu (hidden on desktop) -->
+            <div id="mobileMenu" aria-hidden="true" style="display:none;">
+                <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 16px; border-top:1px solid #E2E8F0;">
+                    <div style="display:flex; align-items:center; gap:12px;">
+                        <a href="index.html" style="display:inline-flex; align-items:center;">
+                            <img class="logo-24" src="img/photo/in-line-logo.svg" alt="logo" style="height:28px;">
+                        </a>
                     </div>
+                    <button id="mobileClose" aria-label="Fechar menu" style="background:transparent; border:0; padding:8px; cursor:pointer;">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.3 5.71L12 12l6.3 6.29-1.41 1.42L10.59 13.41 4.29 19.71 2.88 18.29 9.18 12 2.88 5.71 4.29 4.29 10.59 10.59 16.89 4.29z"/></svg>
+                    </button>
                 </div>
+
+                <nav style="padding:12px 16px; display:flex; flex-direction:column; gap:12px;">
+                    <a class="mobile-link" href="index.html#eventos" style="padding:12px; border-radius:6px; text-decoration:none; color:#111;">Eventos</a>
+                    <a class="mobile-link" href="eventos.html" style="padding:12px; border-radius:6px; text-decoration:none; color:#fff; background:#0b63ce; display:inline-block; text-align:center;">Criar Evento</a>
+                    <div style="border-top:1px solid #E2E8F0; margin-top:8px; padding-top:8px;">
+                        <a class="mobile-link" href="#" style="display:inline-flex; gap:8px; align-items:center; text-decoration:none; color:#111;">
+                            <img src="https://flagcdn.com/w40/pt.png" alt="Português" style="width:20px;">
+                            <span>PT</span>
+                        </a>
+                    </div>
+                </nav>
             </div>
         </div>
-        <!-- menu -->
-        
-        <!-- curtain -->
-        <div class="mil-curtain"></div>
-        
-        <!-- curtain end -->
+
+        <!-- Spacer to offset the fixed header so page content isn't hidden -->
+        <div style="height: 80px;"></div>
 
 
        
@@ -177,41 +98,7 @@
         <!-- content -->
         <div class="mil-content" >
 
-            <div class="justify-content-between container mil-mb-30" style="height: 80px; align-items: center; display: flex;">
-                    <a href="index.html" style="cursor: pointer;">
-                        <img  class="logo-24" src="img/photo/in-line-logo.svg" alt="image">
-                    </a>
-
-                    <div class="inline-flex justify-content-center mil-gap-8" >
-                                        
-                        <!--<a class="btn-secondary">
-
-                            <img src="https://flagcdn.com/w40/gb.png" alt="English" style="width: 20px; margin-right: 8px;">
-
-                            <h5 class="">En</h5>
-                        </a>-->
-
-                        <a  onclick="location.href='#eventos'" class="btn-secondary">
-
-                            
-
-
-                            <h5 class="">Próximos eventos</h5>
-
-                                        
-                        
-                        </a>
-
-                                        
-
-                    </div>
-                </div>
             
-
-            
-
-
-                
 
                 
             <div id="swupMain" class="mil-main-transition">
@@ -220,43 +107,93 @@
 
             
                 <section class="container col-lg-12 mil-up justify-content-center hero-container">
-
-                   
-
-                        
-                        
-
-                        
-
-                        <h1 class="" style="text-align: center; margin-bottom: 20px;">
+                    <h1  style="text-align: center; margin-bottom: 20px;">
                                     Encontre, aprenda, fale,
-                        </h1>
-                        <div class="align-content-center curved-hero ">
-                            <h1 class="curved-text-lg text-orange" style="text-align: center;">novos idiomas
-                            </h1>
-                        </div>
+                    </h1>
+                    <div class="align-content-center curved-hero ">
+                        
+
+                        
+                        <h1 id="colorful-title" class="curved-text-lg" style="text-align: center;">novos idiomas</h1>
+                        <script>
+                        (function(){
+                            const colors = ['#FE6B42','#374186','#FAAA07','#1C7A52'];
+                            const el = document.getElementById('colorful-title');
+                            if(!el) return;
+                            const text = el.textContent || '';
+                            el.textContent = '';
+                            const spans = [];
+                            for (const ch of text) {
+                                const span = document.createElement('span');
+                                span.textContent = ch;
+                                span.style.transition = 'color 500ms';
+                                el.appendChild(span);
+                                spans.push(span);
+                            }
+                            function randomize() {
+                                spans.forEach(s => {
+                                    if (s.textContent.trim() === '') {
+                                        s.style.color = '';
+                                        return;
+                                    }
+                                    s.style.color = colors[Math.floor(Math.random() * colors.length)];
+                                });
+                            }
+                            randomize();
+                            // change colors periodically
+                            setInterval(randomize, 800);
+                        })();
+                        </script>
+                    </div>
 
 
-                        <div class="justify-content-center hero-image-container">
-                           
-                                <img  src="img/photo/new-hero.webp" alt="TalkOut Logo" class="mil-image-frame-hero " >
+                    <div class="inline-flex mil-gap-16 justify-content-center align-content-center hero-people mil-mb-30" >
 
-                        </div>
+                        <style>
+                        
+                        </style>
 
+                        <img src="img/photo/users-left.png" alt="people left" class="hide-mobile floating-left">
+                        <p class="mil-text-lg">Pratica idiomas, enquanto conheces pessoas <br>com o mesmo objetivo que tu.</p>
+                        <img src="img/photo/users-right.png" alt="people right" class="hide-mobile floating-right">
 
+                    </div>
+
+                    <div class="flex-div mil-gap-16 col-lg-12 justify-content-center align-content-center mil-mb-60" >
 
                         
 
-                        <div class="mil-gap-16 justify-content-center align-content-center hero-people mil-mb-60" >
+                            <div class="card-themes col-lg-3">
 
-                            <img src="img/photo/users-circles.webp" alt="People talking" style="width: max-content; height: 40px; object-fit: contain;">
+                                
+                                <h4>Procura um evento</h4>
+                                <p>Descobre encontros perto de ti para praticar línguas.</p>
 
-                            <p class=" " >Pratica idiomas, enquanto conheces pessoas <br>com o mesmo objetivo que tu.</p>
+                            </div>
+                            <div class="card-themes col-lg-3">
+
+                                
+                                <h4>Conversa e pratica</h4>
+                                <p>Junta-te a grupos moderados por experts e aprende sem pressão.</p>
+
+                            </div>
+                            <div class="card-themes col-lg-3">
+
+                                
+                                <h4>Melhora o teu vocabulário</h4>
+                                <p>Aos poucos, ganha confiança para falar noutra língua, e fazes novas amizades.</p>
+
+                            </div>
 
                         </div>
 
 
-                    </section>
+
+                            
+
+                        
+
+                </section>
 
 
                 <!--<section style=" background-image: url('/img/photo/trace-background.webp'); background-size: cover; background-position: center;" >
@@ -364,9 +301,6 @@
                                             <div class="mil-cover-frame">
                                                 <img src="img/photo/group-brunch.webp" alt="cover">
                                             </div>
-                                            <div class="blog-card-disabled">
-                                                <p>Em Breve</p>
-                                            </div>
                                         </a>
 
                                     </div>
@@ -409,9 +343,7 @@
                                             <div class="mil-cover-frame">
                                                 <img src="img/photo/group-pizza.webp" alt="cover">
                                             </div>
-                                            <div class="blog-card-disabled">
-                                                <p>Em Breve</p>
-                                            </div>
+                                            
                                         </a>
 
                                     </div>
