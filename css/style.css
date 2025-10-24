@@ -4387,6 +4387,7 @@ html {
 
 .btn-link{
   display: flex;
+  font-family: outfit, sans-serif;
   
   align-items: center;
   text-align: center;
