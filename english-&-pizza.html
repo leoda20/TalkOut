@@ -277,7 +277,7 @@
                         <div class="inline-flex col-lg-12 col-md-10 mil-gap-16" style="margin-top: 24px;">
 
                                 
-                                <img src="img/photo/moderador-victor-cortada.jfif" alt="image" style="width:64px; height:64px; border-radius: 50%;">
+                                    <img src="img/photo/moderador-victor-cortada.jfif" alt="image" style="width:64px; height:64px; border-radius: 50%;">
                                     
 
                                     <div class="align-items-center mil-gap-8">
@@ -308,16 +308,91 @@
                                     <button id="toggleMore" class="btn-link" aria-expanded="false" style="margin-top:8px;">Ver mais</button>
 
                                     <script>
-                                        (function(){
-                                            var btn = document.getElementById('toggleMore');
-                                            var more = document.getElementById('moreText');
-                                            btn.addEventListener('click', function(){
-                                                var expanded = this.getAttribute('aria-expanded') === 'true';
-                                                more.style.display = expanded ? 'none' : 'block';
-                                                this.textContent = expanded ? 'Ver mais' : 'Ver menos';
-                                                this.setAttribute('aria-expanded', !expanded);
-                                            });
-                                        })();
+                                    (function(){
+                                        var btn = document.getElementById('toggleMore');
+                                        var more = document.getElementById('moreText');
+                                        if (!btn || !more) return;
+
+                                        btn.addEventListener('click', function(e){
+                                            e.preventDefault();
+                                            var modal = document.getElementById('infoModal');
+                                            if (!modal) createModal();
+                                            openModal();
+                                        });
+
+                                        function createModal(){
+                                            var modal = document.createElement('div');
+                                            modal.id = 'infoModal';
+                                            modal.setAttribute('role','dialog');
+                                            modal.setAttribute('aria-modal','true');
+                                            modal.setAttribute('aria-hidden','true');
+                                            modal.style.cssText = 'position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:10000;font-family:inherit;';
+
+                                            // modal inner (panel) and backdrop
+                                            modal.innerHTML = ''
+                                                + '<div id="infoModalBackdrop" style="position:fixed;inset:0;background:rgba(2,6,23,0.5);"></div>'
+                                                + '<div id="infoModalPanel" role="document" style="position:relative;z-index:10001;max-width:760px;width:calc(100% - 32px);max-height:85vh;overflow:auto;background:#fff;border-radius:8px;box-shadow:0 10px 40px rgba(2,6,23,0.2);">'
+                                                + '  <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid #eee;">'
+                                                + '    <h3 style="margin:0;font-size:1.125rem;">Sobre o moderador</h3>'
+                                                + '    <button id="infoModalClose" aria-label="Fechar" style="background:transparent;border:0;font-size:20px;line-height:1;cursor:pointer;padding:4px 8px;">×</button>'
+                                                + '  </div>'
+                                                + '  <div id="infoModalContent" style="padding:16px;color:#111;"></div>'
+                                                + '</div>';
+
+                                            document.body.appendChild(modal);
+
+                                            // wire events
+                                            document.getElementById('infoModalBackdrop').addEventListener('click', closeModal);
+                                            document.getElementById('infoModalClose').addEventListener('click', closeModal);
+                                            // Esc key
+                                            document.addEventListener('keydown', handleKeydown);
+                                        }
+
+                                        function openModal(){
+                                            var modal = document.getElementById('infoModal');
+                                            if (!modal) return;
+                                            var content = document.getElementById('infoModalContent');
+                                            // copy the inner HTML of the hidden block into modal content
+                                            content.innerHTML = more.innerHTML;
+                                            modal.style.display = 'flex';
+                                            modal.setAttribute('aria-hidden','false');
+                                            document.body.style.overflow = 'hidden';
+                                            btn.textContent = 'Ver menos';
+                                            btn.setAttribute('aria-expanded','true');
+                                            // focus close button for accessibility
+                                            var closeBtn = document.getElementById('infoModalClose');
+                                            if (closeBtn) closeBtn.focus();
+                                        }
+
+                                        function closeModal(){
+                                            var modal = document.getElementById('infoModal');
+                                            if (!modal) return;
+                                            modal.style.display = 'none';
+                                            modal.setAttribute('aria-hidden','true');
+                                            document.body.style.overflow = '';
+                                            btn.textContent = 'Ver mais';
+                                            btn.setAttribute('aria-expanded','false');
+                                        }
+
+                                        function handleKeydown(e){
+                                            if (e.key === 'Escape') closeModal();
+                                        }
+
+                                        // ensure modal works after swup content replacement
+                                        document.addEventListener('swup:contentReplaced', function(){
+                                            // if the DOM was replaced, try to re-bind elements
+                                            btn = document.getElementById('toggleMore');
+                                            more = document.getElementById('moreText');
+                                            if (btn && more) {
+                                                btn.addEventListener('click', function(e){
+                                                    e.preventDefault();
+                                                    var modal = document.getElementById('infoModal');
+                                                    if (!modal) createModal();
+                                                    openModal();
+                                                });
+                                            }
+                                        });
+                                    })();
                                     </script>
 
                                 </div>
@@ -537,10 +612,7 @@
                             
 
                             <div class="mil-image-frame mil-up mil-mb-16 ">
-                                <img src="img/photo/location-jardim-da-estrela.png" alt="image">
-                                <a data-fancybox="gallery" href="img/photo/location-jardim-da-estrela.png" class="mil-zoom-btn">
-                                    <img src="img/icons/expand.svg" alt="expand">
-                                </a>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3113.1323982249996!2d-9.161837788754587!3d38.71476915734195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd193363534236ab%3A0x2bd79101bf03e891!2sJardim%20da%20Estrela!5e0!3m2!1spt-PT!2spt!4v1761399824845!5m2!1spt-PT!2spt" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                         
                             </div>
 
@@ -766,6 +838,78 @@
 
                     </div>
                 </section>
+
+
+                <section class="container col-lg-8 col-sm-12 mil-up mil-p-120-120" id="faq-section" aria-labelledby="faq-title" style="margin-top:32px; margin-bottom:48px;">
+                            <h2 id="faq-title" style="margin-bottom:16px;">FAQ — Perguntas Frequentes</h2>
+
+                            <div class="faq-list" style="display:flex; flex-direction:column; gap:12px;">
+
+                                <details class="faq-item card-themes" style="padding:16px; border-radius:8px;" open>
+                                    <summary style="font-weight:600; cursor:pointer; list-style:none; outline:none;">Como posso participar de um TalkOut?</summary>
+                                    <div class="faq-answer" style="margin-top:8px; color:var(--text-color, #444);">
+                                        Encontra eventos na secção "Próximos TalkOuts" ou na página de eventos. Clica no evento que te interessa e segue as instruções para reservar o teu lugar.
+                                    </div>
+                                </details>
+
+                                <details class="faq-item card-themes" style="padding:16px; border-radius:8px;">
+                                    <summary style="font-weight:600; cursor:pointer; list-style:none; outline:none;">Preciso de ser fluente na língua para participar?</summary>
+                                    <div class="faq-answer" style="margin-top:8px; color:var(--text-color, #444);">
+                                        Não. Os eventos são organizados por níveis. Procura a indicação do nível no detalhe do evento — há grupos para iniciantes, intermédios e avançados.
+                                    </div>
+                                </details>
+
+                                <details class="faq-item card-themes" style="padding:16px; border-radius:8px;">
+                                    <summary style="font-weight:600; cursor:pointer; list-style:none; outline:none;">Como posso criar um evento como professor?</summary>
+                                    <div class="faq-answer" style="margin-top:8px; color:var(--text-color, #444);">
+                                        Vai à página "Criar Evento" (registro.html), preenche o formulário com os detalhes do evento e submete. Iremos validar e publicar o teu evento.
+                                    </div>
+                                </details>
+
+                                <details class="faq-item card-themes" style="padding:16px; border-radius:8px;">
+                                    <summary style="font-weight:600; cursor:pointer; list-style:none; outline:none;">Os eventos têm custo?</summary>
+                                    <div class="faq-answer" style="margin-top:8px; color:var(--text-color, #444);">
+                                        Alguns eventos são gratuitos e outros pagos — isso é especificado na página do evento. Pagamentos são processados conforme as instruções do organizador.
+                                    </div>
+                                </details>
+
+                                <details class="faq-item card-themes" style="padding:16px; border-radius:8px;">
+                                    <summary style="font-weight:600; cursor:pointer; list-style:none; outline:none;">Que medidas de segurança existem nos encontros presenciais?</summary>
+                                    <div class="faq-answer" style="margin-top:8px; color:var(--text-color, #444);">
+                                        Organizadores recebem recomendações de segurança e boas práticas. Se tiveres preocupações, contacta o organizador através dos contactos no detalhe do evento antes de participar.
+                                    </div>
+                                </details>
+
+                            </div>
+
+                            
+
+                            <script>
+                                // Permitir abrir apenas uma pergunta de cada vez e tornar o clique em todo o card togglable
+                                (function(){
+                                    const container = document.getElementById('faq-section');
+                                    if(!container) return;
+                                    const details = Array.from(container.querySelectorAll('details'));
+
+                                    details.forEach(d => {
+                                        // mantém o comportamento "apenas um aberto"
+                                        d.addEventListener('toggle', () => {
+                                            if (!d.open) return;
+                                            details.forEach(other => {
+                                                if (other !== d) other.open = false;
+                                            });
+                                        });
+
+                                        // clique em qualquer local do card (exceto summary ou elementos interativos) alterna o estado
+                                        d.addEventListener('click', (e) => {
+                                            if (e.target.closest('summary')) return; // summary já trata do toggle
+                                            if (e.target.closest('a, button, input, textarea, select')) return; // evitar interferir com interações
+                                            d.open = !d.open;
+                                        });
+                                    });
+                                })();
+                            </script>
+                        </section>
 
 
                 

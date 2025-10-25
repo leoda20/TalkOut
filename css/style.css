@@ -5083,6 +5083,40 @@ map
 accordion
 
 ------------------------------------------- */
+
+
+
+  /* Ajustes visuais para o FAQ */
+  #faq-section details[open] { box-shadow: 0 6px 18px rgba(2,6,23,0.06); }
+  #faq-section summary::-webkit-details-marker { display: none; }
+  #faq-section summary { display:flex; align-items:center; gap:12px; }
+  #faq-section summary::after {
+      content: "▾";
+      margin-left: auto;
+      transition: transform .2s ease;
+      color: var(--muted-color, #6b7280);
+  }
+  #faq-section details[open] summary::after { transform: rotate(180deg); }
+  .faq-answer { line-height:1.6; }
+
+  /* Make entire card show as clickable, but keep interactive elements normal */
+  #faq-section .card-themes { cursor: pointer; }
+  #faq-section .card-themes a,
+  #faq-section .card-themes button,
+  #faq-section .card-themes input,
+  #faq-section .card-themes textarea,
+  #faq-section .card-themes select { cursor: auto; }
+
+
+
+
+
+
+
+
+
+
+
 .mil-accordion-group {
   border-bottom: solid 1px rgba(0, 0, 0, 0.2);
   margin-bottom: 30px;

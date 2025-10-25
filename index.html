@@ -578,6 +578,78 @@
                                     </div>
                             </div>
 
+
+                            <section class="container col-lg-8 col-sm-12 mil-up mil-p-120-120" id="faq-section" aria-labelledby="faq-title" style="margin-top:32px; margin-bottom:48px;">
+                            <h2 id="faq-title" style="margin-bottom:16px;">FAQ — Perguntas Frequentes</h2>
+
+                            <div class="faq-list" style="display:flex; flex-direction:column; gap:12px;">
+
+                                <details class="faq-item card-themes" style="padding:16px; border-radius:8px;" open>
+                                    <summary style="font-weight:600; cursor:pointer; list-style:none; outline:none;">Como posso participar de um TalkOut?</summary>
+                                    <div class="faq-answer" style="margin-top:8px; color:var(--text-color, #444);">
+                                        Encontra eventos na secção "Próximos TalkOuts" ou na página de eventos. Clica no evento que te interessa e segue as instruções para reservar o teu lugar.
+                                    </div>
+                                </details>
+
+                                <details class="faq-item card-themes" style="padding:16px; border-radius:8px;">
+                                    <summary style="font-weight:600; cursor:pointer; list-style:none; outline:none;">Preciso de ser fluente na língua para participar?</summary>
+                                    <div class="faq-answer" style="margin-top:8px; color:var(--text-color, #444);">
+                                        Não. Os eventos são organizados por níveis. Procura a indicação do nível no detalhe do evento — há grupos para iniciantes, intermédios e avançados.
+                                    </div>
+                                </details>
+
+                                <details class="faq-item card-themes" style="padding:16px; border-radius:8px;">
+                                    <summary style="font-weight:600; cursor:pointer; list-style:none; outline:none;">Como posso criar um evento como professor?</summary>
+                                    <div class="faq-answer" style="margin-top:8px; color:var(--text-color, #444);">
+                                        Vai à página "Criar Evento" (registro.html), preenche o formulário com os detalhes do evento e submete. Iremos validar e publicar o teu evento.
+                                    </div>
+                                </details>
+
+                                <details class="faq-item card-themes" style="padding:16px; border-radius:8px;">
+                                    <summary style="font-weight:600; cursor:pointer; list-style:none; outline:none;">Os eventos têm custo?</summary>
+                                    <div class="faq-answer" style="margin-top:8px; color:var(--text-color, #444);">
+                                        Alguns eventos são gratuitos e outros pagos — isso é especificado na página do evento. Pagamentos são processados conforme as instruções do organizador.
+                                    </div>
+                                </details>
+
+                                <details class="faq-item card-themes" style="padding:16px; border-radius:8px;">
+                                    <summary style="font-weight:600; cursor:pointer; list-style:none; outline:none;">Que medidas de segurança existem nos encontros presenciais?</summary>
+                                    <div class="faq-answer" style="margin-top:8px; color:var(--text-color, #444);">
+                                        Organizadores recebem recomendações de segurança e boas práticas. Se tiveres preocupações, contacta o organizador através dos contactos no detalhe do evento antes de participar.
+                                    </div>
+                                </details>
+
+                            </div>
+
+                            
+
+                            <script>
+                                // Permitir abrir apenas uma pergunta de cada vez e tornar o clique em todo o card togglable
+                                (function(){
+                                    const container = document.getElementById('faq-section');
+                                    if(!container) return;
+                                    const details = Array.from(container.querySelectorAll('details'));
+
+                                    details.forEach(d => {
+                                        // mantém o comportamento "apenas um aberto"
+                                        d.addEventListener('toggle', () => {
+                                            if (!d.open) return;
+                                            details.forEach(other => {
+                                                if (other !== d) other.open = false;
+                                            });
+                                        });
+
+                                        // clique em qualquer local do card (exceto summary ou elementos interativos) alterna o estado
+                                        d.addEventListener('click', (e) => {
+                                            if (e.target.closest('summary')) return; // summary já trata do toggle
+                                            if (e.target.closest('a, button, input, textarea, select')) return; // evitar interferir com interações
+                                            d.open = !d.open;
+                                        });
+                                    });
+                                })();
+                            </script>
+                        </section>
+
                         
 
                 
