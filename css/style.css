@@ -3890,50 +3890,50 @@ html {
 
 
 
-.contact-card{
+.btn-card{
   padding: 24px;
   background-color: #F8FAFC;
   border-radius: 16px;
   -webkit-transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
   transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
   gap: 24px;
-  height: max-content;
+  height: 100%;
 }
 
-.contact-card h4{
+.btn-card h4{
   color: #020617;
 }
 
 
 
-.contact-card:hover{
+.btn-card:hover{
   background-color: #FEF3C7;
   
 }
 
-.contact-card:hover h4{
+.btn-card:hover h4{
   color: #020617;
 }
 
 @media screen and (max-width: 768px) {
-  .contact-card {
+  .btn-card {
     padding: 32px;
     display: block;
   }
 
-  .contact-card:hover {
+  .btn-card:hover {
     padding: 32px;
     display: block;
   }
 
-  .contact-card h1 {
+  .btn-card h1 {
     margin-bottom: 24px;
   }
 
-  .contact-card:hover h1 {
+  .btn-card:hover h1 {
     margin-bottom: 24px;
   }
-  .contact-card svg{
+  .btn-card svg{
     align-items: end;
   }
 }
@@ -4242,10 +4242,11 @@ html {
   border: solid 1px #CBD5E1 ;
   border-radius: 99px;
   width: max-content;
-  decoration: none;
+  cursor: pointer;
+
 }
 
-.btn-seconday:hover{
+.btn-secondary:hover{
   display: flex;
   align-items: center;
   text-align: center;
