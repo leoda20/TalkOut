@@ -4282,6 +4282,65 @@ html {
 }
 
 
+@media screen and (max-width: 768px) {
+  .btn-secondary{
+  display: flex;
+  
+  align-items: center;
+  text-align: center;
+  -webkit-transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
+  
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 12px;
+  padding-right: 12px;
+  height: fit-content;
+  border: solid 1px #f1f5f9 ;
+  border-radius: 99px;
+  width: max-content;
+  background-color: #f1f5f9;
+  
+}
+
+.btn-secondary:hover{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  height: auto;
+  text-decoration: none;
+  background-color: #e2e8f0;
+  border: solid 1px #e2e8f0;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 12px;
+  padding-right: 12px;
+  height: fit-content;
+  border-radius: 16px;
+  cursor: pointer;
+    -webkit-transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
+  transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
+
+}
+
+
+.btn-secondary h5{
+  font-size: 16px;
+  color: #1c1c1c;
+  -webkit-transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
+  
+
+
+}
+
+.btn-secondary:hover h5{
+  color: #1c1c1c;
+  font-size: 16px;
+  -webkit-transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
+  
+}
+}
+
+
 .btn-ghost{
   display: flex;
   
