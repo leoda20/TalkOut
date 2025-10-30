@@ -2815,7 +2815,6 @@ services
 .event-card {
   background: #fff;
   background-size: cover;
-  border-style:2px #6d6d6d;
   height: 100%;
   border-radius:20px;
   margin-bottom: 24px;
@@ -2825,7 +2824,6 @@ services
 .event-card:hover {
   background-size: cover;
   background-repeat: no-repeat;
-  border-style:2px #6d6d6d;
   height: 100%;
 }
 
@@ -3448,6 +3446,7 @@ blog
 ------------------------------------------- */
 .mil-blog-card {
   display: block;
+  margin-bottom: 32px;
   
 }
 .mil-blog-card .mil-cover-frame {
