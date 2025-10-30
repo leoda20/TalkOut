@@ -29,66 +29,68 @@
 <body>
 
     <!-- wrapper -->
-    <div class="mil-wrapper" id="top">
+    
 
-        <div class="top-header" style="border-bottom: 1px solid #E2E8F0; position: fixed; width: 100%; top: 0; left: 0; z-index: 9999; background: #fff;">
-            <div class="justify-content-between container" style="height: 80px; align-items: center; display: flex;">
-                <a href="index.html" style="cursor: pointer;">
-                    <img class="logo-24" src="img/photo/in-line-logo.svg" alt="image">
+    <div class="top-header" style="border-bottom: 1px solid #E2E8F0; position: fixed; width: 100%; top: 0; left: 0; z-index: 9999; background: #fff;">
+        <div class="justify-content-between container" style="height: 64px; align-items: center; display: flex;">
+            <a href="index.html" style="cursor: pointer;">
+                <img class="logo-24" src="img/photo/in-line-logo.svg" alt="image">
+            </a>
+
+            <!-- Desktop nav -->
+            <div class="desktop-nav inline-flex justify-content-center align-items-center " style="gap:4px;">
+                <!--<a class="btn-ghost" aria-label="Português">
+                    <img src="https://flagcdn.com/w40/pt.png" alt="Português" style="width: 20px; margin-right: 8px;">
+                    <h5 class="">PT</h5>
                 </a>
 
-                <!-- Desktop nav -->
-                <div class="desktop-nav inline-flex justify-content-center align-items-center " style="gap:4px;">
-                    <!--<a class="btn-ghost" aria-label="Português">
-                        <img src="https://flagcdn.com/w40/pt.png" alt="Português" style="width: 20px; margin-right: 8px;">
-                        <h5 class="">PT</h5>
-                    </a>
+                <hr style="height: 24px; border: 1px solid #E2E8F0; margin: 0 8px;" id="anchor1">-->
 
-                    <hr style="height: 24px; border: 1px solid #E2E8F0; margin: 0 8px;" id="anchor1">
+                <a href="torna-te-um-moderador.html" class="btn-ghost">
+                    Criar Evento
+                </a>
+                
+                <a href="eventos.html" class="btn-ghost">
+                    Eventos
+                </a>
 
-                    <a href="eventos.html" class="btn-ghost">
-                        <h5 class="">Eventos</h5>
-                    </a>-->
+                
+            </div>
 
-                    <a href="registro.html" class="btn-primary">
-                        <h5 class="">Criar Evento</h5>
+            <!-- Hamburger for mobile -->
+            <button id="navToggle" aria-label="Abrir menu" aria-expanded="false" style="display:none; background:transparent; border:0; padding:8px; cursor:pointer;">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z"/></svg>
+            </button>
+        </div>
+
+        <!-- Mobile menu (hidden on desktop) -->
+        <div id="mobileMenu" aria-hidden="true" style="display:none;">
+            <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 16px; border-top:1px solid #E2E8F0;">
+                <div style="display:flex; align-items:center; gap:12px;">
+                    <a href="index.html" style="display:inline-flex; align-items:center;">
+                        <img class="logo-24" src="img/photo/in-line-logo.svg" alt="logo" style="height:28px;">
                     </a>
                 </div>
-
-                <!-- Hamburger for mobile -->
-                <button id="navToggle" aria-label="Abrir menu" aria-expanded="false" style="display:none; background:transparent; border:0; padding:8px; cursor:pointer;">
-                    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z"/></svg>
+                <button id="mobileClose" aria-label="Fechar menu" style="background:transparent; border:0; padding:8px; cursor:pointer;">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.3 5.71L12 12l6.3 6.29-1.41 1.42L10.59 13.41 4.29 19.71 2.88 18.29 9.18 12 2.88 5.71 4.29 4.29 10.59 10.59 16.89 4.29z"/></svg>
                 </button>
             </div>
 
-            <!-- Mobile menu (hidden on desktop) -->
-            <div id="mobileMenu" aria-hidden="true" style="display:none;">
-                <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 16px; border-top:1px solid #E2E8F0;">
-                    <div style="display:flex; align-items:center; gap:12px;">
-                        <a href="index.html" style="display:inline-flex; align-items:center;">
-                            <img class="logo-24" src="img/photo/in-line-logo.svg" alt="logo" style="height:28px;">
-                        </a>
-                    </div>
-                    <button id="mobileClose" aria-label="Fechar menu" style="background:transparent; border:0; padding:8px; cursor:pointer;">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.3 5.71L12 12l6.3 6.29-1.41 1.42L10.59 13.41 4.29 19.71 2.88 18.29 9.18 12 2.88 5.71 4.29 4.29 10.59 10.59 16.89 4.29z"/></svg>
-                    </button>
+            <nav style="padding:12px 16px; display:flex; flex-direction:column; gap:12px;">
+                <a class="mobile-link" href="eventos.html" style="padding:12px; border-radius:6px; text-decoration:none; color:#111;">Eventos</a>
+                <a class="mobile-link" href="torna-te-um-moderador.html" style="padding:12px; border-radius:6px; text-decoration:none; color:#fff; background:#0b63ce; display:inline-block; text-align:center;">Criar Evento</a>
+                <div style="border-top:1px solid #E2E8F0; margin-top:8px; padding-top:8px;">
+                    <a class="mobile-link" href="#" style="display:inline-flex; gap:8px; align-items:center; text-decoration:none; color:#111;">
+                        <img src="https://flagcdn.com/w40/pt.png" alt="Português" style="width:20px;">
+                        <span>PT</span>
+                    </a>
                 </div>
-
-                <nav style="padding:12px 16px; display:flex; flex-direction:column; gap:12px;">
-                    <a class="mobile-link" href="eventos.html" style="padding:12px; border-radius:6px; text-decoration:none; color:#111;">Eventos</a>
-                    <a class="mobile-link" href="registro.html" style="padding:12px; border-radius:6px; text-decoration:none; color:#fff; background:#0b63ce; display:inline-block; text-align:center;">Criar Evento</a>
-                    <div style="border-top:1px solid #E2E8F0; margin-top:8px; padding-top:8px;">
-                        <a class="mobile-link" href="#" style="display:inline-flex; gap:8px; align-items:center; text-decoration:none; color:#111;">
-                            <img src="https://flagcdn.com/w40/pt.png" alt="Português" style="width:20px;">
-                            <span>PT</span>
-                        </a>
-                    </div>
-                </nav>
-            </div>
+            </nav>
         </div>
+    </div>
 
-        <!-- Spacer to offset the fixed header so page content isn't hidden -->
-        <div style="height: 80px;"></div>
+    <!-- Spacer to offset the fixed header so page content isn't hidden -->
+    <div style="height: 64px;"></div>
 
 
        
@@ -101,676 +103,792 @@
                 
 
             
-                <section class="container col-lg-12 mil-up justify-content-center hero-container">
-                    <h1  style="text-align: center; margin-bottom: 20px;">
-                                    Encontre, aprenda, fale,
-                    </h1>
-                    <div class="align-content-center curved-hero ">
-                        
-
-                        
-                        <h1 id="colorful-title" class="curved-text-lg" style="text-align: center;">novos idiomas</h1>
-                        <script>
-                        (function(){
-                            const colors = ['#FE6B42','#374186','#FAAA07','#1C7A52'];
-                            const el = document.getElementById('colorful-title');
-                            if(!el) return;
-                            const text = el.textContent || '';
-                            el.textContent = '';
-                            const spans = [];
-                            for (const ch of text) {
-                                const span = document.createElement('span');
-                                span.textContent = ch;
-                                span.style.transition = 'color 500ms';
-                                el.appendChild(span);
-                                spans.push(span);
-                            }
-                            function randomize() {
-                                spans.forEach(s => {
-                                    if (s.textContent.trim() === '') {
-                                        s.style.color = '';
-                                        return;
-                                    }
-                                    s.style.color = colors[Math.floor(Math.random() * colors.length)];
-                                });
-                            }
-                            randomize();
-                            // change colors periodically
-                            setInterval(randomize, 800);
-                        })();
-                        </script>
-                    </div>
-
-
-                    <div class="inline-flex mil-gap-16 justify-content-center align-content-center hero-people mil-mb-30" >
-
-                        <style>
-                        
-                        </style>
-
-                        <img src="img/photo/users-left.png" alt="people left" class="hide-mobile floating-left">
-                        <p class="mil-text-lg">Pratica idiomas, enquanto conheces pessoas <br>com o mesmo objetivo que tu.</p>
-                        <img src="img/photo/users-right.png" alt="people right" class="hide-mobile floating-right">
-
-                    </div>
-
-                    <div class="flex-div mil-gap-16 col-lg-12 justify-content-center align-content-center mil-mb-60" >
-
-                        
-
-                            <div class="card-themes col-lg-3">
-
-                                
-                                <h4>Procura um evento</h4>
-                                <p>Descobre encontros perto de ti para praticar línguas.</p>
-
-                            </div>
-                            <div class="card-themes col-lg-3">
-
-                                
-                                <h4>Conversa e pratica</h4>
-                                <p>Junta-te a grupos moderados por experts e aprende sem pressão.</p>
-
-                            </div>
-                            <div class="card-themes col-lg-3">
-
-                                
-                                <h4>Melhora o teu vocabulário</h4>
-                                <p>Aos poucos, ganha confiança para falar noutra língua, e fazes novas amizades.</p>
-
-                            </div>
-
-                        </div>
-
-
-
-                            
-
-                        
-
-                </section>
-
-
-                <!--<section style=" background-image: url('/img/photo/trace-background.webp'); background-size: cover; background-position: center;" >
-
-                        
-
-
-                        <div class="card-comment col-lg-6  col-sm-8 mil-mb-60" style="margin-left: auto; margin-right: auto; display: block; align-items: center; ">
-
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="48" width="48" fill="currentColor"><path d="M4.58341 17.3211C3.55316 16.2274 3 15 3 13.0103C3 9.51086 5.45651 6.37366 9.03059 4.82318L9.92328 6.20079C6.58804 8.00539 5.93618 10.346 5.67564 11.822C6.21263 11.5443 6.91558 11.4466 7.60471 11.5105C9.40908 11.6778 10.8312 13.159 10.8312 15C10.8312 16.933 9.26416 18.5 7.33116 18.5C6.2581 18.5 5.23196 18.0095 4.58341 17.3211ZM14.5834 17.3211C13.5532 16.2274 13 15 13 13.0103C13 9.51086 15.4565 6.37366 19.0306 4.82318L19.9233 6.20079C16.588 8.00539 15.9362 10.346 15.6756 11.822C16.2126 11.5443 16.9156 11.4466 17.6047 11.5105C19.4091 11.6778 20.8312 13.159 20.8312 15C20.8312 16.933 19.2642 18.5 17.3312 18.5C16.2581 18.5 15.232 18.0095 14.5834 17.3211Z"></path></svg>
-
-                            <h3>A imersão presencial acelera a aprendizagem em até 2x quando comparada apenas ao estudo online.</h3>
-
-                        </div>
-
-                        
-
-
-
-                        
-
-                        
-
-                </section>-->
-
-
-                <!--<section class="container div-flex col-lg-12 mil-p-120-120 justify-content-center align-content-center" id="eventos">
-
-                    <div class="row mil-gap-16 col-lg-12 justify-content-center">
-
-                        <div class="col-lg-4 ">
-
-                            <h2 class="mil-mb-30">
-                                        Próximos TalkOuts
-                                        </h2>
-
-                            <a href="eventos.html" target="E-mail"  class="btn-secondary mil-mb-60">
-
-                                                    <h5 class="">Ver todos eventos</h5>
-                            </a>
-
-                            <div class="card-highlight inline-flex align-items-center mil-gap-8" >
-
-                                <div style=" width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10.0544 2.0941C11.1756 1.13856 12.8248 1.13855 13.9461 2.09411L15.2941 3.24286C15.4542 3.37935 15.6533 3.46182 15.8631 3.47856L17.6286 3.61945C19.0971 3.73663 20.2633 4.9028 20.3805 6.37131L20.5214 8.13679C20.5381 8.34654 20.6205 8.54568 20.757 8.70585L21.9058 10.0539C22.8614 11.1751 22.8614 12.8243 21.9058 13.9456L20.757 15.2935C20.6206 15.4537 20.538 15.6529 20.5213 15.8627L20.3805 17.6281C20.2633 19.0967 19.0971 20.2628 17.6286 20.3799L15.8631 20.5208C15.6533 20.5376 15.4542 20.6201 15.2941 20.7566L13.9461 21.9053C12.8248 22.8609 11.1756 22.8608 10.0543 21.9053L8.70631 20.7566C8.54615 20.6201 8.34705 20.5376 8.1373 20.5209L6.37184 20.3799C4.9033 20.2627 3.73716 19.0966 3.61997 17.6281L3.47906 15.8627C3.46232 15.6529 3.37983 15.4538 3.24336 15.2936L2.0946 13.9455C1.13905 12.8243 1.13904 11.1752 2.09458 10.0539L3.24334 8.70589C3.37983 8.54573 3.46234 8.34654 3.47907 8.13678L3.61996 6.3713C3.73714 4.90278 4.90327 3.73665 6.3718 3.61946L8.13729 3.47857C8.34705 3.46183 8.54619 3.37935 8.70636 3.24286L10.0544 2.0941ZM12.6488 3.61632C12.2751 3.29782 11.7253 3.29781 11.3516 3.61632L10.0036 4.76509C9.5231 5.17456 8.92568 5.42201 8.29637 5.47223L6.5309 5.61312C6.04139 5.65219 5.65268 6.04089 5.61362 6.53041L5.47272 8.29593C5.4225 8.92521 5.17505 9.52259 4.76559 10.0031L3.61683 11.3511C3.29832 11.7248 3.29831 12.2746 3.61683 12.6483L4.76559 13.9963C5.17506 14.4768 5.4225 15.0743 5.47275 15.7035L5.61363 17.469C5.65268 17.9585 6.04139 18.3473 6.53092 18.3863L8.29636 18.5272C8.92563 18.5774 9.5231 18.8249 10.0036 19.2344L11.3516 20.3831C11.7254 20.7016 12.2751 20.7016 12.6488 20.3831L13.9969 19.2343C14.4773 18.8249 15.0747 18.5774 15.704 18.5272L17.4695 18.3863C17.959 18.3472 18.3478 17.9585 18.3868 17.469L18.5277 15.7035C18.5779 15.0742 18.8253 14.4768 19.2349 13.9964L20.3836 12.6483C20.7022 12.2746 20.7021 11.7249 20.3836 11.3511L19.2348 10.0031C18.8253 9.52259 18.5779 8.92519 18.5277 8.2959L18.3868 6.53041C18.3478 6.0409 17.959 5.65219 17.4695 5.61312L15.704 5.47224C15.0748 5.42203 14.4773 5.17455 13.9968 4.76508L12.6488 3.61632ZM14.8284 7.75718L16.2426 9.1714L9.17154 16.2425L7.75733 14.8282L14.8284 7.75718ZM10.2322 10.232C9.64641 10.8178 8.69667 10.8178 8.11088 10.232C7.52509 9.6463 7.52509 8.69652 8.11088 8.11073C8.69667 7.52494 9.64641 7.52494 10.2322 8.11073C10.818 8.69652 10.818 9.6463 10.2322 10.232ZM13.7677 15.8889C14.3535 16.4747 15.3032 16.4747 15.889 15.8889C16.4748 15.3031 16.4748 14.3534 15.889 13.7676C15.3032 13.1818 14.3535 13.1818 13.7677 13.7676C13.1819 14.3534 13.1819 15.3031 13.7677 15.8889Z"></path></svg>
-
-
-                                        </div>  
-
-                                        <div>
-                                                <p>Receba desconto no seu primeiro TalkOut!</p>
-                                                <button class="btn-link" href="#footer">Assinar Newsletter</button>
-                                        </div>
-
-
-
-                                    </div>
-
-                        </div>
-
-                    
-
-                    
-                        
-                                <div class="col-lg-4 mil-mb-60" href="piquenique-e-talkout.html" style="cursor: auto;">
-
-
-                                    <div class="">
-
-                                        <a href="piquenique-e-talkout.html" class="mil-blog-card mil-more  mil-up">
-
-                                            <div class="mil-cover-frame">
-                                                <img src="img/photo/group-picnic-new.webp" alt="cover">
-                                            </div>
-                                            <div class="blog-card-title">
-                                                <p>Lisboa</p>
-                                            </div>
-                                        </a>
-
-                                    </div>
-                                        <div >
-                                            <div class="mil-gap-16 justify-content-between mil-mb-16">
-                                                <div class="align-items-center " style="gap: 4px; display: inline-flex; margin-right: 12px;">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.364 17.364L12 23.7279L5.63604 17.364C2.12132 13.8492 2.12132 8.15076 5.63604 4.63604C9.15076 1.12132 14.8492 1.12132 18.364 4.63604C21.8787 8.15076 21.8787 13.8492 18.364 17.364ZM12 13C13.1046 13 14 12.1046 14 11C14 9.89543 13.1046 9 12 9C10.8954 9 10 9.89543 10 11C10 12.1046 10.8954 13 12 13Z"></path></svg>
-
-                                                    <p>Lisboa</p>
-
-                                                </div>
-
-
-                                                <div class="align-items-center" style="gap: 4px; display: inline-flex; margin-right: 12px;">
-                                                    
-
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M2 11H22V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V11ZM17 3H21C21.5523 3 22 3.44772 22 4V9H2V4C2 3.44772 2.44772 3 3 3H7V1H9V3H15V1H17V3Z"></path></svg>
-
-                                                    <p1>18/10</p1>
-
-                                                </div>
-
-
-                                                <div class="align-items-center" style="gap: 4px; display: inline-flex; margin-right: 12px;">
-                                                    
-
-                                                  
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM13 12V7H11V14H17V12H13Z"></path></svg>
-                                                    <p>16:00</p>
-
-                                                </div>
-                                            
-
-                                            </div>
-
-
-                                            <h3>Pratique inglês em um piquenique</h3>
-                                            <p>Um fim de tarde com conversa, sol e inglês.</p>
-                                                
-
-                                            
-                                        </div>
-
-
-                                    
-
-                                </div>
-
-                                <div class="event-card col-lg-3 mil-more " href="brunch-e-talkout.html">
-
-
-                                    <div class="mil-blog-card">
-
-                                        <div class="mil-cover-frame">
-                                            <img src="img/photo/group-brunch.webp" alt="cover">
-                                        </div>
-
-                                        <div class="mil-badge-sm inline-flex align-items-center">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" ><path d="M12 23.7279L5.63604 17.364C2.12132 13.8492 2.12132 8.15076 5.63604 4.63604C9.15076 1.12132 14.8492 1.12132 18.364 4.63604C21.8787 8.15076 21.8787 13.8492 18.364 17.364L12 23.7279ZM16.9497 15.9497C19.6834 13.2161 19.6834 8.78392 16.9497 6.05025C14.2161 3.31658 9.78392 3.31658 7.05025 6.05025C4.31658 8.78392 4.31658 13.2161 7.05025 15.9497L12 20.8995L16.9497 15.9497ZM12 13C10.8954 13 10 12.1046 10 11C10 9.89543 10.8954 9 12 9C13.1046 9 14 9.89543 14 11C14 12.1046 13.1046 13 12 13Z"></path></svg>
-
-                                            <p>Campolide</p>
-                                        </div>
-
-                                        <h4 class="mil-mb-8" >Brunch em Inglês: Conversa & Croissants</h4>
-                                        
-                                        <div class="inline-flex" style="align-items: center; gap: 4px; ">
-                                            
-                                            <p style="font-size: 14px; line-height: 1; margin: 0;">🇬🇧</p>
-
-                                            <p class=" mil-text-sm">Inglês</p>
-
-                                            <p class=" mil-text-sm">•</p>
-
-                                            <p class=" mil-text-sm">Básico</p>
-
-                                        </div>
-
-                                        <div class="inline-flex" style="align-items: center; gap: 4px; " >
-
-                                            <img src="img/photo/users-circles.webp" alt="People talking" style="width: 80px; height: 40px; object-fit: contain;">
-
-                                            <p class=" mil-text-sm" >5 participantes</p>
-
-                                        </div>
-
-                                        <div class="inline-flex" style="align-items: center; gap: 4px; " >
-
-                                            <h3 >€15</h3>
-
-                                            <p class=" " >por pessoa</p>
-
-                                        </div>
-                                        
-
-
-                                    </div>
-
-
-                                    
-
-                                </div>
-
-                                <div class="event-card col-lg-3 mil-more " href="brunch-e-talkout.html">
-
-
-                                    <div class="mil-blog-card">
-
-                                        <div class="mil-cover-frame">
-                                            <img src="img/photo/group-brunch.webp" alt="cover">
-                                        </div>
-
-                                        <div class="mil-badge-sm inline-flex align-items-center">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" ><path d="M12 23.7279L5.63604 17.364C2.12132 13.8492 2.12132 8.15076 5.63604 4.63604C9.15076 1.12132 14.8492 1.12132 18.364 4.63604C21.8787 8.15076 21.8787 13.8492 18.364 17.364L12 23.7279ZM16.9497 15.9497C19.6834 13.2161 19.6834 8.78392 16.9497 6.05025C14.2161 3.31658 9.78392 3.31658 7.05025 6.05025C4.31658 8.78392 4.31658 13.2161 7.05025 15.9497L12 20.8995L16.9497 15.9497ZM12 13C10.8954 13 10 12.1046 10 11C10 9.89543 10.8954 9 12 9C13.1046 9 14 9.89543 14 11C14 12.1046 13.1046 13 12 13Z"></path></svg>
-
-                                            <p>Campolide</p>
-                                        </div>
-
-                                        <h4 class="mil-mb-8" >Brunch em Inglês: Conversa & Croissants</h4>
-                                        
-                                        <div class="inline-flex" style="align-items: center; gap: 4px; ">
-                                            
-                                            <p style="font-size: 14px; line-height: 1; margin: 0;">🇬🇧</p>
-
-                                            <p class=" mil-text-sm">Inglês</p>
-
-                                            <p class=" mil-text-sm">•</p>
-
-                                            <p class=" mil-text-sm">Básico</p>
-
-                                        </div>
-
-                                        <div class="inline-flex" style="align-items: center; gap: 4px; " >
-
-                                            <img src="img/photo/users-circles.webp" alt="People talking" style="width: 80px; height: 40px; object-fit: contain;">
-
-                                            <p class=" mil-text-sm" >5 participantes</p>
-
-                                        </div>
-
-                                        <div class="inline-flex" style="align-items: center; gap: 4px; " >
-
-                                            <h3 >€15</h3>
-
-                                            <p class=" " >por pessoa</p>
-
-                                        </div>
-                                        
-
-
-                                    </div>
-
-
-                                    
-
-                                </div>
-
-                                
-                        
-                               
-
-
-                               
-                                
-                            </div>
-
-                             
-
-
-                </section>-->
-
-
-                
-
+    <section class="container col-lg-12  justify-content-center hero-container" >
+        <h1  style="text-align: center; margin-bottom: 20px;" >
+                        Encontre, aprenda, fale,
+        </h1>
+        <div class="align-content-center curved-hero ">
             
 
-
-                <section class="container">
-
-                    <div class="mil-soft-bg justify-content-between flex-div mil-gap-16">
-
-                        <div class="col-lg-3 col-md-4 mil-mb-20">
-
-                            <h2 class="mil-mb-16 title-light" >Por que o TalkOut é <span class="curved-text-md ">Diferente</span></h2>
-
-
-                            <p class="mil-mb-20 mil-text-lg" style="color: #fff;">Chega de chamadas de grupo com pouca participação.</p>
-
-                        </div> 
-                            
-                            
-                        <div class="col-lg-8 flex-div mil-gap-16" >
-
-                            
-                            <div class="col-lg-6 col-md-6 mil-gap-16 mil-mb-16">
-                                <div class="card-blur mil-mb-16">
-                                    
-                                    <div class="mil-mb-16">
-                                        <svg xmlns="http://www.w3.org/2000/svg"  width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M20.7134 7.12811L20.4668 7.69379C20.2864 8.10792 19.7136 8.10792 19.5331 7.69379L19.2866 7.12811C18.8471 6.11947 18.0555 5.31641 17.0677 4.87708L16.308 4.53922C15.8973 4.35653 15.8973 3.75881 16.308 3.57612L17.0252 3.25714C18.0384 2.80651 18.8442 1.97373 19.2761 0.930828L19.5293 0.319534C19.7058 -0.106511 20.2942 -0.106511 20.4706 0.319534L20.7238 0.930828C21.1558 1.97373 21.9616 2.80651 22.9748 3.25714L23.6919 3.57612C24.1027 3.75881 24.1027 4.35653 23.6919 4.53922L22.9323 4.87708C21.9445 5.31641 21.1529 6.11947 20.7134 7.12811ZM9 2C13.0675 2 16.426 5.03562 16.9337 8.96494L19.1842 12.5037C19.3324 12.7367 19.3025 13.0847 18.9593 13.2317L17 14.071V17C17 18.1046 16.1046 19 15 19H13.001L13 22H4L4.00025 18.3061C4.00033 17.1252 3.56351 16.0087 2.7555 15.0011C1.65707 13.6313 1 11.8924 1 10C1 5.58172 4.58172 2 9 2ZM9 4C5.68629 4 3 6.68629 3 10C3 11.3849 3.46818 12.6929 4.31578 13.7499C5.40965 15.114 6.00036 16.6672 6.00025 18.3063L6.00013 20H11.0007L11.0017 17H15V12.7519L16.5497 12.0881L15.0072 9.66262L14.9501 9.22118C14.5665 6.25141 12.0243 4 9 4ZM19.4893 16.9929L21.1535 18.1024C22.32 16.3562 23 14.2576 23 12.0001C23 11.317 22.9378 10.6486 22.8186 10L20.8756 10.5C20.9574 10.9878 21 11.489 21 12.0001C21 13.8471 20.4436 15.5642 19.4893 16.9929Z"></path></svg>
-
-                                    </div>
-
-                                            
-                                    <h3 class="mil-mb-8 ">Aprenda na Prática</h3>
-                                    <p class="">Sem testes nem pressão, só conversas reais e experiências do dia a dia.</p>
-                                        
-
-                                </div>
-
-                                <div class="card-blur">
-
-                                        
-                                    <div class="mil-mb-16">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M6.23509 6.45329C4.85101 7.89148 4 9.84636 4 12C4 16.4183 7.58172 20 12 20C13.0808 20 14.1116 19.7857 15.0521 19.3972C15.1671 18.6467 14.9148 17.9266 14.8116 17.6746C14.582 17.115 13.8241 16.1582 12.5589 14.8308C12.2212 14.4758 12.2429 14.2035 12.3636 13.3943L12.3775 13.3029C12.4595 12.7486 12.5971 12.4209 14.4622 12.1248C15.4097 11.9746 15.6589 12.3533 16.0043 12.8777C16.0425 12.9358 16.0807 12.9928 16.1198 13.0499C16.4479 13.5297 16.691 13.6394 17.0582 13.8064C17.2227 13.881 17.428 13.9751 17.7031 14.1314C18.3551 14.504 18.3551 14.9247 18.3551 15.8472V15.9518C18.3551 16.3434 18.3168 16.6872 18.2566 16.9859C19.3478 15.6185 20 13.8854 20 12C20 8.70089 18.003 5.8682 15.1519 4.64482C14.5987 5.01813 13.8398 5.54726 13.575 5.91C13.4396 6.09538 13.2482 7.04166 12.6257 7.11976C12.4626 7.14023 12.2438 7.12589 12.012 7.11097C11.3905 7.07058 10.5402 7.01606 10.268 7.75495C10.0952 8.2232 10.0648 9.49445 10.6239 10.1543C10.7134 10.2597 10.7307 10.4547 10.6699 10.6735C10.59 10.9608 10.4286 11.1356 10.3783 11.1717C10.2819 11.1163 10.0896 10.8931 9.95938 10.7412C9.64554 10.3765 9.25405 9.92233 8.74797 9.78176C8.56395 9.73083 8.36166 9.68867 8.16548 9.64736C7.6164 9.53227 6.99443 9.40134 6.84992 9.09302C6.74442 8.8672 6.74488 8.55621 6.74529 8.22764C6.74529 7.8112 6.74529 7.34029 6.54129 6.88256C6.46246 6.70541 6.35689 6.56446 6.23509 6.45329ZM12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22Z"></path></svg>
-                                    </div>
-
-
-                                    <h3 class="mil-mb-8">Faz novos amigos</h3>
-                                    <p class="">Conhece pessoas, pratica, partilha histórias e cria ligações.</p>
-                                        
-
-                                </div>
-
-                            </div>
-
-                            <div class="col-lg-6 col-md-6 mil-gap-16">
-
-                                <div class=" card-blur mil-mb-16">
-
-                                        
-                                    <div class="mil-mb-16">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M20.998 3V5C20.998 14.6274 15.6255 19 8.99805 19L5.24077 18.9999C5.0786 19.912 4.99805 20.907 4.99805 22H2.99805C2.99805 20.6373 3.11376 19.3997 3.34381 18.2682C3.1133 16.9741 2.99805 15.2176 2.99805 13C2.99805 7.47715 7.4752 3 12.998 3C14.998 3 16.998 4 20.998 3ZM12.998 5C8.57977 5 4.99805 8.58172 4.99805 13C4.99805 13.3624 5.00125 13.7111 5.00759 14.0459C6.26198 12.0684 8.09902 10.5048 10.5019 9.13176L11.4942 10.8682C8.6393 12.4996 6.74554 14.3535 5.77329 16.9998L8.99805 17C15.0132 17 18.8692 13.0269 18.9949 5.38766C17.6229 5.52113 16.3481 5.436 14.7754 5.20009C13.6243 5.02742 13.3988 5 12.998 5Z"></path></svg>
-                                    </div>
-                                    <h3 class="mil-mb-8">Ambiente descontraído</h3>
-                                    <p class="">Aprende a usar o idioma no teu dia a dia, de forma simples e sem stress, para falares com confiança onde quer que estejas.</p>
-                                        
-
-                                </div>
-
-                                <div class="card-blur">
-
-
-                                        
-                                    <div class="mil-mb-16">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12C14 13.1046 13.1046 14 12 14Z"></path></svg>
-                                    </div>
-                                    <h3 class="mil-mb-8">Adaptado aos seus objetivos</h3>
-                                    <p class="">Eventos à tua medida, com o teu nível e aquilo de que gostas. Queres praticar para uma viagem, para o trabalho ou só para ganhares mais à vontade a conversar? A TalkOut tem sempre algo feito para ti.</p>
-                                        
-
-
-                                </div>
-                            </div>
-                        </div>
-                    </div> 
-
-
-                </section>
-
-
-                
-
             
-
-
-                <section class="container">
-
-                    
-                    
-
-                       
-                    <div class=" mil-up mil-p-24-24"  >
-
-                        <div class="mil-p-80 align-items-center" >
-
-                            <div class="col-lg-12 mil-mb-20 align-items-center">
-
-                                <h2>TalkOut é <span class="curved-text-md">simples</span></h2>
-
-                            </div>
-
-                            <div class="col-lg-12 col-md-12 flex-div" style="gap: 32px;">
-                                
-
-                                <div class="col-lg-6 col-md-6 card-themes mil-up  mil-gap-16 align-items-start mil-mb-16" style="padding: 40px;">
-
-                                        <img class="mil-mb-16" style="width: 100%; height: 240px; border-radius: 8px; object-fit: cover;
-                                        -o-object-position: center;
-                                        object-position: center;" src="img/photo/multiethnic-group-of-young-friends-meeting-and-hav-2025-08-11-13-15-54-utc.webp" alt="cover">
-
-                                        <svg style="height: 32px; width:32px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z"></path></svg>
-
-                                        <div>
-
-                                            <h3 class="mil-mb-8">Para Alunos</h3>
-
-                                            <p class="mil-mb-20">Junta-te a experiências divertidas e reais para praticar línguas de forma natural.</p>
-
-                                           <!-- <a  onclick="location.href='#eventos'" class="btn-secondary">
-
-                            
-
-
-                                                <h5 class="">Próximos eventos</h5>
-
-                                            </a>-->
-                                        </div>
-
-                                    </div>
-
-
-
-                                    <div class="col-lg-6 col-md-6 card-themes mil-up  mil-gap-16 align-items-start mil-mb-16" style="padding: 40px;">
-                                        <img class="mil-mb-16" style="width: 100%; height: 240px; border-radius: 8px; object-fit: cover;
-                                        -o-object-position: center;
-                                        object-position: center;" src="img/photo/young-multiracial-people-in-office-2025-02-21-11-52-24-utc.webp">
-                                        
-                                        <svg style="height: 32px; width:32px;" xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 24 24" fill="currentColor"><path d="M10.6144 17.7956C10.277 18.5682 9.20776 18.5682 8.8704 17.7956L7.99275 15.7854C7.21171 13.9966 5.80589 12.5726 4.0523 11.7942L1.63658 10.7219C.868536 10.381.868537 9.26368 1.63658 8.92276L3.97685 7.88394C5.77553 7.08552 7.20657 5.60881 7.97427 3.75892L8.8633 1.61673C9.19319.821767 10.2916.821765 10.6215 1.61673L11.5105 3.75894C12.2782 5.60881 13.7092 7.08552 15.5079 7.88394L17.8482 8.92276C18.6162 9.26368 18.6162 10.381 17.8482 10.7219L15.4325 11.7942C13.6789 12.5726 12.2731 13.9966 11.492 15.7854L10.6144 17.7956ZM4.53956 9.82234C6.8254 10.837 8.68402 12.5048 9.74238 14.7996 10.8008 12.5048 12.6594 10.837 14.9452 9.82234 12.6321 8.79557 10.7676 7.04647 9.74239 4.71088 8.71719 7.04648 6.85267 8.79557 4.53956 9.82234ZM19.4014 22.6899 19.6482 22.1242C20.0882 21.1156 20.8807 20.3125 21.8695 19.8732L22.6299 19.5353C23.0412 19.3526 23.0412 18.7549 22.6299 18.5722L21.9121 18.2532C20.8978 17.8026 20.0911 16.9698 19.6586 15.9269L19.4052 15.3156C19.2285 14.8896 18.6395 14.8896 18.4628 15.3156L18.2094 15.9269C17.777 16.9698 16.9703 17.8026 15.956 18.2532L15.2381 18.5722C14.8269 18.7549 14.8269 19.3526 15.2381 19.5353L15.9985 19.8732C16.9874 20.3125 17.7798 21.1156 18.2198 22.1242L18.4667 22.6899C18.6473 23.104 19.2207 23.104 19.4014 22.6899ZM18.3745 19.0469 18.937 18.4883 19.4878 19.0469 18.937 19.5898 18.3745 19.0469Z"></path></svg>
-
-                                        <div>
-
-                                            <h3 class="mil-mb-8">Para Professores</h3> 
-
-                                            <p class="mil-mb-20">Cria eventos pagos e significativos que ligam cultura e língua.</p>
-
-                                            <a href="registro.html" class="btn-secondary">
-
-                                                <h5 class="">Criar evento</h5>
-
-                                            </a>
-                                        </div>
-
-                                    </div>
-                            </div>
-
-
-                </section>
-
-
-                
-
-            
-
-
-                <section class="container col-lg-8 col-sm-12 mil-up mil-p-120-120" id="faq-section" aria-labelledby="faq-title" style="margin-top:32px; margin-bottom:48px;">
-                            <h2 id="faq-title" class="mil-mb-20" >Perguntas Frequentes</h2>
-
-                            <div class="faq-list" style="display:flex; flex-direction:column; gap:12px;">
-
-                                <details class="faq-item card-themes" style="padding:16px; border-radius:8px;" open>
-                                    <summary style="font-weight:600; cursor:pointer; list-style:none; outline:none;">Como posso participar de um TalkOut?</summary>
-                                    <div class="faq-answer" style="margin-top:8px; color:var(--text-color, #1c1c1c);">
-                                        Encontra eventos na secção "Próximos TalkOuts" ou na página de eventos. Clica no evento que te interessa e segue as instruções para reservar o teu lugar.
-                                    </div>
-                                </details>
-
-                                <details class="faq-item card-themes" style="padding:16px; border-radius:8px;">
-                                    <summary style="font-weight:600; cursor:pointer; list-style:none; outline:none;">Preciso de ser fluente na língua para participar?</summary>
-                                    <div class="faq-answer" style="margin-top:8px; color:var(--text-color, #1c1c1c);">
-                                        Não. Os eventos são organizados por níveis. Procura a indicação do nível no detalhe do evento — há grupos para iniciantes, intermédios e avançados.
-                                    </div>
-                                </details>
-
-                                <details class="faq-item card-themes" style="padding:16px; border-radius:8px;">
-                                    <summary style="font-weight:600; cursor:pointer; list-style:none; outline:none;">Como posso criar um evento como professor?</summary>
-                                    <div class="faq-answer" style="margin-top:8px; color:var(--text-color, #1c1c1c);">
-                                        Vai à página "Criar Evento" (registro.html), preenche o formulário com os detalhes do evento e submete. Iremos validar e publicar o teu evento.
-                                    </div>
-                                </details>
-
-                                <details class="faq-item card-themes" style="padding:16px; border-radius:8px;">
-                                    <summary style="font-weight:600; cursor:pointer; list-style:none; outline:none;">Os eventos têm custo?</summary>
-                                    <div class="faq-answer" style="margin-top:8px; color:var(--text-color, #1c1c1c);">
-                                        Alguns eventos são gratuitos e outros pagos — isso é especificado na página do evento. Pagamentos são processados conforme as instruções do organizador.
-                                    </div>
-                                </details>
-
-                                <details class="faq-item card-themes" style="padding:16px; border-radius:8px;">
-                                    <summary style="font-weight:600; cursor:pointer; list-style:none; outline:none;">Que medidas de segurança existem nos encontros presenciais?</summary>
-                                    <div class="faq-answer" style="margin-top:8px; color:var(--text-color, #1c1c1c);">
-                                        Organizadores recebem recomendações de segurança e boas práticas. Se tiveres preocupações, contacta o organizador através dos contactos no detalhe do evento antes de participar.
-                                    </div>
-                                </details>
-
-                            </div>
-
-                            
-
-                            <script>
-                                // Permitir abrir apenas uma pergunta de cada vez e tornar o clique em todo o card togglable
-                                (function(){
-                                    const container = document.getElementById('faq-section');
-                                    if(!container) return;
-                                    const details = Array.from(container.querySelectorAll('details'));
-
-                                    details.forEach(d => {
-                                        // mantém o comportamento "apenas um aberto"
-                                        d.addEventListener('toggle', () => {
-                                            if (!d.open) return;
-                                            details.forEach(other => {
-                                                if (other !== d) other.open = false;
-                                            });
-                                        });
-
-                                        // clique em qualquer local do card (exceto summary ou elementos interativos) alterna o estado
-                                        d.addEventListener('click', (e) => {
-                                            if (e.target.closest('summary')) return; // summary já trata do toggle
-                                            if (e.target.closest('a, button, input, textarea, select')) return; // evitar interferir com interações
-                                            d.open = !d.open;
-                                        });
-                                    });
-                                })();
-                            </script>
-                        </section>
-
-                        
-
-                
-                                
-                
-                <!-- work -->
-                 
-
-                
-             
-
-            <!-- footer -->
-                <footer id="footer" class="footer-content" >
-
-                            <div class="container flex-div">
-
-                            <div class=" col-lg-6 justify-content-between align-items-center">
-
-                                
-                                    <h3 style="color: #fff;">Talk<span class="curved-text-sm">Out</span></h3>
-
-                                
-                                <div class="row align-items-center mil-gap-8 mil-mb-30">
-                                
-                                    
-
-                                    <div class="mil-vert-between">
-                                        <div class="mil-mb-20">
-                                            <ul class="mil-social-icons">
-                                                        
-                                                    
-                                                <li><a href="https://www.instagram.com/talkout.today/" target="_blank" aria-label="Instagram" class="social-icon"> 
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12.001 9C10.3436 9 9.00098 10.3431 9.00098 12C9.00098 13.6573 10.3441 15 12.001 15C13.6583 15 15.001 13.6569 15.001 12C15.001 10.3427 13.6579 9 12.001 9ZM12.001 7C14.7614 7 17.001 9.2371 17.001 12C17.001 14.7605 14.7639 17 12.001 17C9.24051 17 7.00098 14.7629 7.00098 12C7.00098 9.23953 9.23808 7 12.001 7ZM18.501 6.74915C18.501 7.43926 17.9402 7.99917 17.251 7.99917C16.5609 7.99917 16.001 7.4384 16.001 6.74915C16.001 6.0599 16.5617 5.5 17.251 5.5C17.9393 5.49913 18.501 6.0599 18.501 6.74915ZM12.001 4C9.5265 4 9.12318 4.00655 7.97227 4.0578C7.18815 4.09461 6.66253 4.20007 6.17416 4.38967C5.74016 4.55799 5.42709 4.75898 5.09352 5.09255C4.75867 5.4274 4.55804 5.73963 4.3904 6.17383C4.20036 6.66332 4.09493 7.18811 4.05878 7.97115C4.00703 9.0752 4.00098 9.46105 4.00098 12C4.00098 14.4745 4.00753 14.8778 4.05877 16.0286C4.0956 16.8124 4.2012 17.3388 4.39034 17.826C4.5591 18.2606 4.7605 18.5744 5.09246 18.9064C5.42863 19.2421 5.74179 19.4434 6.17187 19.6094C6.66619 19.8005 7.19148 19.9061 7.97212 19.9422C9.07618 19.9939 9.46203 20 12.001 20C14.4755 20 14.8788 19.9934 16.0296 19.9422C16.8117 19.9055 17.3385 19.7996 17.827 19.6106C18.2604 19.4423 18.5752 19.2402 18.9074 18.9085C19.2436 18.5718 19.4445 18.2594 19.6107 17.8283C19.8013 17.3358 19.9071 16.8098 19.9432 16.0289C19.9949 14.9248 20.001 14.5389 20.001 12C20.001 9.52552 19.9944 9.12221 19.9432 7.97137C19.9064 7.18906 19.8005 6.66149 19.6113 6.17318C19.4434 5.74038 19.2417 5.42635 18.9084 5.09255C18.573 4.75715 18.2616 4.55693 17.8271 4.38942C17.338 4.19954 16.8124 4.09396 16.0298 4.05781C14.9258 4.00605 14.5399 4 12.001 4ZM12.001 2C14.7176 2 15.0568 2.01 16.1235 2.06C17.1876 2.10917 17.9135 2.2775 18.551 2.525C19.2101 2.77917 19.7668 3.1225 20.3226 3.67833C20.8776 4.23417 21.221 4.7925 21.476 5.45C21.7226 6.08667 21.891 6.81333 21.941 7.8775C21.9885 8.94417 22.001 9.28333 22.001 12C22.001 14.7167 21.991 15.0558 21.941 16.1225C21.8918 17.1867 21.7226 17.9125 21.476 18.55C21.2218 19.2092 20.8776 19.7658 20.3226 20.3217C19.7668 20.8767 19.2076 21.22 18.551 21.475C17.9135 21.7217 17.1876 21.89 16.1235 21.94C15.0568 21.9875 14.7176 22 12.001 22C9.28431 22 8.94514 21.99 7.87848 21.94C6.81431 21.8908 6.08931 21.7217 5.45098 21.475C4.79264 21.2208 4.23514 20.8767 3.67931 20.3217C3.12348 19.7658 2.78098 19.2067 2.52598 18.55C2.27848 17.9125 2.11098 17.1867 2.06098 16.1225C2.01348 15.0558 2.00098 14.7167 2.00098 12C2.00098 9.28333 2.01098 8.94417 2.06098 7.8775C2.11014 6.8125 2.27848 6.0875 2.52598 5.45C2.78014 4.79167 3.12348 4.23417 3.67931 3.67833C4.23514 3.1225 4.79348 2.78 5.45098 2.525C6.08848 2.2775 6.81348 2.11 7.87848 2.06C8.94514 2.0125 9.28431 2 12.001 2Z"></path></svg>
-                                                                        
-                                                </a>
-                                                </li>
-                                                <li>
-                                                    <a onclick="window.location.href='mailto:info@talkout.today?subject=Hello&body=I%20wanted%20to%20say%20hi!'" target="E-mail" aria-label="E-mail" class="social-icon"> 
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3ZM20 7.23792L12.0718 14.338L4 7.21594V19H20V7.23792ZM4.51146 5L12.0619 11.662L19.501 5H4.51146Z"></path></svg>
-                                                                        
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        
-                                    </div>
-
-                                </div>
-
-                                <div class="inline-flex align-items-center mil-gap-8 justify-content-between mil-mb-30" >
-                                    <p class="mil-text-lg mil-social-icons" style="text-align: center;"> <a href="termos-de-servico.html" target="_blank" rel="noopener noreferrer">Termos de serviço</a></p>
-                                    <p class="mil-text-lg"> | </p>
-                                    <p class="mil-text-lg mil-social-icons" style="text-align: center;"> <a href="politica-de-privacidade.html" target="_blank" rel="noopener noreferrer">Política de privacidade</a></p>
-
-
-                                </div>
-                                    
-                            </div>
-
-                            <div class="col-lg-6 newsletter" id="newsletter">
-                                <h3 class="mil-mb-8">Inscreva-se na Newsletter</h3>
-                                <p class="mil-mb-16 mil-text-lg">Não fique por fora das novidades em próximos eventos.</p>
-
-                                    <form action="https://formsubmit.co/leonardo.denega@hotmail.com" method="POST" data-swup-form="true">
-
-                                        <title>Newsletter</title>
-
-                                        
-  
-                                        <!-- Optional hidden fields -->
-                                        <input type="hidden" name="_subject" value="Nova inscrição na Newsletter">
-                                        <input type="hidden" name="_captcha" value="true">
-                                        <input type="hidden" name="_next" value="https://talkout.today/obrigado.html"> <!-- personalize se quiser -->
-
-                                        
-                                        <!-- Email -->
-                                        <label for="email" class="mil-mb-8">Digite seu Email <span style="color:red">*</span></label><br>
-                                        <input type="email" id="email" name="email" placeholder="email@exemplo.com" required><br><br>
-
-                                        <!-- Botão -->
-                                        <button class="hero-card-btn" type="submit"><h5>Enviar</h5></button>
-
-                                    </form>
-                            </div>
-
-                        </div>
-                </footer>
-            <!-- footer end -->
+            <h1 id="colorful-title" class="curved-text-lg" style="text-align: center;">novos idiomas</h1>
+            <script>
+            (function(){
+                const colors = ['#FE6B42','#374186','#FAAA07','#1C7A52'];
+                const el = document.getElementById('colorful-title');
+                if(!el) return;
+                const text = el.textContent || '';
+                el.textContent = '';
+                const spans = [];
+                for (const ch of text) {
+                    const span = document.createElement('span');
+                    span.textContent = ch;
+                    span.style.transition = 'color 500ms';
+                    el.appendChild(span);
+                    spans.push(span);
+                }
+                function randomize() {
+                    spans.forEach(s => {
+                        if (s.textContent.trim() === '') {
+                            s.style.color = '';
+                            return;
+                        }
+                        s.style.color = colors[Math.floor(Math.random() * colors.length)];
+                    });
+                }
+                randomize();
+                // change colors periodically
+                setInterval(randomize, 1000);
+            })();
+            </script>
         </div>
-        <!-- content -->
-    </div>
+
+
+        <div class="inline-flex mil-gap-16 justify-content-center align-content-center hero-people mil-mb-60" >
+
+            <style>
+            
+            </style>
+
+            <img src="img/photo/users-left.png" alt="people left" class="hide-mobile floating-left">
+
+            <div class="align-content-center" style="text-align: center; max-width: 480px;">
+                <p class="mil-text-lg mil-mb-16">Pratica idiomas, enquanto conheces pessoas <br>com o mesmo objetivo que tu.</p>
+
+                <div class="desktop-nav inline-flex justify-content-center align-items-center " style="gap:8px; margin-top: 16px;">
+
+
+                    <a href="torna-te-um-moderador.html" class="btn-secondary">
+                        <h5 class="">Criar um Evento</h5>
+                    </a>
+                
+
+                    <a href="eventos.html" class="btn-primary">
+                        <h5 class=""> Ver todos Eventos</h5>
+                    </a>
+
+                    
+                </div>
+            </div>
+            <img src="img/photo/users-right.png" alt="people right" class="hide-mobile floating-right">
+
+        </div>
+
+
+    </section>  
+
+    <section class=" col-lg-12 mil-workflow justify-content-center mil-mb-30" style="overflow: visible;">
+
+        <div class="flex-div col-lg-12 justify-content-center align-content-center" >
+
+            
+
+                <div class="card-themes col-lg-3 mil-mb-8" style="margin-left: 8px; margin-right: 8px;">
+
+                    
+                    <h4>Procura um evento</h4>
+                    <p>Descobre encontros perto de ti para praticar línguas.</p>
+
+                </div>
+                <div class="card-themes col-lg-3 mil-mb-8" style="margin-left: 8px; margin-right: 8px;">
+
+                    
+                    <h4>Conversa e pratica</h4>
+                    <p>Junta-te a grupos moderados por experts e aprende sem pressão.</p>
+
+                </div>
+                <div class="card-themes col-lg-3 mil-mb-8" style="margin-left: 8px; margin-right: 8px;">
+
+                    
+                    <h4>Melhora o teu vocabulário</h4>
+                    <p>Aos poucos, ganha confiança para falar noutra língua, e fazes novas amizades.</p>
+
+                </div>
+
+            </div>
+
+
+            <img src="img/photo/trace-background.svg" alt="background trace" style="position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:100%; z-index:-1; pointer-events:none; overflow:hidden;">
+
+
+
+                
+
+            
+
+    </section>
+
+
+    <!--<section style=" background-image: url('/img/photo/trace-background.webp'); background-size: cover; background-position: center;" >
+
+            
+
+
+            <div class="card-comment col-lg-6  col-sm-8 mil-mb-60" style="margin-left: auto; margin-right: auto; display: block; align-items: center; ">
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="48" width="48" fill="currentColor"><path d="M4.58341 17.3211C3.55316 16.2274 3 15 3 13.0103C3 9.51086 5.45651 6.37366 9.03059 4.82318L9.92328 6.20079C6.58804 8.00539 5.93618 10.346 5.67564 11.822C6.21263 11.5443 6.91558 11.4466 7.60471 11.5105C9.40908 11.6778 10.8312 13.159 10.8312 15C10.8312 16.933 9.26416 18.5 7.33116 18.5C6.2581 18.5 5.23196 18.0095 4.58341 17.3211ZM14.5834 17.3211C13.5532 16.2274 13 15 13 13.0103C13 9.51086 15.4565 6.37366 19.0306 4.82318L19.9233 6.20079C16.588 8.00539 15.9362 10.346 15.6756 11.822C16.2126 11.5443 16.9156 11.4466 17.6047 11.5105C19.4091 11.6778 20.8312 13.159 20.8312 15C20.8312 16.933 19.2642 18.5 17.3312 18.5C16.2581 18.5 15.232 18.0095 14.5834 17.3211Z"></path></svg>
+
+                <h3>A imersão presencial acelera a aprendizagem em até 2x quando comparada apenas ao estudo online.</h3>
+
+            </div>
+
+            
+
+
+
+            
+
+            
+
+    </section>-->
+
+
+    <section class="container flex-div mil-gap-8 col-lg-12 mil-p-120-120 justify-content-center align-content-center" id="eventos">
+
+            <div class="col-lg-3 " style="padding-right: 24px;">
+
+                <h2 class="mil-mb-8">
+                            Próximos Eventos
+                            </h2>
+
+                            <p class="mil-text-lg mil-mb-16">Decrubra os próximos TalkOuts perto  de ti.</p>
+
+                <a href="eventos.html" target="E-mail"  class="btn-secondary mil-mb-60">
+
+                                        <h5 class="">Ver todos eventos</h5>
+                </a>
+
+                <!--<div class="card-highlight align-items-center mil-gap-8" style="width: 220px;" >
+
+                    <div style=" width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; margin-bottom: 8px;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10.0544 2.0941C11.1756 1.13856 12.8248 1.13855 13.9461 2.09411L15.2941 3.24286C15.4542 3.37935 15.6533 3.46182 15.8631 3.47856L17.6286 3.61945C19.0971 3.73663 20.2633 4.9028 20.3805 6.37131L20.5214 8.13679C20.5381 8.34654 20.6205 8.54568 20.757 8.70585L21.9058 10.0539C22.8614 11.1751 22.8614 12.8243 21.9058 13.9456L20.757 15.2935C20.6206 15.4537 20.538 15.6529 20.5213 15.8627L20.3805 17.6281C20.2633 19.0967 19.0971 20.2628 17.6286 20.3799L15.8631 20.5208C15.6533 20.5376 15.4542 20.6201 15.2941 20.7566L13.9461 21.9053C12.8248 22.8609 11.1756 22.8608 10.0543 21.9053L8.70631 20.7566C8.54615 20.6201 8.34705 20.5376 8.1373 20.5209L6.37184 20.3799C4.9033 20.2627 3.73716 19.0966 3.61997 17.6281L3.47906 15.8627C3.46232 15.6529 3.37983 15.4538 3.24336 15.2936L2.0946 13.9455C1.13905 12.8243 1.13904 11.1752 2.09458 10.0539L3.24334 8.70589C3.37983 8.54573 3.46234 8.34654 3.47907 8.13678L3.61996 6.3713C3.73714 4.90278 4.90327 3.73665 6.3718 3.61946L8.13729 3.47857C8.34705 3.46183 8.54619 3.37935 8.70636 3.24286L10.0544 2.0941ZM12.6488 3.61632C12.2751 3.29782 11.7253 3.29781 11.3516 3.61632L10.0036 4.76509C9.5231 5.17456 8.92568 5.42201 8.29637 5.47223L6.5309 5.61312C6.04139 5.65219 5.65268 6.04089 5.61362 6.53041L5.47272 8.29593C5.4225 8.92521 5.17505 9.52259 4.76559 10.0031L3.61683 11.3511C3.29832 11.7248 3.29831 12.2746 3.61683 12.6483L4.76559 13.9963C5.17506 14.4768 5.4225 15.0743 5.47275 15.7035L5.61363 17.469C5.65268 17.9585 6.04139 18.3473 6.53092 18.3863L8.29636 18.5272C8.92563 18.5774 9.5231 18.8249 10.0036 19.2344L11.3516 20.3831C11.7254 20.7016 12.2751 20.7016 12.6488 20.3831L13.9969 19.2343C14.4773 18.8249 15.0747 18.5774 15.704 18.5272L17.4695 18.3863C17.959 18.3472 18.3478 17.9585 18.3868 17.469L18.5277 15.7035C18.5779 15.0742 18.8253 14.4768 19.2349 13.9964L20.3836 12.6483C20.7022 12.2746 20.7021 11.7249 20.3836 11.3511L19.2348 10.0031C18.8253 9.52259 18.5779 8.92519 18.5277 8.2959L18.3868 6.53041C18.3478 6.0409 17.959 5.65219 17.4695 5.61312L15.704 5.47224C15.0748 5.42203 14.4773 5.17455 13.9968 4.76508L12.6488 3.61632ZM14.8284 7.75718L16.2426 9.1714L9.17154 16.2425L7.75733 14.8282L14.8284 7.75718ZM10.2322 10.232C9.64641 10.8178 8.69667 10.8178 8.11088 10.232C7.52509 9.6463 7.52509 8.69652 8.11088 8.11073C8.69667 7.52494 9.64641 7.52494 10.2322 8.11073C10.818 8.69652 10.818 9.6463 10.2322 10.232ZM13.7677 15.8889C14.3535 16.4747 15.3032 16.4747 15.889 15.8889C16.4748 15.3031 16.4748 14.3534 15.889 13.7676C15.3032 13.1818 14.3535 13.1818 13.7677 13.7676C13.1819 14.3534 13.1819 15.3031 13.7677 15.8889Z"></path></svg>
+
+
+                            </div>  
+
+                            <div>
+                                    <p>Receba desconto no seu primeiro TalkOut!</p>
+                                    <button class="btn-link" href="#footer">Assinar Newsletter</button>
+                            </div>
+
+
+
+                        </div>-->
+
+            </div>
+
+        
+
+        
+            
+                    
+
+            <a class="event-card col-lg-3" href="ingles-e-pizza-a-combinacao-perfeita.html">
+
+
+                <div class="mil-blog-card">
+
+                    <div class="mil-cover-frame">
+                        <img src="img/photo/four-teenagers-on-picnic-chatting-while-music-play-2025-03-09-06-08-48-utc.webp" alt="cover">
+                    </div>
+
+                    <div class="mil-badge-sm inline-flex align-items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" ><path d="M12 23.7279L5.63604 17.364C2.12132 13.8492 2.12132 8.15076 5.63604 4.63604C9.15076 1.12132 14.8492 1.12132 18.364 4.63604C21.8787 8.15076 21.8787 13.8492 18.364 17.364L12 23.7279ZM16.9497 15.9497C19.6834 13.2161 19.6834 8.78392 16.9497 6.05025C14.2161 3.31658 9.78392 3.31658 7.05025 6.05025C4.31658 8.78392 4.31658 13.2161 7.05025 15.9497L12 20.8995L16.9497 15.9497ZM12 13C10.8954 13 10 12.1046 10 11C10 9.89543 10.8954 9 12 9C13.1046 9 14 9.89543 14 11C14 12.1046 13.1046 13 12 13Z"></path></svg>
+
+                        <p>Jardim da Estrela</p>
+                    </div>
+
+                    <h4 class="mil-mb-8" >Inglês e Pizza: a combinação perfeita</h4>
+
+                    <div class="mil-gap-16 div-flex justify-content-between mil-mb-8">
+                        
+
+
+                        <div class="align-items-center" style="gap: 4px; display: inline-flex; margin-right: 12px;">
+                            
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M2 11H22V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V11ZM17 3H21C21.5523 3 22 3.44772 22 4V9H2V4C2 3.44772 2.44772 3 3 3H7V1H9V3H15V1H17V3Z"></path></svg>
+
+                            <p>08/11</p>
+
+                        </div>
+
+
+                        <div class="align-items-center" style="gap: 4px; display: inline-flex; margin-right: 12px;">
+                            
+
+                            
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM13 12V7H11V14H17V12H13Z"></path></svg>
+                            <p>14:30</p>
+
+                        </div>
+                    
+
+                    </div>
+                    
+                    <div class="inline-flex" style="align-items: center; gap: 4px; ">
+                        
+
+                        <p class=" mil-text-sm">Inglês</p>
+
+                        <p class=" mil-text-sm">•</p>
+
+                        <p class=" mil-text-sm">Até 4 participantes</p>
+
+                    </div><br>
+
+                    
+
+                    <div class="inline-flex " style="align-items: center; gap: 4px; " >
+
+                        <h3 >€15</h3>
+
+                        <div style="display:flex; flex-direction:column; justify-content:center; margin:0;">
+                            <p class="mil-text-sm" style="margin:0; line-height:1; font-size:14px;">por</p>
+                            <p class="mil-text-sm" style="margin:0; line-height:1; font-size:14px;">participante</p>
+                        </div>
+
+                        
+
+                    </div>
+                    
+
+
+                </div>
+
+
+                
+
+            </a>
+
+            <a class="event-card col-lg-3" href="Tarde-de-Café-Inglês-e-conversa.html">
+
+
+                <div class="mil-blog-card">
+
+                    <div class="mil-cover-frame">
+                        <img src="img/photo/group-teenagers-having-coffee.jpg" alt="cover">
+                    </div>
+
+                    <div class="mil-badge-sm inline-flex align-items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" ><path d="M12 23.7279L5.63604 17.364C2.12132 13.8492 2.12132 8.15076 5.63604 4.63604C9.15076 1.12132 14.8492 1.12132 18.364 4.63604C21.8787 8.15076 21.8787 13.8492 18.364 17.364L12 23.7279ZM16.9497 15.9497C19.6834 13.2161 19.6834 8.78392 16.9497 6.05025C14.2161 3.31658 9.78392 3.31658 7.05025 6.05025C4.31658 8.78392 4.31658 13.2161 7.05025 15.9497L12 20.8995L16.9497 15.9497ZM12 13C10.8954 13 10 12.1046 10 11C10 9.89543 10.8954 9 12 9C13.1046 9 14 9.89543 14 11C14 12.1046 13.1046 13 12 13Z"></path></svg>
+
+                        <p>SM Specialty Coffee Shop</p>
+                    </div>
+
+                    <h4 class="mil-mb-8" >Tarde de Café, Inglês e conversa</h4>
+
+                    <div class="mil-gap-8 justify-content-between">
+                        
+
+
+                        <div class="align-items-center" style="gap: 4px; display: inline-flex; margin-right: 12px;">
+                            
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M2 11H22V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V11ZM17 3H21C21.5523 3 22 3.44772 22 4V9H2V4C2 3.44772 2.44772 3 3 3H7V1H9V3H15V1H17V3Z"></path></svg>
+
+                            <p>15/11</p>
+
+                        </div>
+
+
+                        <div class="align-items-center" style="gap: 4px; display: inline-flex; margin-right: 12px;">
+                            
+
+                            
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM13 12V7H11V14H17V12H13Z"></path></svg>
+                            <p>14:30</p>
+
+                        </div>
+                    
+
+                    </div>
+
+
+                    <!--<div class="inline-flex" style="align-items: center; gap: 4px;">
+                        
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M16 13V5H6V13C6 14.1046 6.89543 15 8 15H14C15.1046 15 16 14.1046 16 13ZM5 3H20C21.1046 3 22 3.89543 22 5V8C22 9.10457 21.1046 10 20 10H18V13C18 15.2091 16.2091 17 14 17H8C5.79086 17 4 15.2091 4 13V4C4 3.44772 4.44772 3 5 3ZM18 5V8H20V5H18ZM2 19H20V21H2V19Z"></path></svg>
+
+                        <p class=" mil-text-sm">Ganha um café*</p>
+
+                    </div><br>-->
+                    
+                    <div class="inline-flex" style="align-items: center; gap: 4px; ">
+                        
+
+                        <p class=" mil-text-sm">Inglês</p>
+
+                        <p class=" mil-text-sm">•</p>
+
+                        <p class=" mil-text-sm">Até 4 participantes</p>
+
+                    </div><br>
+
+                    
+
+                    <div class="inline-flex " style="align-items: center; gap: 4px; " >
+
+                        <h3 >€15</h3>
+
+                        <div style="display:flex; flex-direction:column; justify-content:center; margin:0;">
+                            <p class="mil-text-sm" style="margin:0; line-height:1; font-size:14px;">por</p>
+                            <p class="mil-text-sm" style="margin:0; line-height:1; font-size:14px;">participante</p>
+                        </div>
+
+                        
+
+                    </div>
+                    
+
+
+                </div>
+
+
+                
+
+            </a>
+
+            <a class="event-card col-lg-3" href="Espanhol-e-Cafe-Hablando-Sin-Prisa.html">
+
+
+                <div class="mil-blog-card">
+
+                    <div class="mil-cover-frame">
+                        <img src="img/photo/business-people-office-break.jpg" alt="cover">
+                    </div>
+
+                    <div class="mil-badge-sm inline-flex align-items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" ><path d="M12 23.7279L5.63604 17.364C2.12132 13.8492 2.12132 8.15076 5.63604 4.63604C9.15076 1.12132 14.8492 1.12132 18.364 4.63604C21.8787 8.15076 21.8787 13.8492 18.364 17.364L12 23.7279ZM16.9497 15.9497C19.6834 13.2161 19.6834 8.78392 16.9497 6.05025C14.2161 3.31658 9.78392 3.31658 7.05025 6.05025C4.31658 8.78392 4.31658 13.2161 7.05025 15.9497L12 20.8995L16.9497 15.9497ZM12 13C10.8954 13 10 12.1046 10 11C10 9.89543 10.8954 9 12 9C13.1046 9 14 9.89543 14 11C14 12.1046 13.1046 13 12 13Z"></path></svg>
+
+                        <p>LENA Specialty Coffee</p>
+                    </div>
+
+                    <h4 class="mil-mb-8" >Espanhol e Café: Hablando Sin Prisa</h4>
+
+                    <div class="mil-gap-8 justify-content-between">
+                        
+
+
+                        <div class="align-items-center" style="gap: 4px; display: inline-flex; margin-right: 12px;">
+                            
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M2 11H22V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V11ZM17 3H21C21.5523 3 22 3.44772 22 4V9H2V4C2 3.44772 2.44772 3 3 3H7V1H9V3H15V1H17V3Z"></path></svg>
+
+                            <p>22/11</p>
+
+                        </div>
+
+
+                        <div class="align-items-center" style="gap: 4px; display: inline-flex; margin-right: 12px;">
+                            
+
+                            
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM13 12V7H11V14H17V12H13Z"></path></svg>
+                            <p>15:00</p>
+
+                        </div>
+                    
+
+                    </div>
+                    
+                    <div class="inline-flex" style="align-items: center; gap: 4px; ">
+                        
+
+                        <p class=" mil-text-sm">Espanhol</p>
+
+                        <p class=" mil-text-sm">•</p>
+
+                        <p class=" mil-text-sm">Até 4 participantes</p>
+
+                    </div><br>
+
+                    
+
+                    <div class="inline-flex " style="align-items: center; gap: 4px; " >
+
+                        <h3 >€15</h3>
+
+                        <div style="display:flex; flex-direction:column; justify-content:center; margin:0;">
+                            <p class="mil-text-sm" style="margin:0; line-height:1; font-size:14px;">por</p>
+                            <p class="mil-text-sm" style="margin:0; line-height:1; font-size:14px;">participante</p>
+                        </div>
+
+                        
+
+                    </div>
+                    
+
+
+                </div>
+
+
+                
+
+            </a>
+
+
+                
+
+            
+
+            
+
+            
+            
+        </div>
+
+                    
+
+
+    </section>
+
+
+                
+
+            
+
+
+    <section class="">
+
+        <div class=" container mil-soft-bg justify-content-between mil-gap-16">
+
+            <div class="col-lg-12 col-md-4 mil-mb-20">
+
+                <h2 class="mil-mb-16 title-light" >Por que o TalkOut é <span class="curved-text-md ">Diferente</span></h2>
+
+
+                <p class="mil-mb-20 mil-text-lg" style="color: #fff;">Chega de chamadas de grupo com pouca participação.</p>
+
+            </div> 
+                
+                
+            <div class="flex-div mil-gap-16" >
+
+                    <div class="card-blur">
+                        
+                        <div class="mil-mb-16">
+                            <svg xmlns="http://www.w3.org/2000/svg"  width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M20.7134 7.12811L20.4668 7.69379C20.2864 8.10792 19.7136 8.10792 19.5331 7.69379L19.2866 7.12811C18.8471 6.11947 18.0555 5.31641 17.0677 4.87708L16.308 4.53922C15.8973 4.35653 15.8973 3.75881 16.308 3.57612L17.0252 3.25714C18.0384 2.80651 18.8442 1.97373 19.2761 0.930828L19.5293 0.319534C19.7058 -0.106511 20.2942 -0.106511 20.4706 0.319534L20.7238 0.930828C21.1558 1.97373 21.9616 2.80651 22.9748 3.25714L23.6919 3.57612C24.1027 3.75881 24.1027 4.35653 23.6919 4.53922L22.9323 4.87708C21.9445 5.31641 21.1529 6.11947 20.7134 7.12811ZM9 2C13.0675 2 16.426 5.03562 16.9337 8.96494L19.1842 12.5037C19.3324 12.7367 19.3025 13.0847 18.9593 13.2317L17 14.071V17C17 18.1046 16.1046 19 15 19H13.001L13 22H4L4.00025 18.3061C4.00033 17.1252 3.56351 16.0087 2.7555 15.0011C1.65707 13.6313 1 11.8924 1 10C1 5.58172 4.58172 2 9 2ZM9 4C5.68629 4 3 6.68629 3 10C3 11.3849 3.46818 12.6929 4.31578 13.7499C5.40965 15.114 6.00036 16.6672 6.00025 18.3063L6.00013 20H11.0007L11.0017 17H15V12.7519L16.5497 12.0881L15.0072 9.66262L14.9501 9.22118C14.5665 6.25141 12.0243 4 9 4ZM19.4893 16.9929L21.1535 18.1024C22.32 16.3562 23 14.2576 23 12.0001C23 11.317 22.9378 10.6486 22.8186 10L20.8756 10.5C20.9574 10.9878 21 11.489 21 12.0001C21 13.8471 20.4436 15.5642 19.4893 16.9929Z"></path></svg>
+
+                        </div>
+
+                                
+                        <h3 class="mil-mb-8 ">Aprenda na Prática</h3>
+                        <p class="">Sem testes nem pressão, só conversas reais e experiências do dia a dia.</p>
+                            
+
+                    </div>
+
+                    <div class="card-blur">
+
+                            
+                        <div class="mil-mb-16">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M6.23509 6.45329C4.85101 7.89148 4 9.84636 4 12C4 16.4183 7.58172 20 12 20C13.0808 20 14.1116 19.7857 15.0521 19.3972C15.1671 18.6467 14.9148 17.9266 14.8116 17.6746C14.582 17.115 13.8241 16.1582 12.5589 14.8308C12.2212 14.4758 12.2429 14.2035 12.3636 13.3943L12.3775 13.3029C12.4595 12.7486 12.5971 12.4209 14.4622 12.1248C15.4097 11.9746 15.6589 12.3533 16.0043 12.8777C16.0425 12.9358 16.0807 12.9928 16.1198 13.0499C16.4479 13.5297 16.691 13.6394 17.0582 13.8064C17.2227 13.881 17.428 13.9751 17.7031 14.1314C18.3551 14.504 18.3551 14.9247 18.3551 15.8472V15.9518C18.3551 16.3434 18.3168 16.6872 18.2566 16.9859C19.3478 15.6185 20 13.8854 20 12C20 8.70089 18.003 5.8682 15.1519 4.64482C14.5987 5.01813 13.8398 5.54726 13.575 5.91C13.4396 6.09538 13.2482 7.04166 12.6257 7.11976C12.4626 7.14023 12.2438 7.12589 12.012 7.11097C11.3905 7.07058 10.5402 7.01606 10.268 7.75495C10.0952 8.2232 10.0648 9.49445 10.6239 10.1543C10.7134 10.2597 10.7307 10.4547 10.6699 10.6735C10.59 10.9608 10.4286 11.1356 10.3783 11.1717C10.2819 11.1163 10.0896 10.8931 9.95938 10.7412C9.64554 10.3765 9.25405 9.92233 8.74797 9.78176C8.56395 9.73083 8.36166 9.68867 8.16548 9.64736C7.6164 9.53227 6.99443 9.40134 6.84992 9.09302C6.74442 8.8672 6.74488 8.55621 6.74529 8.22764C6.74529 7.8112 6.74529 7.34029 6.54129 6.88256C6.46246 6.70541 6.35689 6.56446 6.23509 6.45329ZM12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22Z"></path></svg>
+                        </div>
+
+
+                        <h3 class="mil-mb-8">Faz novos amigos</h3>
+                        <p class="">Conhece pessoas, pratica, partilha histórias e cria ligações.</p>
+                            
+
+                    </div>
+
+
+            </div>
+            <div class="flex-div mil-gap-16" >
+
+                
+
+                    <div class="card-blur">
+
+                            
+                        <div class="mil-mb-16">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M20.998 3V5C20.998 14.6274 15.6255 19 8.99805 19L5.24077 18.9999C5.0786 19.912 4.99805 20.907 4.99805 22H2.99805C2.99805 20.6373 3.11376 19.3997 3.34381 18.2682C3.1133 16.9741 2.99805 15.2176 2.99805 13C2.99805 7.47715 7.4752 3 12.998 3C14.998 3 16.998 4 20.998 3ZM12.998 5C8.57977 5 4.99805 8.58172 4.99805 13C4.99805 13.3624 5.00125 13.7111 5.00759 14.0459C6.26198 12.0684 8.09902 10.5048 10.5019 9.13176L11.4942 10.8682C8.6393 12.4996 6.74554 14.3535 5.77329 16.9998L8.99805 17C15.0132 17 18.8692 13.0269 18.9949 5.38766C17.6229 5.52113 16.3481 5.436 14.7754 5.20009C13.6243 5.02742 13.3988 5 12.998 5Z"></path></svg>
+                        </div>
+                        <h3 class="mil-mb-8">Ambiente descontraído</h3>
+                        <p class="">Aprende a usar o idioma no teu dia a dia, de forma simples e sem stress, para falares com confiança onde quer que estejas.</p>
+                            
+
+                    </div>
+
+                    <div class="card-blur">
+
+
+                            
+                        <div class="mil-mb-16">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12C14 13.1046 13.1046 14 12 14Z"></path></svg>
+                        </div>
+                        <h3 class="mil-mb-8">Adaptado aos seus objetivos</h3>
+                        <p class="">Eventos à tua medida, com o teu nível e aquilo de que gostas. Queres praticar para uma viagem, para o trabalho ou só para ganhares mais à vontade a conversar? A TalkOut tem sempre algo feito para ti.</p>
+                            
+
+
+                    </div>
+                
+            </div>
+        </div> 
+
+
+    </section>
+
+
+                
+
+            
+
+
+    <section class="container col-lg-12 align-items-center mil-p-120-120">
+
+        
+        
+
+                <div class="col-lg-12 mil-mb-20 align-items-center">
+
+                    <h2>TalkOut é <span class="curved-text-md">simples</span></h2>
+
+                </div>
+
+                <div class="col-lg-12 col-md-12 flex-div" style="gap: 32px;">
+
+
+                    <div class="col-lg-6 col-md-6 card-themes  mil-gap-16 align-items-start mil-mb-16" style="padding: 40px;">
+                        <img class="mil-mb-16" style="width: 100%; height: 240px; border-radius: 8px; object-fit: cover;
+                        -o-object-position: center;
+                        object-position: center;" src="img/photo/young-multiracial-people-in-office-2025-02-21-11-52-24-utc.webp">
+                        
+                        <svg style="height: 32px; width:32px;" xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 24 24" fill="currentColor"><path d="M10.6144 17.7956C10.277 18.5682 9.20776 18.5682 8.8704 17.7956L7.99275 15.7854C7.21171 13.9966 5.80589 12.5726 4.0523 11.7942L1.63658 10.7219C.868536 10.381.868537 9.26368 1.63658 8.92276L3.97685 7.88394C5.77553 7.08552 7.20657 5.60881 7.97427 3.75892L8.8633 1.61673C9.19319.821767 10.2916.821765 10.6215 1.61673L11.5105 3.75894C12.2782 5.60881 13.7092 7.08552 15.5079 7.88394L17.8482 8.92276C18.6162 9.26368 18.6162 10.381 17.8482 10.7219L15.4325 11.7942C13.6789 12.5726 12.2731 13.9966 11.492 15.7854L10.6144 17.7956ZM4.53956 9.82234C6.8254 10.837 8.68402 12.5048 9.74238 14.7996 10.8008 12.5048 12.6594 10.837 14.9452 9.82234 12.6321 8.79557 10.7676 7.04647 9.74239 4.71088 8.71719 7.04648 6.85267 8.79557 4.53956 9.82234ZM19.4014 22.6899 19.6482 22.1242C20.0882 21.1156 20.8807 20.3125 21.8695 19.8732L22.6299 19.5353C23.0412 19.3526 23.0412 18.7549 22.6299 18.5722L21.9121 18.2532C20.8978 17.8026 20.0911 16.9698 19.6586 15.9269L19.4052 15.3156C19.2285 14.8896 18.6395 14.8896 18.4628 15.3156L18.2094 15.9269C17.777 16.9698 16.9703 17.8026 15.956 18.2532L15.2381 18.5722C14.8269 18.7549 14.8269 19.3526 15.2381 19.5353L15.9985 19.8732C16.9874 20.3125 17.7798 21.1156 18.2198 22.1242L18.4667 22.6899C18.6473 23.104 19.2207 23.104 19.4014 22.6899ZM18.3745 19.0469 18.937 18.4883 19.4878 19.0469 18.937 19.5898 18.3745 19.0469Z"></path></svg>
+
+                        <div>
+
+                            <h3 class="mil-mb-8">Para Professores</h3> 
+
+                            <p class="mil-mb-20">Cria eventos pagos e significativos que ligam cultura e língua.</p>
+
+                            <a href="torna-te-um-moderador.html" class="btn-secondary">
+
+                                <h5 class="">Criar evento</h5>
+
+                            </a>
+                        </div>
+
+                    </div>
+                    
+
+                    <div class="col-lg-6 col-md-6 card-themes  mil-gap-16 align-items-start mil-mb-16" style="padding: 40px;">
+
+                            <img class="mil-mb-16" style="width: 100%; height: 240px; border-radius: 8px; object-fit: cover;
+                            -o-object-position: center;
+                            object-position: center;" src="img/photo/multiethnic-group-of-young-friends-meeting-and-hav-2025-08-11-13-15-54-utc.webp" alt="cover">
+
+                            <svg style="height: 32px; width:32px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z"></path></svg>
+
+                            <div>
+
+                                <h3 class="mil-mb-8">Para Alunos</h3>
+
+                                <p class="mil-mb-20">Junta-te a experiências divertidas e reais para praticar línguas de forma natural.</p>
+
+                                <a  href="#eventos" class="btn-secondary">
+
+                                    <h5 class="">Próximos eventos</h5>
+
+                                </a>
+                            </div>
+
+        
+
+
+    </section>
+
+
+
+    <section class="container col-lg-8 col-sm-12 mil-p-120-120" id="faq-section" aria-labelledby="faq-title" style="margin-top:32px; margin-bottom:48px;">
+        <h2 id="faq-title" class="mil-mb-20" >Perguntas Frequentes</h2>
+
+        <div class="faq-list" style="display:flex; flex-direction:column; gap:12px;">
+
+            <details class="faq-item card-themes" style="padding:16px; border-radius:8px;" open>
+                <summary style="font-weight:600; cursor:pointer; list-style:none; outline:none;">Como posso participar de um TalkOut?</summary>
+                <div class="faq-answer" style="margin-top:8px; color:var(--text-color, #1c1c1c);">
+                    Encontra eventos na secção "Próximos TalkOuts" ou na página de eventos. Clica no evento que te interessa e segue as instruções para reservar o teu lugar.
+                </div>
+            </details>
+
+            <details class="faq-item card-themes" style="padding:16px; border-radius:8px;">
+                <summary style="font-weight:600; cursor:pointer; list-style:none; outline:none;">Preciso de ser fluente na língua para participar?</summary>
+                <div class="faq-answer" style="margin-top:8px; color:var(--text-color, #1c1c1c);">
+                    Não. Os eventos são organizados por níveis. Procura a indicação do nível no detalhe do evento — há grupos para iniciantes, intermédios e avançados.
+                </div>
+            </details>
+
+            <details class="faq-item card-themes" style="padding:16px; border-radius:8px;">
+                <summary style="font-weight:600; cursor:pointer; list-style:none; outline:none;">Como posso criar um evento como professor?</summary>
+                <div class="faq-answer" style="margin-top:8px; color:var(--text-color, #1c1c1c);">
+                    Vai à página "Criar Evento" (torna-te-um-moderador.html), preenche o formulário com os detalhes do evento e submete. Iremos validar e publicar o teu evento.
+                </div>
+            </details>
+
+            <details class="faq-item card-themes" style="padding:16px; border-radius:8px;">
+                <summary style="font-weight:600; cursor:pointer; list-style:none; outline:none;">Os eventos têm custo?</summary>
+                <div class="faq-answer" style="margin-top:8px; color:var(--text-color, #1c1c1c);">
+                    Alguns eventos são gratuitos e outros pagos — isso é especificado na página do evento. Pagamentos são processados conforme as instruções do organizador.
+                </div>
+            </details>
+
+            <details class="faq-item card-themes" style="padding:16px; border-radius:8px;">
+                <summary style="font-weight:600; cursor:pointer; list-style:none; outline:none;">Quanto ganha o professor por aula?</summary>
+                <div class="faq-answer" style="margin-top:8px; color:var(--text-color, #1c1c1c);">
+                    O valor que o professor decidir cobrar será integralmente transferido para si.
+                    Após cada evento, o professor recebe um e-mail para confirmar a realização da sessão. Depois dessa confirmação, o pagamento é efetuado no prazo máximo de 5 dias úteis.
+
+                </div>
+            </details>
+
+            <details class="faq-item card-themes" style="padding:16px; border-radius:8px;">
+                <summary style="font-weight:600; cursor:pointer; list-style:none; outline:none;">Sou aluno e preciso cancelar a minha participação. É possível?</summary>
+                <div class="faq-answer" style="margin-top:8px; color:var(--text-color, #1c1c1c);">
+                    Sim, o cancelamento é permitido.
+                    No entanto, não há reembolso caso o cancelamento ocorra após a confirmação do evento, uma vez que os recursos e horários já estarão reservados.
+
+
+                </div>
+            </details>
+
+            <details class="faq-item card-themes" style="padding:16px; border-radius:8px;">
+                <summary style="font-weight:600; cursor:pointer; list-style:none; outline:none;">O evento requer um número mínimo de participantes. E se a turma não fechar?</summary>
+                <div class="faq-answer" style="margin-top:8px; color:var(--text-color, #1c1c1c);">
+                    Cada professor define o número mínimo de participantes para o seu evento.
+                    Se o número mínimo não for atingido até 5 dias antes da data marcada, o professor poderá optar por prosseguir com o evento ou cancelá-lo.
+                    Caso o evento seja cancelado, os alunos receberão o reembolso integral.
+
+                </div>
+            </details>
+
+            <details class="faq-item card-themes" style="padding:16px; border-radius:8px;">
+                <summary style="font-weight:600; cursor:pointer; list-style:none; outline:none;">A TalkOut participa nos eventos?</summary>
+                <div class="faq-answer" style="margin-top:8px; color:var(--text-color, #1c1c1c);">
+                    A TalkOut atua apenas como plataforma intermediária, ligando alunos e professores.
+                    A organização, o conteúdo e a condução dos eventos são da responsabilidade dos professores.
+
+                </div>
+            </details>
+
+
+        </div>
+
+        
+
+        <script>
+            // Permitir abrir apenas uma pergunta de cada vez e tornar o clique em todo o card togglable
+            (function(){
+                const container = document.getElementById('faq-section');
+                if(!container) return;
+                const details = Array.from(container.querySelectorAll('details'));
+
+                details.forEach(d => {
+                    // mantém o comportamento "apenas um aberto"
+                    d.addEventListener('toggle', () => {
+                        if (!d.open) return;
+                        details.forEach(other => {
+                            if (other !== d) other.open = false;
+                        });
+                    });
+
+                    // clique em qualquer local do card (exceto summary ou elementos interativos) alterna o estado
+                    d.addEventListener('click', (e) => {
+                        if (e.target.closest('summary')) return; // summary já trata do toggle
+                        if (e.target.closest('a, button, input, textarea, select')) return; // evitar interferir com interações
+                        d.open = !d.open;
+                    });
+                });
+            })();
+        </script>
+    </section>
+
+                        
+
+                
+                                
+                
+               
+        <footer id="footer" class="footer-content" >
+
+                    <div class="container flex-div">
+
+                    <div class=" col-lg-6 justify-content-between align-items-center">
+
+                        
+                            <h3 style="color: #fff;">Talk<span class="curved-text-sm">Out</span></h3>
+
+                        
+                        <div class="row align-items-center mil-gap-8 mil-mb-30">
+                        
+                            
+
+                            <div class="mil-vert-between">
+                                <div class="mil-mb-20">
+                                    <ul class="mil-social-icons">
+                                                
+                                            
+                                        <li><a href="https://www.instagram.com/talkout.today/" target="_blank" aria-label="Instagram" class="social-icon"> 
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12.001 9C10.3436 9 9.00098 10.3431 9.00098 12C9.00098 13.6573 10.3441 15 12.001 15C13.6583 15 15.001 13.6569 15.001 12C15.001 10.3427 13.6579 9 12.001 9ZM12.001 7C14.7614 7 17.001 9.2371 17.001 12C17.001 14.7605 14.7639 17 12.001 17C9.24051 17 7.00098 14.7629 7.00098 12C7.00098 9.23953 9.23808 7 12.001 7ZM18.501 6.74915C18.501 7.43926 17.9402 7.99917 17.251 7.99917C16.5609 7.99917 16.001 7.4384 16.001 6.74915C16.001 6.0599 16.5617 5.5 17.251 5.5C17.9393 5.49913 18.501 6.0599 18.501 6.74915ZM12.001 4C9.5265 4 9.12318 4.00655 7.97227 4.0578C7.18815 4.09461 6.66253 4.20007 6.17416 4.38967C5.74016 4.55799 5.42709 4.75898 5.09352 5.09255C4.75867 5.4274 4.55804 5.73963 4.3904 6.17383C4.20036 6.66332 4.09493 7.18811 4.05878 7.97115C4.00703 9.0752 4.00098 9.46105 4.00098 12C4.00098 14.4745 4.00753 14.8778 4.05877 16.0286C4.0956 16.8124 4.2012 17.3388 4.39034 17.826C4.5591 18.2606 4.7605 18.5744 5.09246 18.9064C5.42863 19.2421 5.74179 19.4434 6.17187 19.6094C6.66619 19.8005 7.19148 19.9061 7.97212 19.9422C9.07618 19.9939 9.46203 20 12.001 20C14.4755 20 14.8788 19.9934 16.0296 19.9422C16.8117 19.9055 17.3385 19.7996 17.827 19.6106C18.2604 19.4423 18.5752 19.2402 18.9074 18.9085C19.2436 18.5718 19.4445 18.2594 19.6107 17.8283C19.8013 17.3358 19.9071 16.8098 19.9432 16.0289C19.9949 14.9248 20.001 14.5389 20.001 12C20.001 9.52552 19.9944 9.12221 19.9432 7.97137C19.9064 7.18906 19.8005 6.66149 19.6113 6.17318C19.4434 5.74038 19.2417 5.42635 18.9084 5.09255C18.573 4.75715 18.2616 4.55693 17.8271 4.38942C17.338 4.19954 16.8124 4.09396 16.0298 4.05781C14.9258 4.00605 14.5399 4 12.001 4ZM12.001 2C14.7176 2 15.0568 2.01 16.1235 2.06C17.1876 2.10917 17.9135 2.2775 18.551 2.525C19.2101 2.77917 19.7668 3.1225 20.3226 3.67833C20.8776 4.23417 21.221 4.7925 21.476 5.45C21.7226 6.08667 21.891 6.81333 21.941 7.8775C21.9885 8.94417 22.001 9.28333 22.001 12C22.001 14.7167 21.991 15.0558 21.941 16.1225C21.8918 17.1867 21.7226 17.9125 21.476 18.55C21.2218 19.2092 20.8776 19.7658 20.3226 20.3217C19.7668 20.8767 19.2076 21.22 18.551 21.475C17.9135 21.7217 17.1876 21.89 16.1235 21.94C15.0568 21.9875 14.7176 22 12.001 22C9.28431 22 8.94514 21.99 7.87848 21.94C6.81431 21.8908 6.08931 21.7217 5.45098 21.475C4.79264 21.2208 4.23514 20.8767 3.67931 20.3217C3.12348 19.7658 2.78098 19.2067 2.52598 18.55C2.27848 17.9125 2.11098 17.1867 2.06098 16.1225C2.01348 15.0558 2.00098 14.7167 2.00098 12C2.00098 9.28333 2.01098 8.94417 2.06098 7.8775C2.11014 6.8125 2.27848 6.0875 2.52598 5.45C2.78014 4.79167 3.12348 4.23417 3.67931 3.67833C4.23514 3.1225 4.79348 2.78 5.45098 2.525C6.08848 2.2775 6.81348 2.11 7.87848 2.06C8.94514 2.0125 9.28431 2 12.001 2Z"></path></svg>
+                                                                
+                                        </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="window.location.href='mailto:info@talkout.today?subject=Hello&body=I%20wanted%20to%20say%20hi!'" target="E-mail" aria-label="E-mail" class="social-icon"> 
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3ZM20 7.23792L12.0718 14.338L4 7.21594V19H20V7.23792ZM4.51146 5L12.0619 11.662L19.501 5H4.51146Z"></path></svg>
+                                                                
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                            </div>
+
+                        </div>
+
+                        <div class="inline-flex align-items-center mil-gap-8 justify-content-between mil-mb-30" >
+                            <p class="mil-text-lg mil-social-icons" style="text-align: center;"> <a href="termos-de-servico.html" target="_blank" rel="noopener noreferrer">Termos de serviço</a></p>
+                            <p class="mil-text-lg"> | </p>
+                            <p class="mil-text-lg mil-social-icons" style="text-align: center;"> <a href="politica-de-privacidade.html" target="_blank" rel="noopener noreferrer">Política de privacidade</a></p>
+
+
+                        </div>
+                            
+                    </div>
+
+                    <div class="col-lg-6 newsletter" id="newsletter">
+                        <h3 class="mil-mb-8">Inscreva-se na Newsletter</h3>
+                        <p class="mil-mb-16 mil-text-lg">Não fique por fora das novidades em próximos eventos.</p>
+
+                            <form action="https://formsubmit.co/leonardo.denega@hotmail.com" method="POST" data-swup-form="true">
+
+                                <title>Newsletter</title>
+
+                                
+
+                                <!-- Optional hidden fields -->
+                                <input type="hidden" name="_subject" value="Nova inscrição na Newsletter">
+                                <input type="hidden" name="_captcha" value="true">
+                                <input type="hidden" name="_next" value="https://talkout.today/obrigado.html"> <!-- personalize se quiser -->
+
+                                
+                                <!-- Email -->
+                                <label for="email" class="mil-mb-8">Digite seu Email <span style="color:red">*</span></label><br>
+                                <input type="email" id="email" name="email" placeholder="email@exemplo.com" required><br><br>
+
+                                <!-- Botão -->
+                                <button class="hero-card-btn" type="submit"><h5>Enviar</h5></button>
+
+                            </form>
+                    </div>
+
+                </div>
+        </footer>
+            <!-- footer end -->
+    
     <!-- wrapper end -->
 
     <!-- jQuery js -->
