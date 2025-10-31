@@ -5860,39 +5860,41 @@ images
 .mil-image-frame {
   position: relative;
   overflow: hidden;
-    flex-wrap: wrap;
-    border-radius: 16px;
-    min-height: 40vh;
-    height: 100%;
-    align-items: center;
-    min-width: 32vh;
-    width: 100%;
-
-    
-    justify-content: center;
-
-    
-}
-.mil-image-frame > img {
-  position: fixed;
-    height: 100%;
-    width: 100%;
-    object-fit: cover; /* Change to 'cover' if you prefer images to fill the container */
-    object-position: center;
-
+  border-radius: 16px;
+  width: 100%;
+  min-height: 40vh; /* keeps a visible area while content loads */
+  height: 100%;
+  background-color: #f3f4f6; /* subtle placeholder color */
+  display: block;
 }
 
+/* Make media inside the frame cover the area responsively */
+.mil-image-frame > img,
+.mil-image-frame > picture,
+.mil-image-frame > video {
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+  display: block;
+  max-width: none; /* prevent inline-image constraints */
+}
 
+/* Keep aspect-ratio helpers (existing .mil-horizontal / .mil-vertical classes use padding-bottom)
+   intact — absolute media will fill the padding box. */
+
+/* Slightly smaller min-height on narrow viewports */
 @media screen and (max-width: 768px) {
-  .mil-image-frame > img {
-  position: fixed;
-    
-    width: 100%;
-    object-fit: cover; /* Change to 'cover' if you prefer images to fill the container */
-    object-position: center;
-
- }
+  .mil-image-frame {
+    min-height: 240px;
+  }
 }
+
+
 
 
 @media screen and (max-width: 768px) {
