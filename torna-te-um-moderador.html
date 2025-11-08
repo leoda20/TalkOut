@@ -127,6 +127,16 @@
     </script>
 
 
+<script>
+  document.getElementById('clickButton').addEventListener('click', () => {
+    gtag('event', 'cta_click', {
+      'event_category': 'Engagement',
+      'event_label': 'Main CTA Button'
+    });
+  });
+</script>
+
+
 </head>
 
 <body>
@@ -326,7 +336,7 @@
                         
                     </div>
 
-                    <a href="/criar-evento.html" id="joinEvent" class="btn-primary" aria-label="Criar evento - formulário" style="display:inline-flex; align-items:center; gap:8px; justify-content:center;"  target="_blank" rel="noopener noreferrer" data-no-swup onclick="window.open(this.href,'_blank');return false;">
+                    <a href="/criar-evento.html" id="clickButton" class="btn-primary" aria-label="Criar evento - formulário" style="display:inline-flex; align-items:center; gap:8px; justify-content:center;"  target="_blank" rel="noopener noreferrer" data-no-swup onclick="window.open(this.href,'_blank');return false;">
                             <h5  style="margin:0;">Criar evento</h5>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="display:block;">
                                 <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
