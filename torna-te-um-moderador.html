@@ -43,143 +43,27 @@
         
     </style>
 
-    <!-- Google tag (gtag.js) -->
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7FKSHVRZ0L"></script>
     <script>
-        const MEASUREMENT_ID = 'G-7FKSHVRZ0L';
-
-        // Buffering gtag
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-
-        // Default: deny storage until user consents
-        gtag('consent', 'default', {
-                'ad_storage': 'denied',
-                'analytics_storage': 'denied',
-                'ad_user_data': 'denied',
-                'ad_personalization': 'denied',
-                'wait_for_update': 500
-        });
-
-        // Initialize gtag but don't send the automatic page_view yet
-        gtag('js', new Date());
-        gtag('config', MEASUREMENT_ID, { 'send_page_view': false });
-    </script>
-
-    <!-- 🔵 Script de controlo dos botões (aguarda o DOM) -->
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-            const banner = document.getElementById('cookie-banner');
-            const acceptBtn = document.getElementById('acceptCookies');
-            const declineBtn = document.getElementById('declineCookies');
-            const clickBtn = document.getElementById('clickButton');
-
-            const stored = localStorage.getItem('cookieConsent');
-
-            // If user already chose, apply consent and hide banner
-            if (stored === 'accepted') {
-                    gtag('consent', 'update', {
-                            'ad_storage': 'granted',
-                            'analytics_storage': 'granted',
-                            'ad_user_data': 'granted',
-                            'ad_personalization': 'granted'
-                    });
-                    // send the page_view now that analytics is allowed
-                    gtag('event', 'page_view', { 'send_to': MEASUREMENT_ID });
-                    if (banner) banner.style.display = 'none';
-            } else if (stored === 'declined') {
-                    gtag('consent', 'update', {
-                            'ad_storage': 'denied',
-                            'analytics_storage': 'denied',
-                            'ad_user_data': 'denied',
-                            'ad_personalization': 'denied'
-                    });
-                    if (banner) banner.style.display = 'none';
-            } else {
-                    // no choice yet -> show banner (if present)
-                    if (banner) banner.style.display = 'flex';
-            }
-
-            if (acceptBtn) {
-                    acceptBtn.addEventListener('click', () => {
-                            gtag('consent', 'update', {
-                                    'ad_storage': 'granted',
-                                    'analytics_storage': 'granted',
-                                    'ad_user_data': 'granted',
-                                    'ad_personalization': 'granted'
-                            });
-                            localStorage.setItem('cookieConsent', 'accepted');
-                            if (banner) banner.style.display = 'none';
-                            // Send initial page_view after consent
-                            gtag('event', 'page_view', { 'send_to': MEASUREMENT_ID });
-                    });
-            }
-
-            if (declineBtn) {
-                    declineBtn.addEventListener('click', () => {
-                            gtag('consent', 'update', {
-                                    'ad_storage': 'denied',
-                                    'analytics_storage': 'denied',
-                                    'ad_user_data': 'denied',
-                                    'ad_personalization': 'denied'
-                            });
-                            localStorage.setItem('cookieConsent', 'declined');
-                            if (banner) banner.style.display = 'none';
-                    });
-            }
-
-            // CTA click: respect consent and send GA4 event usable by Tag Assistant
-            if (clickBtn) {
-                    clickBtn.addEventListener('click', (e) => {
-                            const consent = localStorage.getItem('cookieConsent');
-                            // Only send if user previously accepted analytics
-                            if (consent === 'accepted') {
-                                    gtag('event', 'cta_click', {
-                                            'send_to': MEASUREMENT_ID,
-                                            'event_category': 'Engagement',
-                                            'event_label': 'Main CTA Button',
-                                            'transport_type': 'beacon'
-                                    });
-                            } else {
-                                    // If you want to always send regardless of consent (not recommended),
-                                    // remove the consent check above. Keeping it ensures Tag Assistant will
-                                    // see the event only when analytics consent is granted.
-                            }
-                            // Do not prevent default behavior; anchor opens in new tab per markup.
-                    });
-            }
+    document.getElementById('clickButton').addEventListener('click', () => {
+        fetch('https://script.google.com/macros/s/AKfycbydudxXRHwqlS7iTLtghNMg_0qSz-Ur3guAu6Cp77-k8te-sd_4noV5YNe4HyAC17xP/exec', {  // replace with your Web App URL
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            button: 'Main CTA',
+            page: window.location.pathname
+        })
+        })
+        .then(res => res.json())
+        .then(data => console.log('Logged:', data))
+        .catch(err => console.error('Error logging click:', err));
     });
     </script>
-
-
+    
+    
 </head>
 
 <body>
 
-    <div id="cookie-banner" style="
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: #fff;
-    border-top: 1px solid #ddd;
-    padding: 1rem;
-    box-shadow: 0 -2px 6px rgba(0,0,0,0.05);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: sans-serif;
-    z-index: 9999;
-    ">
-    <p style="margin: 0; font-size: 14px; color: #333;">
-        Utilizamos cookies para melhorar a sua experiência. Pode aceitar ou recusar o uso de cookies analíticos.
-    </p>
-    <div>
-        <button id="acceptCookies" style="background:#007bff;color:#fff;border:none;padding:8px 14px;border-radius:6px;cursor:pointer;">Aceitar</button>
-        <button id="declineCookies" style="background:#ccc;color:#333;border:none;padding:8px 14px;border-radius:6px;cursor:pointer;margin-left:8px;">Recusar</button>
-    </div>
-    </div>
 
     
     <!-- wrapper -->
