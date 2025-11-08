@@ -339,30 +339,25 @@
 
     
     <!-- Google tag (gtag.js) -->
+    
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7FKSHVRZ0L"></script>
     <script>
+    // Cria o dataLayer se ainda não existir
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+
+    // Define o consentimento padrão (tudo negado até o usuário aceitar)
     gtag('consent', 'default', {
-    'ad_storage': 'denied',
-    'analytics_storage': 'denied',
-    'ad_user_data': 'denied',
-    'ad_personalization': 'denied'
-     });
-    
-    gtag('js', new Date() );
-
-    gtag('config', 'G-7FKSHVRZ0L');
-    </script>
-
-
-    <script>
-    document.getElementById('joinEvent').addEventListener('click', () => {
-        gtag('event', 'join_event_click', {
-        'event_category': 'Engagement',
-        'event_label': 'Join Event Button'
-        });
+        'ad_storage': 'denied',
+        'analytics_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'wait_for_update': 500 // opcional: aguarda o banner responder
     });
+
+    // Inicializa o GA4
+    gtag('js', new Date());
+    gtag('config', 'G-7FKSHVRZ0L'); // substitua pelo seu ID do Google Analytics 4
     </script>
 
 
