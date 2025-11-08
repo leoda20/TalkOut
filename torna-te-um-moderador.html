@@ -60,9 +60,56 @@
         'wait_for_update': 500 // opcional: aguarda o banner responder
     });
 
-    // Inicializa o GA4 sem enviar page_view até o usuário conceder consentimento
+    // Inicializa o GA4
     gtag('js', new Date());
-    gtag('config', 'G-7FKSHVRZ0L', { 'send_page_view': false }); // substitua pelo seu ID do Google Analytics 4
+    gtag('config', 'G-7FKSHVRZ0L'); // substitua pelo seu ID do Google Analytics 4
+    </script>
+
+
+    
+    <p style="margin: 0; font-size: 14px; color: #333;">
+        Utilizamos cookies para melhorar a sua experiência. Pode aceitar ou recusar o uso de cookies analíticos.
+    </p>
+    <div>
+        <button id="acceptCookies" style="background:#007bff;color:#fff;border:none;padding:8px 14px;border-radius:6px;cursor:pointer;">Aceitar</button>
+        <button id="declineCookies" style="background:#ccc;color:#333;border:none;padding:8px 14px;border-radius:6px;cursor:pointer;margin-left:8px;">Recusar</button>
+    </div>
+    </div>
+
+    <!-- 🔵 Script de controle dos botões -->
+    <script>
+    const banner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('acceptCookies');
+    const declineBtn = document.getElementById('declineCookies');
+
+    // Esconde o banner se já houver escolha salva
+    if (localStorage.getItem('cookieConsent')) {
+        banner.style.display = 'none';
+    }
+
+    // Quando o usuário aceita
+    acceptBtn.addEventListener('click', () => {
+        gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'analytics_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted'
+        });
+        localStorage.setItem('cookieConsent', 'accepted');
+        banner.style.display = 'none';
+    });
+
+    // Quando o usuário recusa
+    declineBtn.addEventListener('click', () => {
+        gtag('consent', 'update', {
+        'ad_storage': 'denied',
+        'analytics_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied'
+        });
+        localStorage.setItem('cookieConsent', 'declined');
+        banner.style.display = 'none';
+    });
     </script>
 
 
@@ -72,6 +119,22 @@
 </head>
 
 <body>
+
+    <div id="cookie-banner" style="
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid #ddd;
+    padding: 1rem;
+    box-shadow: 0 -2px 6px rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: sans-serif;
+    z-index: 9999;
+    ">
 
     
     <!-- wrapper -->
@@ -130,109 +193,12 @@
                         <img src="https://flagcdn.com/w40/pt.png" alt="Português" style="width:20px;">
                         <span>PT</span>
                     </a>
-</head>
-
-<body>
-
-    <div id="cookie-banner" style="
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: #fff;
-    border-top: 1px solid #ddd;
-    padding: 1rem;
-    box-shadow: 0 -2px 6px rgba(0,0,0,0.05);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: sans-serif;
-    z-index: 9999;
-    " role="dialog" aria-live="polite" aria-label="Cookie consent banner">
-    <p style="margin: 0; font-size: 14px; color: #333;">
-        Utilizamos cookies para melhorar a sua experiência. Pode aceitar ou recusar o uso de cookies analíticos.
-    </p>
-    <div>
-        <button id="acceptCookies" style="background:#007bff;color:#fff;border:none;padding:8px 14px;border-radius:6px;cursor:pointer;">Aceitar</button>
-        <button id="declineCookies" style="background:#ccc;color:#333;border:none;padding:8px 14px;border-radius:6px;cursor:pointer;margin-left:8px;">Recusar</button>
-    </div>
+                </div>
+            </nav>
+        </div>
     </div>
 
-    <script>
-    // Controla o banner de consentimento e integra com gtag de forma compatível com CMP rules.
-    document.addEventListener('DOMContentLoaded', function () {
-        const banner = document.getElementById('cookie-banner');
-        const acceptBtn = document.getElementById('acceptCookies');
-        const declineBtn = document.getElementById('declineCookies');
-        const joinBtn = document.getElementById('joinEvent');
-
-        // utilitário seguro para esconder banner se elemento existir
-        function hideBanner() {
-            if (banner) banner.style.display = 'none';
-        }
-
-        // Se já houver escolha, esconde o banner
-        const stored = localStorage.getItem('cookieConsent');
-        if (stored) hideBanner();
-
-        // Atualiza o estado de consentimento do gtag e grava a escolha localmente
-        function setConsent(accepted) {
-            if (accepted) {
-                gtag('consent', 'update', {
-                    'ad_storage': 'granted',
-                    'analytics_storage': 'granted',
-                    'ad_user_data': 'granted',
-                    'ad_personalization': 'granted'
-                });
-                // opcional: envie page_view agora que temos consentimento
-                gtag('event', 'page_view', { 'send_to': 'G-7FKSHVRZ0L' });
-                localStorage.setItem('cookieConsent', 'accepted');
-            } else {
-                gtag('consent', 'update', {
-                    'ad_storage': 'denied',
-                    'analytics_storage': 'denied',
-                    'ad_user_data': 'denied',
-                    'ad_personalization': 'denied'
-                });
-                localStorage.setItem('cookieConsent', 'declined');
-            }
-            hideBanner();
-        }
-
-        if (acceptBtn) {
-            acceptBtn.addEventListener('click', function () {
-                setConsent(true);
-            });
-        }
-        if (declineBtn) {
-            declineBtn.addEventListener('click', function () {
-                setConsent(false);
-            });
-        }
-
-        // Envia evento de clique no botão "Criar evento" somente se o usuário tiver consentido em analytics
-        if (joinBtn) {
-            joinBtn.addEventListener('click', function () {
-                try {
-                    if (localStorage.getItem('cookieConsent') === 'accepted') {
-                        // use transport_type 'beacon' para aumentar a chance de envio em navegação rápida
-                        gtag('event', 'join_event_click', {
-                            'event_category': 'engagement',
-                            'event_label': 'Criar evento',
-                            'transport_type': 'beacon',
-                            'send_to': 'G-7FKSHVRZ0L'
-                        });
-                    }
-                } catch (e) {
-                    // não bloquear navegação se gtag não estiver disponível
-                    console.error(e);
-                }
-            });
-        }
-    });
-    </script>
-
-    <!-- wrapper -->
+    <!-- Spacer to offset the fixed header so page content isn't hidden -->
     <div style="height: 64px;"></div>
 
 
