@@ -65,9 +65,72 @@
     gtag('config', 'G-7FKSHVRZ0L'); // substitua pelo seu ID do Google Analytics 4
     </script>
 
+
+
+
 </head>
 
 <body>
+
+    <div id="cookie-banner" style="
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid #ddd;
+    padding: 1rem;
+    box-shadow: 0 -2px 6px rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: sans-serif;
+    z-index: 9999;
+    ">
+    <p style="margin: 0; font-size: 14px; color: #333;">
+        Utilizamos cookies para melhorar a sua experiência. Pode aceitar ou recusar o uso de cookies analíticos.
+    </p>
+    <div>
+        <button id="acceptCookies" style="background:#007bff;color:#fff;border:none;padding:8px 14px;border-radius:6px;cursor:pointer;">Aceitar</button>
+        <button id="declineCookies" style="background:#ccc;color:#333;border:none;padding:8px 14px;border-radius:6px;cursor:pointer;margin-left:8px;">Recusar</button>
+    </div>
+    </div>
+
+    <!-- 🔵 Script de controle dos botões -->
+    <script>
+    const banner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('acceptCookies');
+    const declineBtn = document.getElementById('declineCookies');
+
+    // Esconde o banner se já houver escolha salva
+    if (localStorage.getItem('cookieConsent')) {
+        banner.style.display = 'none';
+    }
+
+    // Quando o usuário aceita
+    acceptBtn.addEventListener('click', () => {
+        gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'analytics_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted'
+        });
+        localStorage.setItem('cookieConsent', 'accepted');
+        banner.style.display = 'none';
+    });
+
+    // Quando o usuário recusa
+    declineBtn.addEventListener('click', () => {
+        gtag('consent', 'update', {
+        'ad_storage': 'denied',
+        'analytics_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied'
+        });
+        localStorage.setItem('cookieConsent', 'declined');
+        banner.style.display = 'none';
+    });
+    </script>
 
     <!-- wrapper -->
     
