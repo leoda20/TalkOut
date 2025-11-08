@@ -47,66 +47,84 @@
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7FKSHVRZ0L"></script>
     <script>
-    // Cria o dataLayer se ainda não existir
+    // Buffering gtag
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
 
-    // Define o consentimento padrão (tudo negado até o usuário aceitar)
+    // Default: deny storage until user consents
     gtag('consent', 'default', {
         'ad_storage': 'denied',
         'analytics_storage': 'denied',
         'ad_user_data': 'denied',
         'ad_personalization': 'denied',
-        'wait_for_update': 500 // opcional: aguarda o banner responder
+        'wait_for_update': 500
     });
 
-    // Inicializa o GA4
+    // Initialize gtag but don't send the automatic page_view yet
     gtag('js', new Date());
-    gtag('config', 'G-7FKSHVRZ0L'); // substitua pelo seu ID do Google Analytics 4
+    gtag('config', 'G-7FKSHVRZ0L', { 'send_page_view': false });
     </script>
 
-
-    
-    
-
-    <!-- 🔵 Script de controle dos botões -->
+    <!-- 🔵 Script de controlo dos botões (aguarda o DOM) -->
     <script>
-    const banner = document.getElementById('cookie-banner');
-    const acceptBtn = document.getElementById('acceptCookies');
-    const declineBtn = document.getElementById('declineCookies');
+    document.addEventListener('DOMContentLoaded', () => {
+        const banner = document.getElementById('cookie-banner');
+        const acceptBtn = document.getElementById('acceptCookies');
+        const declineBtn = document.getElementById('declineCookies');
 
-    // Esconde o banner se já houver escolha salva
-    if (localStorage.getItem('cookieConsent')) {
-        banner.style.display = 'none';
-    }
+        const stored = localStorage.getItem('cookieConsent');
 
-    // Quando o usuário aceita
-    acceptBtn.addEventListener('click', () => {
-        gtag('consent', 'update', {
-        'ad_storage': 'granted',
-        'analytics_storage': 'granted',
-        'ad_user_data': 'granted',
-        'ad_personalization': 'granted'
+        // If user already chose, apply consent and hide banner
+        if (stored === 'accepted') {
+            gtag('consent', 'update', {
+                'ad_storage': 'granted',
+                'analytics_storage': 'granted',
+                'ad_user_data': 'granted',
+                'ad_personalization': 'granted'
+            });
+            // send the page_view now that analytics is allowed
+            gtag('event', 'page_view', { 'send_to': 'G-7FKSHVRZ0L' });
+            if (banner) banner.style.display = 'none';
+        } else if (stored === 'declined') {
+            gtag('consent', 'update', {
+                'ad_storage': 'denied',
+                'analytics_storage': 'denied',
+                'ad_user_data': 'denied',
+                'ad_personalization': 'denied'
+            });
+            if (banner) banner.style.display = 'none';
+        } else {
+            // no choice yet -> show banner (if present)
+            if (banner) banner.style.display = 'flex';
+        }
+
+        if (!acceptBtn || !declineBtn) return;
+
+        acceptBtn.addEventListener('click', () => {
+            gtag('consent', 'update', {
+                'ad_storage': 'granted',
+                'analytics_storage': 'granted',
+                'ad_user_data': 'granted',
+                'ad_personalization': 'granted'
+            });
+            localStorage.setItem('cookieConsent', 'accepted');
+            if (banner) banner.style.display = 'none';
+            // Send initial page_view after consent
+            gtag('event', 'page_view', { 'send_to': 'G-7FKSHVRZ0L' });
         });
-        localStorage.setItem('cookieConsent', 'accepted');
-        banner.style.display = 'none';
-    });
 
-    // Quando o usuário recusa
-    declineBtn.addEventListener('click', () => {
-        gtag('consent', 'update', {
-        'ad_storage': 'denied',
-        'analytics_storage': 'denied',
-        'ad_user_data': 'denied',
-        'ad_personalization': 'denied'
+        declineBtn.addEventListener('click', () => {
+            gtag('consent', 'update', {
+                'ad_storage': 'denied',
+                'analytics_storage': 'denied',
+                'ad_user_data': 'denied',
+                'ad_personalization': 'denied'
+            });
+            localStorage.setItem('cookieConsent', 'declined');
+            if (banner) banner.style.display = 'none';
         });
-        localStorage.setItem('cookieConsent', 'declined');
-        banner.style.display = 'none';
     });
     </script>
-
-
-
 
 
 </head>
