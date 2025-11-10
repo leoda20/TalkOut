@@ -450,7 +450,7 @@
 
             </a>
 
-            <a class="event-card col-lg-3" href="Espanhol-e-Cafe-Hablando-Sin-Prisa.html">
+            <a class="event-card col-lg-3" href="Espanhol-e-Cafe-Hablando-Sin-Prisa.html"  id="event-card-1">
 
 
                 <div class="mil-blog-card">
@@ -527,6 +527,14 @@
                 
 
             </a>
+
+            <script>
+                document.getElementById('event-card-1').addEventListener('click', function(e){
+                e.preventDefault(); // stops navigation
+                // do whatever you want instead (open modal, ajax, route in SPA, etc.)
+                console.log('card clicked — navigation prevented');
+                });
+                </script>
 
 
                 
