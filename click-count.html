@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- bootstrap grid css -->
+    <link rel="stylesheet" href="css/plugins/bootstrap-grid.css">
+    <!-- font awesome css -->
+    <link rel="stylesheet" href="css/plugins/font-awesome.min.css">
+    <!-- font awesome css -->
+    <script src="https://kit.fontawesome.com/10bed73ca6.js" crossorigin="anonymous"></script>
+    <!-- swiper css -->
+    <link rel="stylesheet" href="css/plugins/swiper.min.css">
+    <!-- fancybox css -->
+    <link rel="stylesheet" href="css/plugins/fancybox.min.css">
+    <!-- ashley scss -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- page name -->
+    <title>Torna-te um Moderador - TalkOut
+    </title>
+    <link rel="icon" type="image/png" href="img/photo/new-favicon.png">
+
+    <style>
+        /* CTA card: fixed on wider screens, pinned to bottom on small screens */
+        
+        .cta-card {
+            padding:24px;
+            border-radius:16px;
+            color:#fff;
+            height: fit-content;
+            width:100%;
+
+            background-image: url('/img/photo/new-bg-gradient.png');
+            background-size: cover;        /* cover entire area */
+            background-position: center;   /* center the image */
+            background-repeat: no-repeat;  /* prevent repeating */
+            background-attachment: fixed;
+        }
+        
+    </style>
+
+    
+
+
+
+    <script>
+    // Wait until DOM is ready, then attach listeners to elements marked with .track-click
+    document.addEventListener('DOMContentLoaded', function () {
+        const url = 'https://script.google.com/macros/s/AKfycbyTkT7nBOltSOSN2hHsC09AePBSeKcUnR_3pnOmIlxGBUq14gKslvHKNqbm_MXYza-t/exec'; // replace with your published Web App URL (exec)
+        document.querySelectorAll('.track-click').forEach(el => {
+            el.addEventListener('click', function (e) {
+                // Determine a label for the clicked element
+                const label = el.dataset.label || (el.innerText || el.textContent || '').trim() || 'unknown';
+                const payload = { button: label, page: window.location.pathname };
+
+                fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                })
+                .then(res => {
+                    // Some Apps Script deployments return plain text; try to parse JSON but fall back to text
+                    if (!res.ok) throw new Error('Network response was not ok: ' + res.status);
+                    return res.text();
+                })
+                .then(text => {
+                    try {
+                        const json = JSON.parse(text);
+                        console.log('Logged:', json);
+                    } catch (err) {
+                        console.log('Logged response (non-JSON):', text);
+                    }
+                })
+                .catch(err => console.error('Error logging click:', err));
+            });
+        });
+    });
+    </script>
+
+    <script>
+    const WEBAPP_URL = "https://script.google.com/macros/s/AKfycbyTkT7nBOltSOSN2hHsC09AePBSeKcUnR_3pnOmIlxGBUq14gKslvHKNqbm_MXYza-t/exec";
+
+    document.getElementById("clickButton").addEventListener("click", function() {
+    fetch(WEBAPP_URL, {
+        method: "POST",
+        mode: "no-cors", // <-- evita bloqueio CORS
+        body: JSON.stringify({
+        button: "Main CTA",
+        page: window.location.pathname
+        })
+    });
+    });
+    </script>
+    
+    
+</head>
+
+<body>
+
+    <button class="track-click" data-label="Header Click">Click me</button>
+    
+            
+
+    
+
+
+    
+    
+   
+
+    <!-- jQuery js -->
+    <script src="js/plugins/jquery.min.js"></script>
+    <!-- swup js -->
+    <script src="js/plugins/swiper.min.js"></script>
+    <!-- fancybox js -->
+    <script src="js/plugins/fancybox.min.js"></script>
+    <!-- gsap js -->
+    <script src="js/plugins/gsap.min.js"></script>
+    <!-- scroll smoother -->
+    <script src="js/plugins/smooth-scroll.js"></script>
+    <!-- scroll trigger js -->
+    <script src="js/plugins/ScrollTrigger.min.js"></script>
+    <!-- scroll to js -->
+    <script src="js/plugins/ScrollTo.min.js"></script>
+    <!-- ashley js -->
+    <script src="js/main.js"></script>
+
+    
+    
+
+
+</body>
+
+</html>
