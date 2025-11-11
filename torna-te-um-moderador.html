@@ -87,8 +87,7 @@
     document.getElementById("clickButton").addEventListener("click", function() {
     fetch(WEBAPP_URL, {
         method: "POST",
-        mode: "no-cors", // <- chave para evitar o bloqueio CORS
-        headers: { "Content-Type": "application/json" },
+        mode: "no-cors", // <-- evita bloqueio CORS
         body: JSON.stringify({
         button: "Main CTA",
         page: window.location.pathname
