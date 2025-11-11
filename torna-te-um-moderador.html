@@ -44,18 +44,36 @@
     </style>
 
     <script>
-    document.getElementById('clickButton').addEventListener('click', () => {
-        fetch('https://script.google.com/macros/s/AKfycbznbTRwklFap_RM-Jumq4jiBYXtHTTBq2Cn4I3zqMM/dev', {  // replace with your Web App URL
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            button: 'Main CTA',
-            page: window.location.pathname
-        })
-        })
-        .then(res => res.json())
-        .then(data => console.log('Logged:', data))
-        .catch(err => console.error('Error logging click:', err));
+    // Wait until DOM is ready, then attach listeners to elements marked with .track-click
+    document.addEventListener('DOMContentLoaded', function () {
+        const url = 'https://script.google.com/macros/s/AKfycbznbTRwklFap_RM-Jumq4jiBYXtHTTBq2Cn4I3zqMM/dev'; // replace with your published Web App URL (exec)
+        document.querySelectorAll('.track-click').forEach(el => {
+            el.addEventListener('click', function (e) {
+                // Determine a label for the clicked element
+                const label = el.dataset.label || (el.innerText || el.textContent || '').trim() || 'unknown';
+                const payload = { button: label, page: window.location.pathname };
+
+                fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                })
+                .then(res => {
+                    // Some Apps Script deployments return plain text; try to parse JSON but fall back to text
+                    if (!res.ok) throw new Error('Network response was not ok: ' + res.status);
+                    return res.text();
+                })
+                .then(text => {
+                    try {
+                        const json = JSON.parse(text);
+                        console.log('Logged:', json);
+                    } catch (err) {
+                        console.log('Logged response (non-JSON):', text);
+                    }
+                })
+                .catch(err => console.error('Error logging click:', err));
+            });
+        });
     });
     </script>
     
@@ -65,8 +83,13 @@
 <body>
 
     
+    
+            
+
+    
 
 
+    
     
     <!-- wrapper -->
     
@@ -76,6 +99,8 @@
             <a href="index.html" style="cursor: pointer;">
                 <img class="logo-24" src="img/photo/in-line-logo.svg" alt="image">
             </a>
+
+            <button class="track-click" data-label="Header Click">Click me</button>
 
             <!-- Desktop nav -->
             <div class="desktop-nav inline-flex justify-content-center align-items-center " style="gap:4px;">
@@ -101,8 +126,7 @@
     <!-- Spacer to offset the fixed header so page content isn't hidden -->
     <div style="height: 64px;"></div>
 
-    <button id="clickButton">Click me</button>
-            
+    
     
 
 
@@ -189,7 +213,7 @@
                         <p >Revê as informações e publica. Depois, partilha o link para atrair participantes.</p>
 
                     </div>
-                </div>
+                    <a href="/criar-evento.html" class="btn-primary track-click" data-label="Criar evento CTA" aria-label="Criar evento - formulário" style="display:inline-flex; align-items:center; gap:8px; justify-content:center;"  target="_blank" rel="noopener noreferrer" data-no-swup onclick="window.open(this.href,'_blank');return false;">
             </div>
 
             <!-- Right: CTA (smaller column) -->
