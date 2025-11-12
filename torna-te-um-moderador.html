@@ -46,55 +46,6 @@
     
 
 
-
-    <script>
-    // Wait until DOM is ready, then attach listeners to elements marked with .track-click
-    document.addEventListener('DOMContentLoaded', function () {
-        const url = 'https://script.google.com/macros/s/AKfycbyTkT7nBOltSOSN2hHsC09AePBSeKcUnR_3pnOmIlxGBUq14gKslvHKNqbm_MXYza-t/exec'; // replace with your published Web App URL (exec)
-        document.querySelectorAll('.track-click').forEach(el => {
-            el.addEventListener('click', function (e) {
-                // Determine a label for the clicked element
-                const label = el.dataset.label || (el.innerText || el.textContent || '').trim() || 'unknown';
-                const payload = { button: label, page: window.location.pathname };
-
-                fetch(url, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                })
-                .then(res => {
-                    // Some Apps Script deployments return plain text; try to parse JSON but fall back to text
-                    if (!res.ok) throw new Error('Network response was not ok: ' + res.status);
-                    return res.text();
-                })
-                .then(text => {
-                    try {
-                        const json = JSON.parse(text);
-                        console.log('Logged:', json);
-                    } catch (err) {
-                        console.log('Logged response (non-JSON):', text);
-                    }
-                })
-                .catch(err => console.error('Error logging click:', err));
-            });
-        });
-    });
-    </script>
-
-    <script>
-    const WEBAPP_URL = "https://script.google.com/macros/s/AKfycbyTkT7nBOltSOSN2hHsC09AePBSeKcUnR_3pnOmIlxGBUq14gKslvHKNqbm_MXYza-t/exec";
-
-    document.getElementById("clickButton").addEventListener("click", function() {
-    fetch(WEBAPP_URL, {
-        method: "POST",
-        mode: "no-cors", // <-- evita bloqueio CORS
-        body: JSON.stringify({
-        button: "Main CTA",
-        page: window.location.pathname
-        })
-    });
-    });
-    </script>
     
     
 </head>
@@ -262,6 +213,29 @@
             </div>
             
         </div>
+
+
+        <script>
+            const WEBAPP_URL = "https://script.google.com/macros/s/AKfycbyTkT7nBOltSOSN2hHsC09AePBSeKcUnR_3pnOmIlxGBUq14gKslvHKNqbm_MXYza-t/exec";
+
+            document.addEventListener("DOMContentLoaded", () => {
+            const button = document.getElementById("clickButton");
+
+            button.addEventListener("click", () => {
+                const formData = new FormData();
+                formData.append("button", button.dataset.label || "Main CTA");
+                formData.append("page", window.location.pathname);
+
+                fetch(WEBAPP_URL, {
+                method: "POST",
+                mode: "no-cors",
+                body: formData
+                });
+
+                console.log("Click sent!");
+            });
+            });
+        </script>
     </section>
 
     
