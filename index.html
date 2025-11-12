@@ -879,16 +879,17 @@
 
                                 <!-- Optional hidden fields -->
                                 <input type="hidden" name="_subject" value="Nova inscrição na Newsletter">
-                                <input type="hidden" name="_captcha" value="true">
+                                <input type="hidden" name="_captcha" value="false">
                                 <input type="hidden" name="_next" value="https://talkout.today/obrigado.html"> <!-- personalize se quiser -->
 
                                 
                                 <!-- Email -->
                                 <label for="email" class="mil-mb-8">Digite seu Email <span style="color:red">*</span></label><br>
                                 <input type="email" id="email" name="email" placeholder="email@exemplo.com" required><br><br>
+                                
 
                                 <!-- Botão -->
-                                <button class="hero-card-btn" type="submit"><h5>Enviar</h5></button>
+                                <button class="hero-card-btn" type="submit" class="g-recaptcha" data-sitekey="6LcQzAosAAAAAG3eEdwVN7pRLawVjOTzUHAr3Bzc" data-callback='onSubmit'><h5>Enviar</h5></button>
 
                             </form>
                     </div>
@@ -917,6 +918,12 @@
     <script src="js/plugins/ScrollTo.min.js"></script>
     <!-- ashley js -->
     <script src="js/main.js"></script>
+
+    <script>
+    function onSubmit(token) {
+    document.getElementById("newsletter-form").submit();
+    }
+    </script>
 
 </body>
 

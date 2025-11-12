@@ -192,7 +192,7 @@
                     <h3 class="mil-mb-8">Inscreva-se na Newsletter</h3>
                     <p class="mil-mb-16 mil-text-lg">Não fique por fora das novidades em próximos eventos.</p>
 
-                        <form action="https://formsubmit.co/info@talkout.today" method="POST" data-swup-form="true">
+                        <form action="https://formsubmit.co/leonardo.denega@hotmail.com" method="POST" data-swup-form="true">
 
                             <title>Newsletter</title>
 
@@ -207,9 +207,10 @@
                             <!-- Email -->
                             <label for="email" class="mil-mb-8">Digite seu Email <span style="color:red">*</span></label><br>
                             <input type="email" id="email" name="email" placeholder="email@exemplo.com" required><br><br>
+                            
 
                             <!-- Botão -->
-                            <button class="hero-card-btn" type="submit"><h5>Enviar</h5></button>
+                            <button class="hero-card-btn" type="submit" class="g-recaptcha" data-sitekey="6LcQzAosAAAAAG3eEdwVN7pRLawVjOTzUHAr3Bzc" data-callback='onSubmit'><h5>Enviar</h5></button>
 
                         </form>
                 </div>
@@ -253,6 +254,12 @@
     </script>
 
     <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+
+    <script>
+    function onSubmit(token) {
+    document.getElementById("newsletter-form").submit();
+    }
+    </script>
 
 </body>
 
