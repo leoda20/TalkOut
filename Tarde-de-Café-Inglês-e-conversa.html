@@ -133,7 +133,30 @@
 
                     
 
-                    <a href="https://buy.stripe.com/dRm5kDdUL6JMcWF75x1ck02" class="hero-card-btn" style="width: 100%; align-items: center; justify-content: center;" role="button" target="_blank" rel="noopener noreferrer" data-no-swup onclick="window.open(this.href,'_blank');return false;"><h5>Quero Participar</h5></a>
+                    <a href="https://buy.stripe.com/dRm5kDdUL6JMcWF75x1ck02" class="hero-card-btn" style="width: 100%; align-items: center; justify-content: center;" role="button" id="clickButton" target="_blank" rel="noopener noreferrer" data-no-swup onclick="window.open(this.href,'_blank');return false;"><h5>Quero Participar</h5></a>
+
+
+                    <script>
+                        const WEBAPP_URL = "https://script.google.com/macros/s/AKfycbwRmyLrF4T6kMm6NB3YC-va4SV38QV_2PypXqPjdPSZ0jtYXt5DbGeCO3EFfrDW54mz/exec";
+
+                        document.addEventListener("DOMContentLoaded", () => {
+                        const button = document.getElementById("clickButton");
+
+                        button.addEventListener("click", () => {
+                            const formData = new FormData();
+                            formData.append("button", button.dataset.label || "Main CTA");
+                            formData.append("page", window.location.pathname);
+
+                            fetch(WEBAPP_URL, {
+                            method: "POST",
+                            mode: "no-cors",
+                            body: formData
+                            });
+
+                            console.log("Click sent!");
+                        });
+                        });
+                    </script>
                     
                     <p style="width:100%; margin-bottom:8px; gap:4px; font-size: 12px;"><span class="btn-link">Termos de Serviço</span><br>
                         e <span class="btn-link">Política de privacidade</span>
