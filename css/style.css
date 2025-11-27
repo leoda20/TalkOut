@@ -384,9 +384,8 @@ blockquote {
   text-transform: uppercase;
   width: fit-content;
   gap: 4px;
-  position: relative;
-  top:-30px;
-  left: 8px;
+  margin-top: 8px;
+  margin-bottom: 8px;
   
 }
 
@@ -3687,7 +3686,7 @@ footer
 .footer-content{
   border-radius:  32px 32px 0 0;
   display: flex;
-  background-color: #1C1917;
+  background-color: #1c1c1c;
   align-items: center;
   justify-items: center;
   padding-top: 48px;
@@ -3695,7 +3694,7 @@ footer
 }
 
 .footer-content p {
-  color: #FAE8FF;
+  color: #ffffff;
 }
 
 .footer-content .newsletter {
