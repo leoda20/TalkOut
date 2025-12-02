@@ -99,16 +99,43 @@
            
 
 
-    <div class="container mil-p-120-120">
-
+    <body>
         <form id="login-form">
             <input type="email" id="email" placeholder="Email" required />
             <button type="submit">Send Magic Link</button>
         </form>
-
         <p id="message"></p>
 
-    </div>
+        <!-- 1️⃣ Load Supabase library first -->
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+        <!-- 2️⃣ Then initialize Supabase -->
+        <script>
+            const SUPABASE_URL = 'https://YOUR-PROJECT-ID.supabase.co';
+            const SUPABASE_ANON_KEY = 'YOUR-ANON-KEY';
+
+            const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        </script>
+
+        <!-- 3️⃣ Then your login logic -->
+        <script>
+            const form = document.getElementById('login-form');
+            const message = document.getElementById('message');
+
+            form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+
+            const { data, error } = await sb.auth.signInWithOtp({ email });
+
+            if (error) {
+                message.textContent = 'Error: ' + error.message;
+            } else {
+                message.textContent = 'Check your email for a login link!';
+            }
+            });
+        </script>
+        </body>
 
             
     <footer id="footer" class="footer-content" >
