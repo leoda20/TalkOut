@@ -99,43 +99,16 @@
            
 
 
-    <body>
+    <div>
         <form id="login-form">
             <input type="email" id="email" placeholder="Email" required />
             <button type="submit">Send Magic Link</button>
         </form>
         <p id="message"></p>
 
-        <!-- 1️⃣ Load Supabase library first -->
-        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>//or<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+        <button id="logout">Logout</button>
 
-        <!-- 2️⃣ Then initialize Supabase -->
-        <script>
-            const SUPABASE_URL = 'https://ovomjuqotkdxcselclqp.supabase.co';
-            const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im92b21qdXFvdGtkeGNzZWxjbHFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQ2OTU3MDYsImV4cCI6MjA4MDI3MTcwNn0.w35Nc9oe7rgYCyu4Obomno8WgrD4zIUf4fk5p-QY3Uo';
-
-            const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-        </script>
-
-        <!-- 3️⃣ Then your login logic -->
-        <script>
-            const form = document.getElementById('login-form');
-            const message = document.getElementById('message');
-
-            form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const email = document.getElementById('email').value;
-
-            const { data, error } = await sb.auth.signInWithOtp({ email });
-
-            if (error) {
-                message.textContent = 'Error: ' + error.message;
-            } else {
-                message.textContent = 'Check your email for a login link!';
-            }
-            });
-        </script>
-        </body>
+    </div>
 
             
     <footer id="footer" class="footer-content" >
@@ -222,7 +195,7 @@
     <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
     
     
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/supabase.min.js"></script>
+   
 
 
 
@@ -252,6 +225,7 @@
     </script>
 
 
+
     <script>
     supabase.auth.onAuthStateChange((event, session) => {
         if (session) {
@@ -262,6 +236,14 @@
         }
     });
     </script>
+
+    <script>
+    document.getElementById('logout').addEventListener('click', async () => {
+        await supabase.auth.signOut();
+        message.textContent = 'Logged out.';
+    });
+    </script>
+
 
 
 
