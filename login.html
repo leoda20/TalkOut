@@ -107,12 +107,12 @@
         <p id="message"></p>
 
         <!-- 1️⃣ Load Supabase library first -->
-        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>//or<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
 
         <!-- 2️⃣ Then initialize Supabase -->
         <script>
-            const SUPABASE_URL = 'https://YOUR-PROJECT-ID.supabase.co';
-            const SUPABASE_ANON_KEY = 'YOUR-ANON-KEY';
+            const SUPABASE_URL = 'https://ovomjuqotkdxcselclqp.supabase.co';
+            const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im92b21qdXFvdGtkeGNzZWxjbHFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQ2OTU3MDYsImV4cCI6MjA4MDI3MTcwNn0.w35Nc9oe7rgYCyu4Obomno8WgrD4zIUf4fk5p-QY3Uo';
 
             const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
         </script>
