@@ -1,15 +1,63 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8" />
-  <title>Login</title>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/auth-ui@2.0.5/dist/umd/index.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@supabase/auth-ui-shared@2.0.5/dist/umd/index.min.css">
-</head>
-<body>
-  <div id="auth"></div>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Supabase Login</title>
 
-  <script src="js/app.js"></script>
-</body>
+    <!-- Supabase + Auth UI CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/auth-ui@0.5.6/dist/umd/index.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@supabase/auth-ui@0.5.6/dist/umd/default.css"
+    />
+  </head>
+
+  <body>
+    <div id="auth"></div>
+    <div id="user-info" style="display: none;">
+      <h3 id="welcome"></h3>
+      <button id="logout">Logout</button>
+    </div>
+
+    <script>
+      const SUPABASE_URL = "https://ovomjuqotkdxcselclqp.supabase.co";
+      const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im92b21qdXFvdGtkeGNzZWxjbHFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQ2OTU3MDYsImV4cCI6MjA4MDI3MTcwNn0.w35Nc9oe7rgYCyu4Obomno8WgrD4zIUf4fk5p-QY3Uo";
+      const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+      const { Auth } = supabaseAuthUI;
+      const authContainer = document.getElementById("auth");
+      const userInfo = document.getElementById("user-info");
+      const welcome = document.getElementById("welcome");
+      const logoutBtn = document.getElementById("logout");
+
+      // Render prebuilt UI
+      Auth.render({
+        supabaseClient: supabase,
+        container: authContainer,
+        view: "sign_in",
+        appearance: {
+          theme: "default",
+        },
+        providers: [], // you can add Google, GitHub, etc. later
+      });
+
+      // Watch for login events
+      supabase.auth.onAuthStateChange((_event, session) => {
+        if (session) {
+          authContainer.style.display = "none";
+          userInfo.style.display = "block";
+          welcome.textContent = "Welcome, " + session.user.email;
+        } else {
+          authContainer.style.display = "block";
+          userInfo.style.display = "none";
+        }
+      });
+
+      logoutBtn.addEventListener("click", async () => {
+        await supabase.auth.signOut();
+      });
+    </script>
+  </body>
 </html>
