@@ -1232,6 +1232,15 @@
     }
     </script>
 
+    <script>
+    document.getElementById('clickButton').addEventListener('click', function() {
+        fbq('track', 'Purchase', {
+            content_name: document.title,
+        
+        });
+    });
+    </script>   
+
 
     
 
