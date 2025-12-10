@@ -685,6 +685,14 @@ button
 
 
 
+.lang-toggle { 
+  float: right;
+   padding: 6px 10px; 
+   cursor: pointer; 
+  }
+
+
+
 
 .mil-button {
   cursor: pointer;

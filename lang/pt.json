@@ -1,0 +1,11 @@
+{
+  "header": {
+    "title": "Bem-vindo!",
+    "subtitle": "Sua demonstração multilíngue"
+  },
+  "home": {
+    "intro": "Este é um exemplo de configuração i18n estruturada.",
+    "button": "Saiba mais"
+  }
+}
+

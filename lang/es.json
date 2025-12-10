@@ -1,0 +1,10 @@
+{
+  "header": {
+    "title": "Welcome!",
+    "subtitle": "Your multilingual demo"
+  },
+  "home": {
+    "intro": "This is an example of a structured i18n setup.",
+    "button": "Learn more"
+  }
+}

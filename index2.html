@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title data-i18n="header.title">Welcome!</title>
+
+  <script src="https://unpkg.com/i18next@latest/dist/umd/i18next.min.js"></script>
+
+</head>
+<body>
+  <button id="lang-toggle">🌐 Switch</button>
+
+  <h1 data-key="header.title">Welcome!</h1>
+  <h2 data-key="header.subtitle">Your multilingual demo</h2>
+  <p data-i18n="home.intro">This is an example of a structured i18n setup.</p>
+  <button data-i18n="home.button">Learn more</button>
+
+  <script src="js/lang.js"></script>
+  <script src="https://unpkg.com/i18next@latest/dist/umd/i18next.min.js"></script>
+  <script>
+  const toggleBtn = document.getElementById("lang-toggle");
+  const currentPath = window.location.pathname;
+  
+  toggleBtn.addEventListener("click", () => {
+    if (currentPath.startsWith("/en")) {
+      window.location.href = "/pt/";
+    } else {
+      window.location.href = "/en/";
+    }
+  });
+</script>
+</body>
+</html>
