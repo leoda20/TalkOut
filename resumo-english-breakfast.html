@@ -64,10 +64,22 @@
     fbq('track', 'FindLocation');
     fbq('track', 'Lead');
     </script>
+
+    <script>
+    document.getElementById('clickButton').addEventListener('click', function() {
+        fbq('track', 'InitiateCheckout', {
+        value: 7.50,
+        currency: 'BRL'
+        });
+    });
+    </script>
+
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1604337657599650&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
+
+
     
 </head>
 
