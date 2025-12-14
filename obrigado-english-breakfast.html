@@ -42,13 +42,15 @@
     fbq('track', 'Contact');
     fbq('track', 'FindLocation');
     fbq('track', 'Lead');
-    fbq('track', 'Purchase', {
-        value: 7.50,       // valor total do pedido
-        currency: 'BRL',    // moeda
-        contents: [
-        {id: 'SKU123', quantity: 1, item_price: 7.50}
-        ],
-        content_type: 'product'
+    
+    </script>
+
+    <script>
+    window.addEventListener('load', function() {
+        fbq('track', 'Purchase', {
+        value: 59.90,
+        currency: 'BRL'
+        });
     });
     </script>
     <noscript><img height="1" width="1" style="display:none"
@@ -340,10 +342,7 @@
 
     <!-- jQuery js -->
     <script src="js/plugins/jquery.min.js"></script>
-    <!-- swup js -->
-    <script src="js/plugins/swup.min.js"></script>
-    <!-- swiper js -->
-    <script src="js/plugins/swiper.min.js"></script>
+    
     <!-- fancybox js -->
     <script src="js/plugins/fancybox.min.js"></script>
     <!-- gsap js -->
