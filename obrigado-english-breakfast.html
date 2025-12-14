@@ -42,10 +42,6 @@
     fbq('track', 'Contact');
     fbq('track', 'FindLocation');
     fbq('track', 'Lead');
-    fbq('track', 'Purchase', {
-        value: 59.90,
-        currency: 'BRL'
-        });
     
     </script>
 
@@ -342,6 +338,19 @@
             </div>
         
         </footer>
+
+
+        <script>
+      document.getElementById('comprar').addEventListener('click', function() {
+        fbq('track', 'Purchase', {
+          value: 59.90,
+          currency: 'BRL',
+          contents: [{id: 'TESTE123', quantity: 1, item_price: 59.90}],
+          content_type: 'product'
+        });
+        alert('Evento Purchase disparado!');
+      });
+    </script>
     
 
     
