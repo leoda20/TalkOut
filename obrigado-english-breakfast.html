@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- bootstrap grid css -->
+    <link rel="stylesheet" href="css/plugins/bootstrap-grid.css">
+    <!-- font awesome css -->
+    <link rel="stylesheet" href="css/plugins/font-awesome.min.css">
+    <!-- font awesome css -->
+    <script src="https://kit.fontawesome.com/10bed73ca6.js" crossorigin="anonymous"></script>
+    <!-- swiper css -->
+    <link rel="stylesheet" href="css/plugins/swiper.min.css">
+    <!-- fancybox css -->
+    <link rel="stylesheet" href="css/plugins/fancybox.min.css">
+    <!-- ashley scss -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- page name -->
+    <title>TalkOut
+    </title>
+    <link rel="icon" type="image/png" href="img/photo/new-favicon.png">
+
+
+    <script async src="https://tally.so/widgets/embed.js"></script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1604337657599650');
+    fbq('track', 'PageView');
+    fbq('track', 'Contact');
+    fbq('track', 'FindLocation');
+    fbq('track', 'Lead');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1604337657599650&ev=PageView&noscript=1"
+    /></noscript>
+
+    <script>
+    fbq('track', 'Purchase', {
+        value: 59.90,       // valor total do pedido
+        currency: 'BRL',    // moeda
+        contents: [
+        {id: 'SKU123', quantity: 1, item_price: 59.90}
+        ],
+        content_type: 'product'
+    });
+    </script>
+
+    <!-- End Meta Pixel Code -->
+</head>
+
+<body>
+
+    <div class="top-header" style="border-bottom: 1px solid #E2E8F0; position: fixed; width: 100%; top: 0; left: 0; z-index: 9999; background: #fff;">
+        <div class="justify-content-between container" style="height: 64px; align-items: center; display: flex;">
+            <a href="index.html" style="cursor: pointer;">
+                <img class="logo-24" src="img/photo/in-line-logo.svg" alt="image">
+            </a>
+
+            <!-- Desktop nav -->
+            <div class="desktop-nav inline-flex justify-content-center align-items-center " style="gap:4px;">
+                <!--<a class="btn-ghost" aria-label="Português">
+                    <img src="https://flagcdn.com/w40/pt.png" alt="Português" style="width: 20px; margin-right: 8px;">
+                    <h5 class="">PT</h5>
+                </a>
+
+                <hr style="height: 24px; border: 1px solid #E2E8F0; margin: 0 8px;" id="anchor1">-->
+
+                <a href="torna-te-um-moderador.html" class="btn-ghost">
+                    Criar Evento
+                </a>
+                
+                <a href="eventos.html" class="btn-ghost">
+                    Eventos
+                </a>
+
+                
+            </div>
+
+            <!-- Hamburger for mobile -->
+            <button id="navToggle" aria-label="Abrir menu" aria-expanded="false" style="display:none; background:transparent; border:0; padding:8px; cursor:pointer;">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z"/></svg>
+            </button>
+        </div>
+
+        <!-- Mobile menu (hidden on desktop) -->
+        <div id="mobileMenu" aria-hidden="true" style="display:none;">
+            <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 16px; border-top:1px solid #E2E8F0;">
+                <div style="display:flex; align-items:center; gap:12px;">
+                    <a href="index.html" style="display:inline-flex; align-items:center;">
+                        <img class="logo-24" src="img/photo/in-line-logo.svg" alt="logo" style="height:28px;">
+                    </a>
+                </div>
+                <button id="mobileClose" aria-label="Fechar menu" style="background:transparent; border:0; padding:8px; cursor:pointer;">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.3 5.71L12 12l6.3 6.29-1.41 1.42L10.59 13.41 4.29 19.71 2.88 18.29 9.18 12 2.88 5.71 4.29 4.29 10.59 10.59 16.89 4.29z"/></svg>
+                </button>
+            </div>
+
+            <nav style="padding:12px 16px; display:flex; flex-direction:column; gap:12px;">
+                <a class="mobile-link" href="eventos.html" style="padding:12px; border-radius:6px; text-decoration:none; color:#111;">Eventos</a>
+                <a class="mobile-link" href="torna-te-um-moderador.html" style="padding:12px; border-radius:6px; text-decoration:none; color:#fff; background:#0b63ce; display:inline-block; text-align:center;">Criar Evento</a>
+                <div style="border-top:1px solid #E2E8F0; margin-top:8px; padding-top:8px;">
+                    <a class="mobile-link" href="#" style="display:inline-flex; gap:8px; align-items:center; text-decoration:none; color:#111;">
+                        <img src="https://flagcdn.com/w40/pt.png" alt="Português" style="width:20px;">
+                        <span>PT</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Spacer to offset the fixed header so page content isn't hidden -->
+    <div style="height: 64px;"></div>
+
+        <div id="swupMain" class="mil-main-transition container">
+            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 72vh; text-align: center;">
+                <div style="background: #e6f9ec; border-radius: 50%; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; margin-bottom: 32px;">
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="12" fill="#34c759"/>
+                        <path d="M7 13l3 3 7-7" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h2 style="color: #222; margin-bottom: 16px;">Obrigado por sua compra!</h2>
+                
+                
+
+                <div class="col-lg-7 mil-mb-16 card-themes" >
+
+                
+
+                    <div class="event-card " style="height: fit-content;">
+
+
+                        <div class="mil-blog-card  align-items-center" style="gap: 16px; margin-bottom: 8px;">
+
+                            <div class="mil-cover-frame mil-mb-16" style="padding: 48px; width: 48px;">
+                                <img src="img/photo/business-people-office-break.jpg" alt="cover">
+                            </div>
+
+                            <div >
+
+
+                            <h4 class="mil-mb-8" >English Breakfast ☕</h4>
+
+                            <div class="mil-gap-8 justify-content-between">
+                                
+                                <div class="align-items-center " style="gap: 4px; display: inline-flex; margin-right: 12px;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.364 17.364L12 23.7279L5.63604 17.364C2.12132 13.8492 2.12132 8.15076 5.63604 4.63604C9.15076 1.12132 14.8492 1.12132 18.364 4.63604C21.8787 8.15076 21.8787 13.8492 18.364 17.364ZM12 13C13.1046 13 14 12.1046 14 11C14 9.89543 13.1046 9 12 9C10.8954 9 10 9.89543 10 11C10 12.1046 10.8954 13 12 13Z"></path></svg>
+
+                                    <p>Spacio - Olivais Shopping</p>
+
+                                </div>
+
+                                <div class="align-items-center" style="gap: 4px; display: inline-flex; margin-right: 12px;">
+                                    
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M2 11H22V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V11ZM17 3H21C21.5523 3 22 3.44772 22 4V9H2V4C2 3.44772 2.44772 3 3 3H7V1H9V3H15V1H17V3Z"></path></svg>
+
+                                    <p>21/12</p>
+
+                                </div>
+
+
+                                <div class="align-items-center" style="gap: 4px; display: inline-flex; margin-right: 12px;">
+                                    
+
+                                    
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM13 12V7H11V14H17V12H13Z"></path></svg>
+                                    <p>10:00</p>
+
+                                </div>
+                            
+
+                            </div>
+
+                            </div>
+
+
+                    
+                        </div>
+
+
+                        
+
+                    </div>
+                    
+                    <div class="mil-image-frame mil-mb-16 " style="height: 100px;">
+                    
+
+                    
+
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3111.0616902799547!2d-9.116665524312161!3d38.76228905466544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19323184648b87%3A0x289f6bd7628f10ba!2sSpacio%20Shopping!5e0!3m2!1spt-PT!2spt!4v1764264594191!5m2!1spt-PT!2spt" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                
+                    </div>
+                    
+
+
+                    <div class="flex-div">
+
+                        
+                        
+                        <div class="inline-flex align-items-center mil-mb-16" style="gap: 8px; width: 100%; ">
+                            <img src="img/photo/Moderadores/moderador-carolina-pardal.jpg" alt="image" style="width:40px; height:40px; border-radius: 50%;">
+
+                            <div>
+                                    <h6>Moderado por</h6>
+                                    <p style="color: #1c1c1c;">Carolina Pardal</p>
+                            </div>
+                        </div>
+
+
+                            <div class="inline-flex align-items-center mil-mb-16" style="gap: 8px; width: 100%; ">
+                                <div style=" width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background-color: #FFE1D9;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="#FE6B42" style="fill: #FE6B42;"><path d="M16.9337 8.96494C16.426 5.03562 13.0675 2 9 2 4.58172 2 1 5.58172 1 10 1 11.8924 1.65707 13.6313 2.7555 15.0011 3.56351 16.0087 4.00033 17.1252 4.00025 18.3061L4 22H13L13.001 19H15C16.1046 19 17 18.1046 17 17V14.071L18.9593 13.2317C19.3025 13.0847 19.3324 12.7367 19.1842 12.5037L16.9337 8.96494ZM3 10C3 6.68629 5.68629 4 9 4 12.0243 4 14.5665 6.25141 14.9501 9.22118L15.0072 9.66262 16.5497 12.0881 15 12.7519V17H11.0017L11.0007 20H6.00013L6.00025 18.3063C6.00036 16.6672 5.40965 15.114 4.31578 13.7499 3.46818 12.6929 3 11.3849 3 10ZM21.1535 18.1024 19.4893 16.9929C20.4436 15.5642 21 13.8471 21 12.0001 21 10.153 20.4436 8.4359 19.4893 7.00722L21.1535 5.89771C22.32 7.64386 23 9.74254 23 12.0001 23 14.2576 22.32 16.3562 21.1535 18.1024Z"></path></svg>
+
+
+                                </div>  
+
+                                <div>
+                                        <h6>Idioma</h6>
+                                        <p style="color: #1c1c1c;">Inglês</p>
+                                </div>
+                            </div>
+
+
+                            <div class="inline-flex align-items-center mil-mb-16" style="gap: 8px; width: 100%;">
+                                <div style=" width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background-color: #D8DAE7;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 6.99999C16.4183 6.99999 20 10.5817 20 15C20 19.4183 16.4183 23 12 23C7.58172 23 4 19.4183 4 15C4 10.5817 7.58172 6.99999 12 6.99999ZM12 8.99999C8.68629 8.99999 6 11.6863 6 15C6 18.3137 8.68629 21 12 21C15.3137 21 18 18.3137 18 15C18 11.6863 15.3137 8.99999 12 8.99999ZM12 10.5L13.3225 13.1797L16.2798 13.6094L14.1399 15.6953L14.645 18.6406L12 17.25L9.35497 18.6406L9.86012 15.6953L7.72025 13.6094L10.6775 13.1797L12 10.5ZM18 1.99999V4.99999L16.6366 6.13755C15.5305 5.5577 14.3025 5.17884 13.0011 5.04948L13 1.99899L18 1.99999ZM11 1.99899L10.9997 5.04939C9.6984 5.17863 8.47046 5.55735 7.36441 6.13703L6 4.99999V1.99999L11 1.99899Z"></path></svg>
+
+
+                                </div>  
+
+                                <div>
+                                        <h6>Nível</h6>
+                                        <p style="color: #1c1c1c;">Iniciante</p>
+                                </div>
+                            </div>
+
+                            
+                        
+
+                            
+                        
+                        
+
+
+                        
+
+
+
+                    </div>
+
+
+                    
+
+
+                    
+
+                    <!-- Step template -->
+                    
+                </div>
+            </div>
+            
+
+
+        </div>
+
+    <footer id="footer" class="footer-content" >
+
+            <div class="container col-lg-12 flex-div justify-content-between ">
+
+                <div class="justify-content-between  mil-gap-16">
+
+                    <h3 style="color: #fff;">Talk<span class="curved-text-sm">Out</span></h3>
+                            
+                                
+
+                    <ul class="mil-social-icons">
+                                            
+                                        
+                        <li><a href="https://www.instagram.com/talkout.today/"  class="social-icon" role="button" id="clickButton" target="_blank" rel="noopener noreferrer" data-no-swup onclick="window.open(this.href,'_blank');return false;">  
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12.001 9C10.3436 9 9.00098 10.3431 9.00098 12C9.00098 13.6573 10.3441 15 12.001 15C13.6583 15 15.001 13.6569 15.001 12C15.001 10.3427 13.6579 9 12.001 9ZM12.001 7C14.7614 7 17.001 9.2371 17.001 12C17.001 14.7605 14.7639 17 12.001 17C9.24051 17 7.00098 14.7629 7.00098 12C7.00098 9.23953 9.23808 7 12.001 7ZM18.501 6.74915C18.501 7.43926 17.9402 7.99917 17.251 7.99917C16.5609 7.99917 16.001 7.4384 16.001 6.74915C16.001 6.0599 16.5617 5.5 17.251 5.5C17.9393 5.49913 18.501 6.0599 18.501 6.74915ZM12.001 4C9.5265 4 9.12318 4.00655 7.97227 4.0578C7.18815 4.09461 6.66253 4.20007 6.17416 4.38967C5.74016 4.55799 5.42709 4.75898 5.09352 5.09255C4.75867 5.4274 4.55804 5.73963 4.3904 6.17383C4.20036 6.66332 4.09493 7.18811 4.05878 7.97115C4.00703 9.0752 4.00098 9.46105 4.00098 12C4.00098 14.4745 4.00753 14.8778 4.05877 16.0286C4.0956 16.8124 4.2012 17.3388 4.39034 17.826C4.5591 18.2606 4.7605 18.5744 5.09246 18.9064C5.42863 19.2421 5.74179 19.4434 6.17187 19.6094C6.66619 19.8005 7.19148 19.9061 7.97212 19.9422C9.07618 19.9939 9.46203 20 12.001 20C14.4755 20 14.8788 19.9934 16.0296 19.9422C16.8117 19.9055 17.3385 19.7996 17.827 19.6106C18.2604 19.4423 18.5752 19.2402 18.9074 18.9085C19.2436 18.5718 19.4445 18.2594 19.6107 17.8283C19.8013 17.3358 19.9071 16.8098 19.9432 16.0289C19.9949 14.9248 20.001 14.5389 20.001 12C20.001 9.52552 19.9944 9.12221 19.9432 7.97137C19.9064 7.18906 19.8005 6.66149 19.6113 6.17318C19.4434 5.74038 19.2417 5.42635 18.9084 5.09255C18.573 4.75715 18.2616 4.55693 17.8271 4.38942C17.338 4.19954 16.8124 4.09396 16.0298 4.05781C14.9258 4.00605 14.5399 4 12.001 4ZM12.001 2C14.7176 2 15.0568 2.01 16.1235 2.06C17.1876 2.10917 17.9135 2.2775 18.551 2.525C19.2101 2.77917 19.7668 3.1225 20.3226 3.67833C20.8776 4.23417 21.221 4.7925 21.476 5.45C21.7226 6.08667 21.891 6.81333 21.941 7.8775C21.9885 8.94417 22.001 9.28333 22.001 12C22.001 14.7167 21.991 15.0558 21.941 16.1225C21.8918 17.1867 21.7226 17.9125 21.476 18.55C21.2218 19.2092 20.8776 19.7658 20.3226 20.3217C19.7668 20.8767 19.2076 21.22 18.551 21.475C17.9135 21.7217 17.1876 21.89 16.1235 21.94C15.0568 21.9875 14.7176 22 12.001 22C9.28431 22 8.94514 21.99 7.87848 21.94C6.81431 21.8908 6.08931 21.7217 5.45098 21.475C4.79264 21.2208 4.23514 20.8767 3.67931 20.3217C3.12348 19.7658 2.78098 19.2067 2.52598 18.55C2.27848 17.9125 2.11098 17.1867 2.06098 16.1225C2.01348 15.0558 2.00098 14.7167 2.00098 12C2.00098 9.28333 2.01098 8.94417 2.06098 7.8775C2.11014 6.8125 2.27848 6.0875 2.52598 5.45C2.78014 4.79167 3.12348 4.23417 3.67931 3.67833C4.23514 3.1225 4.79348 2.78 5.45098 2.525C6.08848 2.2775 6.81348 2.11 7.87848 2.06C8.94514 2.0125 9.28431 2 12.001 2Z"></path></svg>
+                                                
+                        </a>
+                        </li>
+                        <li>
+                            <a onclick="window.location.href='mailto:info@talkout.today?subject=Hello&body=I%20wanted%20to%20say%20hi!'" target="E-mail" aria-label="E-mail" class="social-icon"> 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3ZM20 7.23792L12.0718 14.338L4 7.21594V19H20V7.23792ZM4.51146 5L12.0619 11.662L19.501 5H4.51146Z"></path></svg>
+                                                
+                            </a>
+                        </li>
+                    </ul>
+
+                    <p style="text-align: center; margin-top: 16px; margin-bottom: 16px;">&copy; 2025 TalkOut. Todos os direitos reservados.</p>
+
+                </div>
+
+            
+
+                <div class="align-items-center mil-gap-16 justify-content-between mil-mb-30" >
+
+                    <p>Participe</p>
+
+                    <p class="btn-link" style="text-align: center;"> <a href="index.html" onclick="document.getElementById('eventos').scrollIntoView({ behavior: 'smooth' }); return false;">Eventos</a></p>
+
+                    <p class="btn-link" style="text-align: center;"> <a href="torna-te-um-moderador.html" target="_blank" rel="noopener noreferrer">Criar evento</a></p>
+
+                
+
+
+                </div>
+
+                <div class="align-items-center mil-gap-16 justify-content-between mil-mb-30" >
+
+                    <p>Suporte</p>
+
+
+                    <p class="btn-link" style="text-align: center;"> <a href="termos-de-servico.html" target="_blank" rel="noopener noreferrer">Termos de serviço</a></p>
+
+                    <p class="btn-link" style="text-align: center;"> <a href="politica-de-privacidade.html" target="_blank" rel="noopener noreferrer">Política de privacidade</a></p>
+
+
+                </div>
+
+                
+                            
+            </div>
+        
+        </footer>
+    
+
+    <!-- jQuery js -->
+    <script src="js/plugins/jquery.min.js"></script>
+    <!-- swup js -->
+    <script src="js/plugins/swup.min.js"></script>
+    <!-- swiper js -->
+    <script src="js/plugins/swiper.min.js"></script>
+    <!-- fancybox js -->
+    <script src="js/plugins/fancybox.min.js"></script>
+    <!-- gsap js -->
+    <script src="js/plugins/gsap.min.js"></script>
+    <!-- scroll smoother -->
+    <script src="js/plugins/smooth-scroll.js"></script>
+    <!-- scroll trigger js -->
+    <script src="js/plugins/ScrollTrigger.min.js"></script>
+    <!-- scroll to js -->
+    <script src="js/plugins/ScrollTo.min.js"></script>
+    <!-- ashley js -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
