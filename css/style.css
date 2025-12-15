@@ -3459,7 +3459,7 @@ blog
 .mil-blog-card .mil-cover-frame {
   position: relative;
   overflow: hidden;
-  padding-bottom: 180px;
+  padding-bottom: 200px;
   border-radius: 16px;
   
 }
@@ -4852,7 +4852,6 @@ html {
   border: solid 2px #E2E8F0;
   border-color: #E2E8F0;
   border-radius: 16px;
-  background-color: #ffffff;
   
 }  
 
@@ -4935,6 +4934,12 @@ html {
 }
 
 
+.icon-review path{
+  
+  fill: #F59E0B;
+}
+
+
 
 
 
@@ -4962,7 +4967,8 @@ html {
 .hero-container {
   height: fit-content; 
   align-content: center; 
-  height: 80vh;
+  min-height: 50vh;
+  margin-top: 80px;
 }
 
 .hero-container .curved-hero{
